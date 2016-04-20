@@ -1,0 +1,19 @@
+citHeader("To cite smalldata in publications use:")
+
+citEntry(entry = "Article",
+  title        = "",
+  author       = personList(as.person("Ignasi Bartomeus"),as.person("Oscar Aguado"),
+                   as.person("Curro Molina")),
+  journal      = "In prep",
+  year         = "2017",
+  volume       = "",
+  number       = "",
+  pages        = "",
+  url          = "",
+
+  textVersion  =
+  paste("",
+        "2017",
+        "Bartomeus et al.",
+        "In prep")
+)

@@ -4,6 +4,8 @@ Version: 0.1
 Authors@R: person("Ignasi", "Bartomeus", email = "nacho.bartomeus@gmail.com",
                   role = c("aut", "cre"))
 Description: What the package does (one paragraph)
-Depends: R (>= 3.1.0)
+Depends:
+    taxize
 License: CC0
 LazyData: true
+RoxygenNote: 5.0.1.9000
