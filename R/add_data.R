@@ -1,3 +1,20 @@
+#' @name check_data
+#' 
+#' @title 
+#' 
+#' @description 
+#'  
+#' @param 
+#' @param 
+#' @param 
+#' @param 
+#' 
+#' @return 
+#'
+#' @examples 
+#' #not run
+#'  
+#' @export
 add_data <- function(data, type = c("specimens", "observations"), check = TRUE){
     if(check){
         check_data(data, type = type)  
