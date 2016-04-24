@@ -13,7 +13,8 @@
 #'   \item day: day of the month of the observation
 #'   \item month: month of the observation
 #'   \item year: year of the observation
-#'   \item location: verbal description of the location
+#'   \item country: country (or US state) where collected
+#'   \item location: verbal description of the location, including nearest town/city
 #'   \item lat: latitude degrees
 #'   \item long: longitude degrees
 #'   \item reference: bibtext code of the published reference

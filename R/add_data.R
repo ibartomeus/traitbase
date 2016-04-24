@@ -15,7 +15,7 @@
 #' #not run
 #'  
 #' @export
-add_data <- function(data, type = c("specimens", "observations"), check = TRUE){
+add_data <- function(data, schema = "bee", type = c("specimens", "observations"), check = TRUE){
     if(check){
         check_data(data, type = type)  
     }
