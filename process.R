@@ -1,11 +1,23 @@
 library(devtools)
 library(roxygen2)
 library(knitr)
+library(taxize) #add to dependencies
+library(countrycode) #idem
+#add this as func
+num.decimals <- function(x) {
+    stopifnot(class(x)=="numeric")
+    x <- sub("0+$","",x)
+    x <- sub("^.+[.]","",x)
+    nchar(x)
+}
+
+
+#document
 document()
 
 
 #create the initial datasets
-species <- data.frame(id = NA,
+bee_species <- data.frame(id = NA,
                       Genus = NA,
                       species = NA,
                       order = NA,
@@ -13,7 +25,7 @@ species <- data.frame(id = NA,
                       subfamily = NA)
 
 
-specimens <- data.frame(id = NA,
+bee_specimens <- data.frame(id = NA,
                         link_id = NA,
                         Genus = NA,
                         species = NA,
@@ -24,7 +36,7 @@ specimens <- data.frame(id = NA,
                         reference = NA,
                         credit = NA)
 
-observations <- data.frame(id = NA,
+bee_observations <- data.frame(id = NA,
                            link_id = NA,
                            Genus = NA,
                            species = NA,
@@ -34,6 +46,7 @@ observations <- data.frame(id = NA,
                            day = NA,
                            month = NA,
                            year = NA,
+                           country = NA, 
                            location = NA,
                            lat = NA,
                            long = NA,
@@ -43,7 +56,7 @@ observations <- data.frame(id = NA,
                            taxonomist = NA)
 
 #initial traits
-schema <- data.frame(trait_category = c("morphological", "morphological", 
+bee_schema <- data.frame(trait_category = c("morphological", "morphological", 
                                         "ecological", "ecological",
                                         "life_history", "life_history"), 
                      trait = c("IT", "tongue_length", 
@@ -52,21 +65,32 @@ schema <- data.frame(trait_category = c("morphological", "morphological",
                      units = c("mm", "mm", 
                                "factor", "factor",
                                "individuals", "days"),
+                     test = c("c(0:3)", "c(1:3)",
+                              "c('social', 'solitary')",
+                              "c('soil', 'soil_clay', 'soil_sand', 'soil_gipsy',
+                                          'wood', 'cavity', 'hole', 'stem')",
+                              "c(0:1000)", "c(1:1000)"),
                      description = c("interior distance between tegulas", 
-                                     "nest location", 
+                                     "Length of the tongue (prementum + glossa)", 
                                      "social behaviour: social, solitary", 
-                                     "nest site: soil, wood, cavity, hole, stem",
+                                     "nest site: soil_clay, soil_sand, soil_gipsy, soil,
+                                          wood, cavity, hole, stem",
                                      "number of offspring per female", 
                                      "numbers of days lived as adult"))
 
 
-save(observations, file="data/observations.rda")
-save(specimens, file="data/specimens.rda")
-save(taxonomy, file="data/taxonomy.rda")
-save(schema, file="data/schema.rda")
+save(bee_observations, file="data/bee_observations.rda")
+save(bee_specimens, file="data/bee_specimens.rda")
+save(bee_taxonomy, file="data/bee_taxonomy.rda")
+save(bee_schema, file="data/bee_schema.rda")
 
 
 
 #issues:
-#-What to do with means and se's? Use only mean n= 1, reverse ingenieer?
+#- What to do with means and se's? Use only mean n= 1, reverse ingenieer?
+#- Bibtext?
+# what about synomins. can we make a function that cleans and updates synonims in the master data?
 
+
+load("data/schema.rda")
+schema
