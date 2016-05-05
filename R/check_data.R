@@ -54,7 +54,8 @@ check_data <- function(data, schema = "bee",
     schema <- bee_schema
     #checks common for both types
     if(length(unique(data$link_id)) != length(data$link_id)){
-        stop("link_id should be unique")
+        stop("link_id should be unique") # isue: can I make it unique, and if so, 
+        #can I force observations and specimens same way? 
     }
     if(is.na(data$Genus) | is.na(data$species)){
         stop("Genus and species can't be NA. Only fully identified species are accepted")
@@ -75,7 +76,6 @@ check_data <- function(data, schema = "bee",
         if(colnames(data) != colnames(specimens)[-"id"]){
             stop("Column names should match specimens columnames: see ?specimens")
             #ToDo: automatically add some columns filled with NA with warning
-            # idem, should we use schema for that?
         } 
         #tests for each column
         if(!data$trait_category %in% schema$trait_category){
@@ -91,11 +91,10 @@ check_data <- function(data, schema = "bee",
         #subset by trait
         for(i in 1:length(traits)){
             temp <- subset(data, trait == traits[i])
-            #add to chema the test!
             schema_test <- subset(schema, trait == traits[i])
             #e.g.
-            schema_test <- "c(1:3)"
-            schema_test <- "c('nest', 'nest_soil')"
+            #schema_test <- "c(1:3)"
+            #schema_test <- "c('nest', 'nest_soil')"
             #check
             if(!temp %in% eval(parse(text=schema_test))){
                 stop("value not apropiate...")
@@ -115,14 +114,14 @@ check_data <- function(data, schema = "bee",
             data$Host_sp <- paste(data$host_genus, data$host_species)
             taxas <- tax_name(query = data$Host_sp, get = "genus", verbose = FALSE)
             if(length(which(is.na(taxas$genus))) > 0){
-                data2 <- data[-which(is.na(taxas$genus)),]
+                data2 <- data[-which(is.na(taxas$genus)),] #better only remove species (= NA), not genus, then.
                 warning("Species not in itis removed") #add error = TRUE and id of rows removed
             } #check ITITS is the palce for plants. I know it is the best for bees, but...
         }
         #day
         if(!data$day %in% c(1:31)){
             stop("months should have up to 31 days only") #I am not cheacking by month...
-        } #I can indicate where it fails (along all the script)
+        } #I should indicate where it fails (along all the script)
         #month
         if(!data$month %in% c(1:12)){
             stop("months should be numerated 1 to 12") 
