@@ -1,4 +1,4 @@
-citHeader("To cite smalldata in publications use:")
+citHeader("To cite traitbase in publications use:")
 
 citEntry(entry = "Article",
   title        = "",

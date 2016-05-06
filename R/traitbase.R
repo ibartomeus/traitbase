@@ -1,6 +1,6 @@
-#' smalldata.
+#' traitbase
 #'
-#' @name smalldata
+#' @name traitbase
 #' @docType package
 #' @description 
 NULL
