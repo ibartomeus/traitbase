@@ -3,10 +3,11 @@ library(roxygen2)
 library(knitr)
 library(taxize) #add to dependencies
 library(countrycode) #idem
-library(plyr) #also (ot sure yet)
+library(plyr) #also (not sure yet)
 library(git2r) #also (idem)
 library(sp) #add
 library(rworldmap) #add
+library(googlesheets)
 
 #add this as func
 num.decimals <- function(x) {
@@ -126,6 +127,8 @@ save(bee_schema, file="data/bee_schema.rda")
 #- Bibtext?
 #- what about synomins. can we make a function that cleans and updates synonims in the master data?
 #- use travis with e.g.check data.
+#- Note:  readr::read_csv() should be used to read csv, as is faster.
+
 
 #load("data/bee_schema.rda")
 bee_schema

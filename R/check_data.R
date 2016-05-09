@@ -170,5 +170,6 @@ check_data <- function(dat, schema = "bee",
         #collector: any string goes
         #taxonomist: any string goes
     }
+    dat
 }
 
