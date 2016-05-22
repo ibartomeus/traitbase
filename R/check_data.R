@@ -20,7 +20,9 @@
 #' @export
 check_data <- function(dat, schema = "bee",
                        type = c("specimens", "observations"),
-                       error = FALSE){
+                       error = FALSE){ 
+    #Should I add a verbose and an option not to sheck taxonomy?
+    #This may be useful for testing purposes, but not safe.
     if(schema != "bee") stop("only available for bees")
     load("data/bee_schema.rda")
     schema <- bee_schema
@@ -121,7 +123,7 @@ check_data <- function(dat, schema = "bee",
                                email = NA, 
                                collector = NA,
                                taxonomist = NA)
-        if(colnames(dat) != colnames(template)){
+        if(any(colnames(dat) != colnames(template))){
             stop("Column names should match observations colum names: see ?observations")
             #ToDo: automatically add missing columns filled with NA with warning
         }
@@ -133,52 +135,52 @@ check_data <- function(dat, schema = "bee",
             warning("Genus not in itis. Made NA") #add error = TRUE and id of rows fixed
         } #check ITITS is the palce for plants. I know it is the best for bees, but...
         #partner_species
-        if(!is.na(dat$partner_species)){
-            dat$partner_sp <- paste(dat$partner_genus, dat$partner_species)
-            partner_taxas <- tax_name(query = data$partner_sp, get = "genus", verbose = FALSE)
+        if(any(!is.na(dat$partner_species))){
+            partner_sp <- paste(dat$partner_genus, dat$partner_species)
+            partner_taxas <- tax_name(query = partner_sp, get = "genus", verbose = FALSE)
             if(length(which(is.na(partner_taxas$genus))) > 0){
                 dat[which(is.na(partner_taxas$genus)),] <- NA 
                 warning("species not in itis, turned to NA") #add error = TRUE and id of rows fixed
             } 
         }
         #day
-        if(!dat$day %in% c(1:31)){
+        if(any(!dat$day %in% c(1:31))){
             stop("months should have up to 31 days only") #I am not cheacking by month...
         } #I should indicate where it fails (along all the script)
         #month
-        if(!dat$month %in% c(1:12)){
+        if(any(!dat$month %in% c(1:12))){
             stop("months should be numerated 1 to 12") 
         }
         #year
-        if(!dat$year %in% c(1700:3000)){
+        if(any(!dat$year %in% c(1700:3000))){
             stop("year should be four digits and > 1700") 
         }
         #date
-        if(as.POSIXct(paste(dat$year, dat$day, dat$month, sep = "-")) 
-                      > as.POSIXct(Sys.Date())){
+        if(any(as.POSIXct(paste(dat$year, dat$day, dat$month, sep = "-")) 
+                      > as.POSIXct(Sys.Date()))){
             stop("Collection date can't be on the future")
         }
         #country: 
-        if(!dat$contry %in% countrycode_data$country.name){
+        if(any(!dat$country %in% countrycode_data$country.name)){
             stop("country not recognized, see ?countrycode_data for a list of accepted names")
         } #we can try the regex to match and fix coomon mistakes here on the fly!
         #location: any string goes
         #lat:
-        if(dat$lat %in% c(-85:85)){
+        if(any(!dat$lat %in% c(-85:85))){
             stop("latitude should be between -85 and 85")
         }
         #long
-        if(dat$lat %in% c(-180:180)){
+        if(any(!dat$lat %in% c(-180:180))){
             stop("longitude should be between -180 and 180")
         }
         #accurancy
-        if(num.decimals(dat$lat) | num.decimals(dat$long) < 2){
+        if(any(num.decimals(dat$lat) | num.decimals(dat$long) < 2)){
             warning("longitude and latitude have very low resolution.")
         }
         #check lat long not in the see & in the targeted country...
         match_country <- coords2country(dat$lat, dat$long)
-        discrepancies <- which(dat$country != match_country)
-        if(length(discrpeancies) > 0){
+        discrepancies <- which(as.character(dat$country) != as.character(match_country))
+        if(length(discrepancies) > 0){
             warning("Some points fall on a different country than you mention or on the sea")
             #indicate which!
         } #what to do with US states?

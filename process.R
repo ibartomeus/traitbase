@@ -111,25 +111,26 @@ dat<- data.frame( link_id = c(1,2,3),
                      email = NA)
                     
  
-dat2 <- data.frame(link_id = NA,
-                    genus = NA,
-                    species = NA,
-                    sex = NA,
-                    interaction_type = NA,
-                    partner_genus = NA,
-                    partner_species = NA,
-                    day = NA,
-                    month = NA,
-                    year = NA,
-                    country = NA, #Add state for US?
-                    location = NA,
-                    lat = NA,
-                    long = NA,
-                    reference = NA,
-                    credit = NA,
-                    email = NA, 
-                    collector = NA,
-                    taxonomist = NA)
+dat2 <- data.frame(link_id = c(1,2,3),
+                   genus = c("Andrena", "Osmia", "Bombus"),
+                   species = c("cineraria", "bicornis", "terrestris"),
+                   sex = c("female", "male", "queen"),
+                    interaction_type = c("pollination", "pollination", "pollination"),
+                    partner_genus = c("Lavandula", "Carpobrotus",
+                                      "Rosmarinus"),
+                    partner_species = c("stoechas", "edulis", "officinalis"),
+                    day = c(1:3),
+                    month = c(1:3),
+                    year = rep(2015,3),
+                    country = rep("Spain", 3), #Add state for US?
+                    location = rep("home", 3),
+                    lat = rep(40.00, 3),
+                    long = rep(4.00, 3),
+                    reference = rep("fake", 3),
+                    credit = rep("me", 3),
+                    email = rep(NA, 3), 
+                    collector = rep("me", 3),
+                    taxonomist = rep("me", 3))
 
 check_data(dat, type = "specimens")
 check_data(dat2, type = "observations")
