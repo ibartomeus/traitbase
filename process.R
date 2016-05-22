@@ -105,13 +105,13 @@ dat<- data.frame( link_id = c(1,2,3),
                      sex = c("female", "male", "queen"),
                      category = rep("morphological", 3), 
                      trait = c("IT", "tongue_length", "IT"),
-                     value = c(1.2, 2.3, 3.2),
+                     value = c(1.2, 2.3, 2.9),
                      reference = rep("fake",3),
                      credit = rep("nacho", 3),
                      email = NA)
                     
  
-data2 <- data.frame(link_id = NA,
+dat2 <- data.frame(link_id = NA,
                     genus = NA,
                     species = NA,
                     sex = NA,
@@ -132,4 +132,4 @@ data2 <- data.frame(link_id = NA,
                     taxonomist = NA)
 
 check_data(dat, type = "specimens")
-check_data(data2, type = "observations")
+check_data(dat2, type = "observations")

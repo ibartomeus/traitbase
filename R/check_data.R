@@ -37,7 +37,15 @@ check_data <- function(dat, schema = "bee",
     if(length(which(is.na(taxas$final_names))) > 0){
         dat <- dat[-which(is.na(taxas$final_names)),]
         warning("Species not in itis removed") #add error = TRUE and id of rows removed
-    }
+        taxas <- taxas[-which(is.na(taxas$final_names)),]
+        temp <- unlist(strsplit(as.character(taxas$final_names), " "))
+        dat$genus <- temp[c(1:length(temp)) %% 2 != 0]
+        dat$species <- temp[c(1:length(temp)) %% 2 == 0]
+    } else{
+        temp <- unlist(strsplit(as.character(taxas$final_names), " "))
+        dat$genus <- temp[c(1:length(temp)) %% 2 != 0]
+        dat$species <- temp[c(1:length(temp)) %% 2 == 0]
+    } #Add spellings/synonyms fixed as mwsage!
     if(any(!dat$sex %in% 
            eval(parse(text = as.character(schema[which(schema$trait == "sex"), 
                                               "test"]))))){
@@ -52,7 +60,7 @@ check_data <- function(dat, schema = "bee",
                                genus = NA,
                                species = NA,
                                sex = NA,
-                               trait_category = NA, 
+                               category = NA, 
                                trait = NA,
                                value = NA,
                                reference = NA,
@@ -63,7 +71,7 @@ check_data <- function(dat, schema = "bee",
             #ToDo: automatically add missing columns filled with NA with warning
         } 
         #tests for each column
-        if(any(!dat$trait_category %in% schema$category)){
+        if(any(!dat$category %in% schema$category)){
             stop("trait_category should match schema (load('taxa_'schema.rda)). 
                  If you need a new category contact me")
         }
@@ -86,16 +94,15 @@ check_data <- function(dat, schema = "bee",
                     #better error message? Yes, add at least the trait
                 } 
             }else{
-                if(any(temp$value < 0 | temp$value < eval(parse(text=schema_test)))){
+                if(any(temp$value < 0 | temp$value > eval(parse(text=schema_test)))){
                     stop("value not allowed by the schema. See load('taxa_'schema.rda)") 
                  }
             }
         }
         #check also which columns are allowed to be NA's or not... 
     }
-    if(type == "specimens"){
-        template <- data.frame(id = NA,
-                               link_id = NA,
+    if(type == "observations"){
+        template <- data.frame(link_id = NA,
                                genus = NA,
                                species = NA,
                                sex = NA,
@@ -114,7 +121,7 @@ check_data <- function(dat, schema = "bee",
                                email = NA, 
                                collector = NA,
                                taxonomist = NA)
-        if(colnames(dat) != colnames(template)[-"id"]){
+        if(colnames(dat) != colnames(template)){
             stop("Column names should match observations colum names: see ?observations")
             #ToDo: automatically add missing columns filled with NA with warning
         }
@@ -178,11 +185,6 @@ check_data <- function(dat, schema = "bee",
         #collector: any string goes
         #taxonomist: any string goes
     }
-    print("data checked!") #with this warnings?
+    message("data checked!") #with this warnings?
     dat
 }
-
-
-#why
-tax_name(query = "Osmia bicornis", get = "species")
-tax_name(query = "Osmia bicornis", get = "genus")

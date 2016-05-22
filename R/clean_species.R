@@ -1,4 +1,4 @@
-#' @name clean_data
+#' @name clean_species
 #' 
 #' @title Helper function to clean taxonomy.
 #' 
@@ -13,10 +13,8 @@
 #' species <- c("Osmia rufa", "Osmia bicornis", "Osmia ruffa", 
 #'            "Osmia wikifluqie", "watermelon pie", "Osmia sp.")
 #' clean_species(species)
-
-#Note: code should be updated when synonyms is vectorized by scott.
 #' @export
-clean_species <- function(species){
+clean_species <- function(species){ #Add Verbose option to reduce printed output.
     #misspellings
     species2 <- unique(species) #how to keep track of this?
     temp <- gnr_resolve(species2, best_match_only = TRUE, canonical = TRUE)
@@ -28,20 +26,17 @@ clean_species <- function(species){
     species3 <- species3[!is.na(species3)]
     temp <- synonyms(species3, db="itis")
     synonym_ids <- grep(pattern = "acc_name", temp) #is this the optimal solution?
-    accepted_names <- unlist(lapply(temp[synonym_ids], '[', "acc_name"), use.names = FALSE)
+    accepted_names <- unlist(lapply(temp[synonym_ids], '[', "acc_name"), 
+                             use.names = FALSE)
     synonym_names <- species3
-    synonym_names[synonym_ids] <- accepted_names
+    synonym_names[synonym_ids] <- accepted_names[1]
     key <- data.frame(species3, synonym_names)
     dat <- merge(dat, key, 
                       by.x = "matched_name2", by.y = "species3", all.x = TRUE)
     #clean non accepted species
     species4 <- unique(dat$synonym_names)
     species4 <- species4[!is.na(species4)]
-    out <- list()
-    for(i in 1:length(species4)){
-        out[[i]] <- tax_name(species4[i], get = "species")
-    }
-    out2 <- plyr::ldply(out, data.frame)
+    out2 <- tax_name(species4, get = "species")
     final_names <- species4
     final_names[which(is.na(out2$species))] <- NA
     key2 <- data.frame(species4, final_names)
@@ -52,4 +47,6 @@ clean_species <- function(species){
           all.x = TRUE)
     dat[,c(1,3,2,4)]
 }
+
+
 
