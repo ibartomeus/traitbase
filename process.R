@@ -89,7 +89,7 @@ bee_schema <- data.frame(category = c("metadata", "metadata",
 
 #WARNING do not run this once data is uploaded
 write.csv(bee_observations, file="data/bee_observations.csv")
-write.csv(bee_specimens, file="data/bee_specimens.scv")
+write.csv(bee_specimens, file="data/bee_specimens.csv")
 save(bee_taxonomy, file="data/bee_taxonomy.rda")
 save(bee_schema, file="data/bee_schema.rda")
 
@@ -134,3 +134,8 @@ dat2 <- data.frame(link_id = c(1,2,3),
 
 check_data(dat, type = "specimens")
 check_data(dat2, type = "observations")
+
+add_data(dat, type = "specimens", check = FALSE)
+add_data(dat2, type = "observations", check = FALSE)
+
+
