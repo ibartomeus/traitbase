@@ -8,6 +8,7 @@ library(plyr) #also
 library(sp) #add
 library(rworldmap) #add
 #library(googlesheets) # (not sure yet)
+library(reshape)
 
 #document
 document()
@@ -137,5 +138,4 @@ check_data(dat2, type = "observations")
 
 add_data(dat, type = "specimens", check = FALSE)
 add_data(dat2, type = "observations", check = FALSE)
-
 
