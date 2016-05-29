@@ -21,12 +21,15 @@
 check_data <- function(dat, schema = "bee",
                        type = c("specimens", "observations"),
                        error = FALSE){ 
-    #Should I add a verbose and an option not to sheck taxonomy?
+    #Should I add a verbose and an option not to check taxonomy?
     #This may be useful for testing purposes, but not safe.
     if(schema != "bee") stop("only available for bees")
     load("data/bee_schema.rda")
     schema <- bee_schema
 
+    #check, fill and reorder columns
+    dat <- fill_columns(data1, type = type)
+    
     #checks common things for both types
     if(length(unique(dat$link_id)) != length(dat$link_id)){
         stop("link_id should be unique") 
@@ -52,8 +55,8 @@ check_data <- function(dat, schema = "bee",
            eval(parse(text = as.character(schema[which(schema$trait == "sex"), 
                                               "test"]))))){
         stop("sex should be one of 'male', 'female', 'queen', or NA")
-    } #check when NA's are accepted. Put schema in the warnings.
-    #reference: linked to bibtext??? Not sure yet how to implement that.
+    } #Put schema in the warnings.
+    #reference: linked to bibtext??? DOI? Not sure yet how to implement that.
     #credit: Anything goes?
     #email: can check for [@ .]
     #now check specimens
@@ -70,13 +73,12 @@ check_data <- function(dat, schema = "bee",
                                email = NA) 
         if(any(colnames(dat) != colnames(template))){
             stop("Column names should match specimens colum names: see ?specimens")
-            #ToDo: automatically add missing columns filled with NA with warning
-        } 
+            } 
         #tests for each column
         if(any(!dat$category %in% schema$category)){
             stop("trait_category should match schema (load('taxa_'schema.rda)). 
                  If you need a new category contact me")
-        }
+        } #should we accept NA's I would say so and we can fill it later from schema.
         trait_schema <- paste(dat$category, dat$trait, sep = "_")
         if(any(!trait_schema %in% paste(schema$category, schema$trait, sep = "_"))){
             stop("trait should match schema (load('taxa_'schema.rda)). 
@@ -125,7 +127,6 @@ check_data <- function(dat, schema = "bee",
                                taxonomist = NA)
         if(any(colnames(dat) != colnames(template))){
             stop("Column names should match observations colum names: see ?observations")
-            #ToDo: automatically add missing columns filled with NA with warning
         }
         #partner_genus
         #need to fix also plant taxas with clean_data().
