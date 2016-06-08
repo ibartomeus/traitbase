@@ -1,0 +1,8 @@
+"","id","link_id","genus","species","sex","interaction_type","partner_genus","partner_species","day","month","year","country","location","lat","long","reference","credit","email","collector","taxonomist"
+"1",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,"Andrena_cineraria_1","Andrena","cineraria","female","pollination","Lavandula","stoechas",1,1,2015,"Spain","home",40,4,"fake","me",NA,"me","me"
+NA,"Osmia_bicornis_2","Osmia","bicornis","male","pollination","Carpobrotus","edulis",2,2,2015,"Spain","home",40,4,"fake","me",NA,"me","me"
+NA,"Bombus_terrestris_3","Bombus","terrestris","queen","pollination","Rosmarinus","officinalis",3,3,2015,"Spain","home",40,4,"fake","me",NA,"me","me"
+NA,"Andrena_cineraria_1","Andrena","cineraria","female","pollination","Carpobrotus","edulis",1,1,2015,"Spain","home",40,4,"fake","me",NA,"me","me"
+NA,"Bombus_terrestris_2","Bombus","terrestris","male","pollination","Lavandula","stoechas",2,2,2015,"Spain","home",40,4,"fake","me",NA,"me","me"
+NA,"Osmia_rufa_3","Osmia","rufa","queen","pollination","Rosmarinus",NA,3,3,2015,"Spain","home",40,4,"fake","me",NA,"me","me"

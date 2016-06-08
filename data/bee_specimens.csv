@@ -1,0 +1,14 @@
+"id","link_id","genus","species","sex","category","trait","value","reference","credit","email"
+NA,"Andrena_cineraria_1","Andrena","cineraria","female","morphological","IT",1.2,"fake","nacho",NA
+NA,"Bombus_terrestris_2","Bombus","terrestris","male","morphological","tongue_length",2.3,"fake","nacho",NA
+NA,"Osmia_rufa_3","Osmia","rufa","queen","morphological","IT",2.9,"fake","nacho",NA
+"id","link_id","genus","species","sex","category","trait","value","reference","credit","email"
+NA,"Andrena_cineraria_1","Andrena","cineraria","female","morphological","IT",1.2,"fake","nacho",NA
+NA,"Bombus_terrestris_2","Bombus","terrestris","male","morphological","tongue_length",2.3,"fake","nacho",NA
+NA,"Osmia_rufa_3","Osmia","rufa","queen","morphological","IT",2.9,"fake","nacho",NA
+NA,"Andrena_cineraria_1","Andrena","cineraria","female","morphological","IT",1.2,"fake","nacho",NA
+NA,"Bombus_terrestris_2","Bombus","terrestris","male","morphological","tongue_length",2.3,"fake","nacho",NA
+NA,"Osmia_rufa_3","Osmia","rufa","queen","morphological","IT",2.9,"fake","nacho",NA
+NA,"Andrena_cineraria_1","Andrena","cineraria","female","morphological","IT",1.2,"fake","nacho",NA
+NA,"Bombus_terrestris_2","Bombus","terrestris","male","morphological","tongue_length",2.3,"fake","nacho",NA
+NA,"Osmia_rufa_3","Osmia","rufa",NA,"morphological","IT",2.9,"fake","nacho",NA
