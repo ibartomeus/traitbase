@@ -1,13 +1,11 @@
 library(devtools)
 library(roxygen2)
 library(knitr)
-library(taxize) #add to dependencies
-library(countrycode) #idem
-library(plyr) #also 
-#library(git2r) #also (not sure yet)
-library(sp) #add
-library(rworldmap) #add
-#library(googlesheets) # (not sure yet)
+library(taxize) 
+library(countrycode) 
+library(plyr) 
+library(sp) 
+library(rworldmap) 
 library(reshape)
 
 #document
@@ -103,7 +101,7 @@ bee_schema
 dat<- data.frame( link_id = c(1,2,3),
                      genus = c("Andrena", "Osmia", "Bombus"),
                      species = c("cineraria", "bicornis", "terrestris"),
-                     sex = c("female", "male", "queen"),
+                     sex = c("female", "male", NA),
                      category = rep("morphological", 3), 
                      trait = c("IT", "tongue_length", "IT"),
                      value = c(1.2, 2.3, 2.9),
@@ -119,7 +117,7 @@ dat2 <- data.frame(link_id = c(1,2,3),
                     interaction_type = c("pollination", "pollination", "pollination"),
                     partner_genus = c("Lavandula", "Carpobrotus",
                                       "Rosmarinus"),
-                    partner_species = c("stoechas", "edulis", "officinalis"),
+                    partner_species = c("stoechas", "edulis", NA),
                     day = c(1:3),
                     month = c(1:3),
                     year = rep(2015,3),
@@ -136,6 +134,6 @@ dat2 <- data.frame(link_id = c(1,2,3),
 check_data(dat, type = "specimens")
 check_data(dat2, type = "observations")
 
-add_data(dat, type = "specimens", check = FALSE)
-add_data(dat2, type = "observations", check = FALSE)
+add_data(dat, type = "specimens", check = TRUE)
+add_data(dat2, type = "observations", check = TRUE)
 

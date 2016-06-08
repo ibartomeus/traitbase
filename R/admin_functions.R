@@ -62,3 +62,17 @@ generate_species_level <- function(){
     
     #Note: This can trigger info from e.g. gbif, USGS, 
 }
+
+
+#Add some visualizations
+vis <- function(sp, ){
+    #map
+    #pheno
+    #density traits
+}
+
+vis_summary <- function(){
+    #map all
+    # #records and #traits
+    # phylogeny with traits?
+}
