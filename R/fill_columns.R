@@ -56,13 +56,11 @@ fill_columns <- function(dat, #schema = "bee",
         dat <- dat[,to_order]
         droped <- !colnames(dat) %in% to_order
         if(any(droped)){
-            message("note X columns droped")
+            message(paste("note that", droped ,"columns droped"))
         }
-        dat    
     }
     if(type == "observations"){
-        needed <- c("link_id", "genus", "species", "trait",    
-                    "value", "day", "month", "year") #force lat/long?
+        needed <- c("link_id", "genus", "species", "day", "month", "year") #force lat/long?
         to_order <- c("link_id", "genus", "species",        
                       "sex", "interaction_type", "partner_genus", "partner_species", 
                       "day", "month", "year", "country",         
@@ -74,7 +72,33 @@ fill_columns <- function(dat, #schema = "bee",
         if(is.null(dat$sex)){
             dat$sex <- NA
         }
-##NEED to add more columns here.
+        if(is.null(dat$interaction_type)){
+            dat$interaction_type <- NA
+        }
+        if(is.null(dat$partner_genus)){
+            dat$partner_genus <- NA
+        }
+        if(is.null(dat$partner_species)){
+            dat$partner_species <- NA
+        }
+        if(is.null(dat$country)){
+            dat$country <- NA
+        }
+        if(is.null(dat$location)){
+            dat$location <- NA
+        }
+        if(is.null(dat$lat)){
+            dat$lat <- NA
+        }
+        if(is.null(dat$long)){
+            dat$long <- NA
+        }
+        if(is.null(dat$collector)){
+            dat$collector <- NA
+        }
+        if(is.null(dat$taxonomist)){
+            dat$taxonomist <- NA
+        }
         if(is.null(dat$reference)){
             dat$reference <- NA
         }
@@ -88,8 +112,8 @@ fill_columns <- function(dat, #schema = "bee",
         dat <- dat[,to_order]
         droped <- !colnames(dat) %in% to_order
         if(any(droped)){
-            message("note X columns droped")
+            message(paste("note that", droped ,"columns droped"))
         }
-        dat    
     }
+    dat
 }

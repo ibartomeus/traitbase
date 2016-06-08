@@ -20,15 +20,16 @@
 #' @export
 check_data <- function(dat, schema = "bee",
                        type = c("specimens", "observations"),
-                       error = FALSE){ 
+                       error = FALSE){  
     #Should I add a verbose and an option not to check taxonomy?
     #This may be useful for testing purposes, but not safe.
     if(schema != "bee") stop("only available for bees")
     load("data/bee_schema.rda")
+    schema_ <- schema
     schema <- bee_schema
-
+    
     #check, fill and reorder columns
-    dat <- fill_columns(data1, type = type)
+    dat <- fill_columns(dat, type = type)
     
     #checks common things for both types
     if(length(unique(dat$link_id)) != length(dat$link_id)){
@@ -41,21 +42,32 @@ check_data <- function(dat, schema = "bee",
     taxas <- clean_species(gen_sp)
     if(length(which(is.na(taxas$final_names))) > 0){
         dat <- dat[-which(is.na(taxas$final_names)),]
-        warning("Species not in itis removed") #add error = TRUE and id of rows removed
+        warning(paste("Species not in itis removed:", 
+                      taxas$species[which(is.na(taxas$final_names))])) #add error = TRUE
         taxas <- taxas[-which(is.na(taxas$final_names)),]
         temp <- unlist(strsplit(as.character(taxas$final_names), " "))
         dat$genus <- temp[c(1:length(temp)) %% 2 != 0]
         dat$species <- temp[c(1:length(temp)) %% 2 == 0]
+        message(paste(taxas$species[which(paste(dat$genus, dat$species)
+                                          != taxas$species)],
+                      "species had misspellings or were synonims and had been fixed"))
     } else{
         temp <- unlist(strsplit(as.character(taxas$final_names), " "))
         dat$genus <- temp[c(1:length(temp)) %% 2 != 0]
         dat$species <- temp[c(1:length(temp)) %% 2 == 0]
-    } #Add spellings/synonyms fixed as mwsage!
-    if(any(!dat$sex %in% 
-           eval(parse(text = as.character(schema[which(schema$trait == "sex"), 
-                                              "test"]))))){
-        stop("sex should be one of 'male', 'female', 'queen', or NA")
-    } #Put schema in the warnings.
+        message(paste(taxas$species[which(paste(dat$genus, dat$species)
+                                          != taxas$species)],
+                      "species had misspellings or were synonims and had been fixed to",
+                      taxas$final_names[which(paste(dat$genus, dat$species)
+                                          != taxas$species)]))
+    } 
+    if(all(!is.na(dat$sex)) & any(!dat$sex[!is.na(dat$sex)] %in% 
+                             eval(parse(text = as.character(schema[which(schema$trait == "sex"), 
+                                                                   "test"]))))){
+        stop(paste("sex should be one of", 
+                   as.character(schema[which(schema$trait == "sex"), 
+                                       "test"])))
+    } 
     #reference: linked to bibtext??? DOI? Not sure yet how to implement that.
     #credit: Anything goes?
     #email: can check for [@ .]
@@ -72,17 +84,25 @@ check_data <- function(dat, schema = "bee",
                                credit = NA,
                                email = NA) 
         if(any(colnames(dat) != colnames(template))){
-            stop("Column names should match specimens colum names: see ?specimens")
-            } 
+            stop(paste0("Column names should match specimens colum names: see ?",
+                        schema_, "specimens"))
+        } 
         #tests for each column
-        if(any(!dat$category %in% schema$category)){
-            stop("trait_category should match schema (load('taxa_'schema.rda)). 
-                 If you need a new category contact me")
-        } #should we accept NA's I would say so and we can fill it later from schema.
+        if(all(!is.na(dat$category)) & any(!dat$category[!is.na(dat$category)] 
+                                           %in% schema$category)){
+            stop(paste0("trait_category should match schema (load(", 
+                        schema_, "_schema.rda). If you need a new category contact me"))
+        } 
         trait_schema <- paste(dat$category, dat$trait, sep = "_")
+        if(any(is.na(dat$category))){
+            if(any(!dat$trait %in% schema$trait)){
+                stop(paste0("trait should match schema (load(", 
+                            schema_, "_schema.rda). If you need a new category contact me"))
+            }
+        }
         if(any(!trait_schema %in% paste(schema$category, schema$trait, sep = "_"))){
-            stop("trait should match schema (load('taxa_'schema.rda)). 
-                 If you need a new trait type contact me")
+            stop(paste0("trait & category should match schema (load(", 
+                        schema_, "_schema.rda). If you need a new category contact me"))
         }
         #value: 
         #list traits
@@ -94,16 +114,18 @@ check_data <- function(dat, schema = "bee",
                                                "test"])
             if(is.factor(temp$value)){
                 if(any(!temp$value %in% eval(parse(text=schema_test)))){
-                    stop("value not allowed by the schema. See load('taxa_'schema.rda)") 
-                    #better error message? Yes, add at least the trait
+                    stop(paste("Some values of trait ", traits[i], 
+                               "not allowed by the schema. See schema (load(", 
+                               schema_, "_schema.rda)).")) 
                 } 
             }else{
                 if(any(temp$value < 0 | temp$value > eval(parse(text=schema_test)))){
-                    stop("value not allowed by the schema. See load('taxa_'schema.rda)") 
-                 }
+                    stop(paste("Some values of trait ", traits[i], 
+                               "not allowed by the schema. See schema (load(", 
+                               schema_, "_schema.rda))."))                  
+                    }
             }
         }
-        #check also which columns are allowed to be NA's or not... 
     }
     if(type == "observations"){
         template <- data.frame(link_id = NA,
@@ -126,68 +148,96 @@ check_data <- function(dat, schema = "bee",
                                collector = NA,
                                taxonomist = NA)
         if(any(colnames(dat) != colnames(template))){
-            stop("Column names should match observations colum names: see ?observations")
+            stop(paste0("Column names should match observations colum names: see ?",
+                        schema_, "observations"))
         }
         #partner_genus
-        #need to fix also plant taxas with clean_data().
-        partner_taxas <- tax_name(query = dat$partner_genus, get = "genus", verbose = FALSE)
-        if(length(which(is.na(partner_taxas$genus))) > 0){
-            dat[which(is.na(partner_taxas$genus)),] <- NA
-            warning("Genus not in itis. Made NA") #add error = TRUE and id of rows fixed
-        } #check ITITS is the palce for plants. I know it is the best for bees, but...
-        #partner_species
-        if(any(!is.na(dat$partner_species))){
-            partner_sp <- paste(dat$partner_genus, dat$partner_species)
-            partner_taxas <- tax_name(query = partner_sp, get = "genus", verbose = FALSE)
-            if(length(which(is.na(partner_taxas$genus))) > 0){
-                dat[which(is.na(partner_taxas$genus)),] <- NA 
-                warning("species not in itis, turned to NA") #add error = TRUE and id of rows fixed
-            } 
-        }
+        partner_sp <- paste(dat$partner_genus, dat$partner_species)
+        partner_taxas <- clean_species(partner_sp)
+        if(length(which(is.na(taxas$synonym_names))) > 0){
+            dat <- dat[-which(is.na(taxas$synonym_names)),]
+            warning(paste("Genus not recognized removed:", 
+                          partner_taxas$species[which(is.na(partner_taxas$synonym_names))])) #add error = TRUE
+            partner_taxas <- partner_taxas[-which(is.na(partner_taxas$synonym_names)),]
+            spaces <- grep(pattern = " ", partner_taxas$synonym_names)
+            temp <- unlist(strsplit(as.character(partner_taxas$synonym_names[spaces]), " "))
+            dat$partner_genus[spaces] <- temp[c(1:length(temp)) %% 2 != 0]
+            dat$partner_species[spaces] <- temp[c(1:length(temp)) %% 2 == 0]
+            dat$partner_genus[-spaces] <- as.character(partner_taxas$synonym_names[-spaces])
+            dat$partner_species[-spaces] <- NA
+            message(paste(partner_taxas$species[which(paste(dat$partner_genus,
+                                                            dat$partner_species)
+                                                      != partner_taxas$species)],
+                          "species had misspellings or were synonims and had been fixed to",
+                          partner_taxas$synonym_names[which(paste(dat$partner_genus,
+                                                                  dat$partner_species)
+                                                            != partner_taxas$synonym_names)]))
+        } else{
+            temp <- unlist(strsplit(as.character(partner_taxas$synonym_names[spaces]), " "))
+            dat$partner_genus[spaces] <- temp[c(1:length(temp)) %% 2 != 0]
+            dat$partner_species[spaces] <- temp[c(1:length(temp)) %% 2 == 0]
+            dat$partner_genus[-spaces] <- as.character(partner_taxas$synonym_names[-spaces])
+            dat$partner_species[-spaces] <- NA
+            message(paste(partner_taxas$species[which(paste(dat$partner_genus,
+                                                            dat$partner_species)
+                                                      != partner_taxas$synonym_names)],
+                          "species had misspellings or were synonims and had been fixed to",
+                          partner_taxas$synonym_names[which(paste(dat$partner_genus,
+                                                            dat$partner_species)
+                                                      != partner_taxas$synonym_names)]))
+        } 
         #day
-        if(any(!dat$day %in% c(1:31))){
-            stop("months should have up to 31 days only") #I am not cheacking by month...
-        } #I should indicate where it fails (along all the script)
+        if(any(!dat$day %in% c(NA,1:31))){
+            stop("months should have up to 31 days only") 
+            #I am not cheacking by month...
+        } 
         #month
-        if(any(!dat$month %in% c(1:12))){
-            stop("months should be numerated 1 to 12") 
+        if(any(!dat$month %in% c(NA, 1:12))){
+            stop("months should be numbered from 1 to 12") 
         }
         #year
-        if(any(!dat$year %in% c(1700:3000))){
+        if(any(!dat$year %in% c(NA, 1700:3000))){
             stop("year should be four digits and > 1700") 
         }
         #date
         if(any(as.POSIXct(paste(dat$year, dat$day, dat$month, sep = "-")) 
-                      > as.POSIXct(Sys.Date()))){
+               > as.POSIXct(Sys.Date()))){
             stop("Collection date can't be on the future")
+            #not checking NA's here, necessary?
         }
         #country: 
-        if(any(!dat$country %in% countrycode_data$country.name)){
+        if(any(!dat$country %in% c(NA,countrycode_data$country.name))){
             stop("country not recognized, see ?countrycode_data for a list of accepted names")
-        } #we can try the regex to match and fix coomon mistakes here on the fly!
+            #we can try the regex to match and fix coomon mistakes here on the fly!
+            #NA's allowed. Need to add check
+        }
         #location: any string goes
         #lat:
-        if(any(!dat$lat %in% c(-85:85))){
+        if(any(!dat$lat %in% c(NA,-85:85))){
             stop("latitude should be between -85 and 85")
         }
         #long
-        if(any(!dat$lat %in% c(-180:180))){
+        if(any(!dat$lat %in% c(NA, -180:180))){
             stop("longitude should be between -180 and 180")
         }
         #accurancy
         if(any(num.decimals(dat$lat) | num.decimals(dat$long) < 2)){
             warning("longitude and latitude have very low resolution.")
+            #NA's here?
         }
         #check lat long not in the see & in the targeted country...
         match_country <- coords2country(dat$lat, dat$long)
         discrepancies <- which(as.character(dat$country) != as.character(match_country))
         if(length(discrepancies) > 0){
-            warning("Some points fall on a different country than you mention or on the sea")
-            #indicate which!
+            warning(paste("The following rows fall on a different country than you
+                          mention or on the sea:", paste(discrepancies, sep = " ",
+                                                         collapse = " ")))
+            #we may need to do that in other error messages.
         } #what to do with US states?
         #collector: any string goes
         #taxonomist: any string goes
     }
-    message("data checked!") #with this warnings?
+    message("data checked!")
     dat
-}
+} 
+ 
