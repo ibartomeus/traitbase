@@ -5,7 +5,7 @@ WARNING: this is in development and I may upload fake data to test things. Do no
 
 This is a guide to create a package to host, manage and deliver small dynamic data to the world. Tinny datasets, often static, containing scientific data can be hosted in several places (e.g. dryad, figshare). Similarly, big projects generating big data have the power to create customized data portals (e.g. gbif). But there is a lot of medium sized data that its well curated, dynamic, but that usually lives in a local computer because is not technically easy and/or cheap to put in the public domain. This is an attempt to liberate such data in a programatic way and use it as a guide or template for others to do the same.
 
-This is small data. Why? Becasue I need a ligth protable and simple data structure: _csv_. This has several advantadges, but the drawback is that data can't be really large (e.g. no more than ~50 MB to work smoothly with git and R).
+This is small data. Why? Becasue I need a light, portable, and simple data structure: _csv_. This has several advantadges, but the drawback is that data can't be really large (e.g. no more than ~50 MB to work smoothly with git and R).
 
 The example data will be about bee traits, but is designed so it can be easily extended to other organisms. Actually there is no comprensive database of bee traits, but information is scatered in diverse publications and private databases. However, most importantly none of this data to my knowledge capture the variability in traits, but only mean values for especies. 
 
