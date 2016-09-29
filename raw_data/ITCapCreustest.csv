@@ -1,0 +1,49 @@
+ID,Notas,Site,Ancho (mm),Genero ,Especie,Sexo ,Planta genero,Planta especie,Det.,Day,Month,Year
+242,H78,,1.62,Andrena??,sp,hembra,Cistus ,albidus,,25,5,2005
+243,H69,,2.7,Andrena ,agilissima,hembra,Thymelea ,hirsuta,L.O. Aguado,25,5,2005
+244,H69,,2.31,Andrena,agilissima,macho,Thymelea ,hirsuta,L.O. Aguado,26,4,2005
+245,H106,,1.7,Andrena,colletiformis,hembra,Sonchus ,tenerrimus,L.O. Aguado,28,4,2005
+246,H107,,2.17,Andrena,senecionis,hembra,Sonchus ,tenerrimus,L.O. Aguado,13,4,2005
+247,H107,,2,Andrena,senecionis,hembra,Sonchus ,tenerrimus,L.O. Aguado,13,4,2005
+248,H107,,2.22,Andrena,senecionis,hembra,Urospermum,picroides,L.O. Aguado,21,4,2005
+249,H107,,2.11,Andrena,sp,hembra,Cistus ,monspeliensis,NA,26,4,2005
+250,H34,,2.39,Andrena,villipes,hembra,Cistus ,monspeliensis,L.O. Aguado,NA,4,2006
+251,H34,,2.38,Andrena,villipes,hembra,Cistus ,monspeliensis,L.O. Aguado,21,6,2004
+252,H34,,2.62,Andrena,villipes,hembra,Cistus ,albidus,L.O. Aguado,28,4,2004
+253,H63,,1.83,Andrena,taraxaci,hembra,Sonchus ,tenerrimus,L.O. Aguado,28,4,2004
+254,H63,,1.91,Andrena,taraxaci,hembra,Sonchus ,tenerrimus,L.O. Aguado,13,5,2004
+255,H63,,1.87,Andrena,lepida,hembra,Cistus ,monspeliensis,L.O. Aguado,13,5,2004
+256,H76,,1.51,Andrena,sp,macho,Sonchus ,tenerrimus,NA,13,5,2004
+257,H76,,1.46,Andrena,sp,hembra,Cistus ,monspeliensis,NA,21,6,2004
+258,H76,,1.69,Andrena,taraxaci,macho,Carpobrotus ,edulis,L.O. Aguado,23,6,2004
+259,H76,,1.55,Andrena,cinerea,macho,Cistus ,salvifolius,L.O. Aguado,21,6,2004
+260,H76,,1.89,Andrena,sp,macho,Cistus ,salvifolius,NA,21,6,2004
+261,H110,,2.19,Andrena,lepida,hembra,Cistus ,monpeliensis,L.O. Aguado,21,6,2004
+262,H108,,2.34,Panurgus,banksianus,macho,Urospermum,picroides,L.O. Aguado,27,4,2004
+263,H108,,2.07,Panurgus,banksianus,hembra,Urospermum,picroides,L.O. Aguado,NA,5,2005
+264,NA,,3.64,Anthidium ,sticticum,macho,Carpobrotus ,edulis,NA,21,6,2004
+265,NA,,3.58,Anthidium ,sticticum,macho,Carpobrotus ,edulis,NA,8,6,2005
+266,NA,,3.53,Anthidium ,sticticum,hembra,Lavandula ,stoechas,NA,21,6,2004
+267,NA,,3.52,Anthidium ,sticticum,macho,Lavandula ,stoechas,NA,6,7,2004
+268,NA,,3.59,Anthidium ,sticticum,hembra,Lavandula ,stoechas,NA,8,6,2005
+269,NA,,3.37,Anthidium ,sticticum,hembra,Lavandula ,stoechas,NA,21,6,2004
+270,NA,,3.38,Anthidium ,sticticum,macho,Cistus ,albidus,NA,21,6,2004
+271,H88,,3.8,Anthidium ,septemspinosum,macho,Lavandula ,stoechas,L.O. Aguado,29,6,2004
+272,NA,,3.47,Anthidium ,septemspinosum,hembra,Galactites,tomentosa,L.O. Aguado,26,6,2006
+273,NA,,3.27,Anthidium ,septemspinosum,macho,Opuntia,sp,L.O. Aguado,26,6,2006
+274,NA,,3.3,Anthidium ,sp,macho,Sedum,sp,NA,27,5,2006
+275,H92,,2.18,Megachile,sp,macho,Sedum,sp,NA,29,5,2006
+276,H73,,4.07,Osmia,sp,hembra,Cistus ,albidus,NA,14,5,2006
+277,H91,,2.64,Osmia,aurulenta,hembra,Lavandula ,stoechas,L.O. Aguado,14,5,2006
+278,H97,,2.51,Dasypoda,crassicornis,macho,Carpobrotus ,edulis,C.Molina,22,5,2006
+279,H75,,2.11,Andrena,lepida,hembra,Cistus ,albidus,L.O. Aguado,27,5,2006
+280,H75,,2.12,Andrena,lepida,hembra,Cistus ,albidus,L.O. Aguado,NA,5,2007
+281,H75,,2.17,Andrena,lepida,hembra,Cistus ,salvifolius,L.O. Aguado,22,7,2005
+282,H67,,1.87,Andrena,fabrella,hembra,Cistus ,salvifolius,L.O. Aguado,29,5,2005
+283,H67,,1.3,Andrena,fabrella,hembra,Alyssum ,maritimum,L.O. Aguado,29,5,2005
+284,H78,,1.63,Andrena,sp,macho,Cistus ,monspeliensis,NA,14,6,2005
+285,H77,,1.46,Andrena,cinerea,macho,Sonchus ,tenerrimus,L.O. Aguado,14,6,2005
+286,H62,,1.75,Andrena,cinerea,macho,Lavandula ,stoechas,L.O. Aguado,14,6,2005
+287,H58,,4.24,Chalicodoma,pyrenaica,hembra,Lavandula ,stoechas,L.O. Aguado,22,7,2005
+288,H58,,4.56,Chalicodoma,pyrenaica,hembra,Lavandula ,stoechas,L.O. Aguado,24,7,2005
+289,H58,,4,Chalicodoma,pyrenaica,hembra,Lavandula ,stoechas,L.O. Aguado,22,7,2005

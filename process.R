@@ -87,10 +87,10 @@ bee_schema <- data.frame(category = c("metadata", "metadata",
 
 
 #WARNING do not run this once data is uploaded
-write.csv(bee_observations, file="data/bee_observations.csv")
-write.csv(bee_specimens, file="data/bee_specimens.csv")
-save(bee_taxonomy, file="data/bee_taxonomy.rda")
-save(bee_schema, file="data/bee_schema.rda")
+#write.csv(bee_observations, file="data/bee_observations.csv")
+#write.csv(bee_specimens, file="data/bee_specimens.csv")
+#save(bee_taxonomy, file="data/bee_taxonomy.rda")
+#save(bee_schema, file="data/bee_schema.rda")
 
 
 #load("data/bee_schema.rda")
