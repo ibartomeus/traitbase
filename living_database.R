@@ -1,113 +1,137 @@
-#this script load raw data located at data and produces input for traitbase.
-#By running this script you cna recreate the database from scratch.
+#this script upload raw data located at raw_data folder and produces 
+#input for traitbase. By running this script you cna recreate the database 
+#from scratch.
 
-#
+#source helper functions and packages
 source("R/clean_species.R")
+library(reshape2)
 
+#Input data needs to be in a data.frame with the following columns:
 
-#Test data
+#colnames:
+#"name": UNIQUE. Name of the datset (should be unique and will be lastname_year 
+    #followed by a,b,c if different datasets has the same name_year combination)
+#"Desciption": UNIQUE. brief description of the dataset.
+#"Credit": UNIQUE. Optional, in case we want to add some free text about how to credit the dataset
+#"doi": UNIQUE. If published doi of the dataset/paper
 
-#Data from Cap creus.----
+#"local_id": Any id set in the original paper
+#"species": Genua species (needs to be a valid taxon name
+#"collector": If known who the collector was
+#"taxonomist": If known who the taxonomist was
+#"day","month","year": In separate columns
+#"lat","long","location": Lat long and descriptive location if available.
+#"country": If known where was collected.
 
-d <- read.csv("raw_data/ITCapCreustest.csv", header = TRUE)
-head(d)
+#Traits: measures start by "m_"
+    #"m_IT" 
+    #"m_sex" (male, female, queen, ...)
+    #"m_plant_genus"
+    #"m_plant_species"
+    #...
+        #standard error start by "se_"
+    #"se_IT"
+    #"se_sex"
+    #"se_plant_genus"
+    #"se_plant_species"
+    #...
+        #sample size start by "n_"
+    #"n_IT"
+    #"n_sex"
+    #"n_plant_genus"
+    #"n_plant_species"
+    #...
 
-#need to recover: (function fill_columns will do that!)
-#local_id (obs) species (obs) day (obs) month (obs) year (obs) lat (obs) long (obs) 
-#location (obs) country (obs) collector (obs) taxonomist (obs) trait1 (measures) 
-#trait 2 (measures) doi (Dataset) Contributor_name (Contributors), Contributor_last_name (Contributors) 
-#ORCID (Contributors)
+#"Contributor_name": Who to give credit name. Usa as many rows as contributors. Rest can be NA.
+#"Contributor_lastname": Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"Contributor_country": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"Contributor_organization": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"Contributor_url": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"Contributor_email": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"Contributor_ORCID": Who to give credit ORCID. Usa as many rows as contributors. Rest can be NA.
 
-#colnames <-  "local_id","species","collector","taxonomist","day","month","year","lat","long","location",
- #"country","m_IT","m_sex","m_plant_genus","m_plant_species","doi","Contributor_name","Contributor_lastname","ORCID","name"
-
-
-colnames(d)
-colnames(d)[1] <- "local_id"
-d$species <- paste(d$Genero, d$Especie)
-colnames(d)[11] <- "day"
-colnames(d)[12] <- "month"
-colnames(d)[13] <- "year"
-d$lat <- "42.3202451"
-d$long <- "3.314970799999969"
-d$location <- "Cap de creus"
-d$country <- "Spain"
-d$collector <- "I. Bartomeus"
-colnames(d)[10] <- "taxonomist"
-colnames(d)[4] <- "m_IT" #use this in traits!
-colnames(d)[7] <- "m_sex" #use this in traits!
-colnames(d)[8] <- "m_plant_genus" #use this in traits!
-colnames(d)[9] <- "m_plant_species" #use this in traits!
-d$doi <- "10.1007/s00442-007-0946-1"
-d$Contributor_name <- "Ignasi"
-d$Contributor_last_name <- "Bartomeus"
-d$ORCID <- "0000-0001-7893-4389"
-d$name <- "Bartomeus_cap_creus"
-
-
-head(d)
-#reorder
-#local_id (obs) species (obs) day (obs) month (obs) year (obs) lat (obs) long (obs) 
-#location (obs) country (obs) collector (obs) taxonomist (obs) trait1 (measures) 
-#trait 2 (measures) doi (Dataset) Contributor_name (Contributors), Contributor_last_name (Contributors) 
-#ORCID (Contributors), "name"
-
-d <- d[,c("local_id", "species", "collector", "taxonomist",           
-     "day", "month", "year", "lat", "long", "location", "country", 
-     "m_IT", "m_sex", "m_plant_genus", "m_plant_species",
-     "doi", "Contributor_name", "Contributor_last_name", "ORCID", "name")]
-head(d)
-
-#for now
-unique(d$species)
-d <- subset(d, !species %in% c("Andrena?? sp", "Andrena  agilissima", "Anthidium  sticticum", 
-                               "Anthidium  septemspinosum", "Anthidium  sp", "Chalicodoma pyrenaica"))
-
-#test error
-colnames(d)[3] <- "collectorr"
-    
-write.csv(d, file = "processed_data/capCreus.csv", row.names = FALSE)
-
-#check data: function check data will do that.
-
+#Add data---
+#template:
+#1) Read data (read.table, read.csv...)
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+    #"day","month","year","lat","long","location","country")
+    #Add lat long from google maps or paper if possible.
+#Check traits colnames(m_trait, se_trait, n_trait)
+#3) Add known missing columns (name, description, credit, doi)
+#Add contributor information (if doi, can be ignored)
+    #Do not look for contributor info in detail.
+#4) Remove unused columns
+#5) Write dataset?
 
 #Data from Nederland bees-----
 
+#1) Read data (read.table, read.csv...)
 d <- read.table("raw_data/Oliveira_etal.txt", header = TRUE, fileEncoding="UCS-2LE")
 head(d)
 str(d)
 
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+    #"day","month","year","lat","long","location","country")
+    #Add lat long from google maps or paper if possible.
+#Check traits colnames(m_trait, se_trait, n_trait)
 colnames(d)
-d$species <- paste(d$Sample, d$species)
-colnames(d)[8] <- "month"
-colnames(d)[7] <- "year"
-d$country <- "Netherlands"
-colnames(d)[9] <- "m_IT" #use this in traits!
-d$doi <- "10.1371/journal.pone.0148983"
-d$name <- "Oliveira_nederlands"
-d$m_sex <- d$sex
 head(d)
+#(no need to comment all, I am only commenting the first one as example)
+d$local_id <- c(1:nrow(d)) #Add local_id manually 
+d$species <- paste(d$Sample, d$species) #build species
+#note collector and taxonomist is missing and it's ok.
+colnames(d)[8] <- "month" #update name of the column 
+colnames(d)[7] <- "year" #update name of the column 
+#extract day
+date <- as.POSIXlt(strptime(d$date, "%d/%m/%Y")) #convert to date class
+d$day <- date$mday #extract the day only
+#lat long and location missing. It's ok
+d$country <- "Netherlands" #Add country based on paper description
+colnames(d)[9] <- "m_IT" #rename trait
+summary(d$m_IT) #check is numeric and range is ok
+d$n_IT <- 1 #sample size is one for all
+d$m_sex <- d$sex #less elegant way to rename a column
+levels(d$m_sex) <- c("female", "male") #recode for standardizing all datsets.
 
-d <- d[,c("species",           
-          "month", "year", "country", 
-          "m_IT", "m_sex",
-          "doi", "name")]
+#3) Add known missing columns (name, description, credit, doi)
+#Add contributor information (if doi, can be ignored)
+    #Do not look for contributor info in detail.
+d$doi <- "10.1371/journal.pone.0148983" #Add doi
+d$name <- "Oliveira_2016" # Add name of the dataset
+d$description <- "Dataset describing bodi sizes for 10 bee species alomg > 100 years in the Nederlands" # Add name of the dataset
+#the fllwing lines are not necesary as there is doi, but for completness of the example
+d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
+d$Contributor_name[1:4] <- c("MO", "BM", "J", "D") #populate the first forut rows
+d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
+d$Contributor_lastname[1:4] <- c("Oliveira", "Freitas", "Scheper", "Kleijn") #populate the first forut rows
 
-clean_species(d$species)
-
-x <- .Last.value
-
-(x$species, x$matched_name2)
-
-unique(x)
-
-#test errors
-write.csv(head(d), file = "processed_data/nederlands_short.csv", row.names = FALSE)
-
+#4) Remove unused columns
 head(d)
-write.csv(d, file = "processed_data/nederlands.csv", row.names = FALSE)
+d <- d[,c("local_id", "species",           
+          "day", "month", "year", "country", 
+          "m_IT", "n_IT", "m_sex",
+          "doi", "name", "description", 
+          "Contributor_name", "Contributor_lastname")]
 
-#Data from XXX----
+#5) Write dataset?
+write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
+
+
+#Data from ----
+#1) Read data (read.table, read.csv...)
+
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+#"day","month","year","lat","long","location","country")
+#Add lat long from google maps or paper if possible.
+#Check traits colnames(m_trait, se_trait, n_trait)
+
+#3) Add known missing columns (name, description, credit, doi)
+#Add contributor information (if doi, can be ignored)
+#Do not look for contributor info in detail.
+
+#4) Remove unused columns
+
+#5) Write dataset?
 
 
 
