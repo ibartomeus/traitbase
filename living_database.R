@@ -63,7 +63,7 @@ library(reshape2)
 #4) Remove unused columns
 #5) Write dataset?
 
-#Data from Nederland bees-----
+#Data from Oliveira et al., 2016
 
 #1) Read data (read.table, read.csv...)
 d <- read.table("raw_data/Oliveira_etal.txt", header = TRUE, fileEncoding="UCS-2LE")
