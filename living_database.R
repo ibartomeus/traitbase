@@ -117,13 +117,30 @@ d <- d[,c("local_id", "species",
 write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
 
 
-#Data from ----
+#Data from unknown author
+
 #1) Read data (read.table, read.csv...)
+
+d <- read.csv("raw_data/unknown.csv", header = TRUE, sep = ";")
 
 #2) Check observations colnames ("local_id", "species","collector","taxonomist",
 #"day","month","year","lat","long","location","country")
 #Add lat long from google maps or paper if possible.
 #Check traits colnames(m_trait, se_trait, n_trait)
+
+d$local_id <- c(1:nrow(d))
+
+d$species <- paste(d$Genus, d$Species) #build species
+
+#missing: "collector","taxonomist", "day","month","year","lat","long","location","country"
+
+colnames(d)[8] <- "m_IT" 
+
+colnames(d)[9] <- "se_IT" 
+
+colnames(d)[10] <- "n_IT" 
+
+
 
 #3) Add known missing columns (name, description, credit, doi)
 #Add contributor information (if doi, can be ignored)
