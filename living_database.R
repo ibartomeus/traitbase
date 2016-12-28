@@ -123,14 +123,17 @@ write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
 
 d <- read.csv("raw_data/unknown.csv", header = TRUE, sep = ";")
 
-#2) Check observations colnames ("local_id", "species","collector","taxonomist",
-#"day","month","year","lat","long","location","country")
-#Add lat long from google maps or paper if possible.
-#Check traits colnames(m_trait, se_trait, n_trait)
+#2) Check observations colnames
+
+#Delete first row (it is useless)
+
+d <- d[-1,]
 
 d$local_id <- c(1:nrow(d))
 
-d$species <- paste(d$Genus, d$Species) #build species
+#build species
+
+d$species <- paste(d$Genus, d$Species)
 
 #missing: "collector","taxonomist", "day","month","year","lat","long","location","country"
 
@@ -140,15 +143,30 @@ colnames(d)[9] <- "se_IT"
 
 colnames(d)[10] <- "n_IT" 
 
-
-
 #3) Add known missing columns (name, description, credit, doi)
-#Add contributor information (if doi, can be ignored)
-#Do not look for contributor info in detail.
+
+#Add doi
+d$doi <- "????" 
+# Add name of the dataset
+d$name <- "????"
+d$description <- "????"
+#the fllwing lines are not necesary as there is doi, but for completness of the example
+d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
+d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
 
 #4) Remove unused columns
+
+d <- d[,c("local_id", "species",
+          "m_IT", "se_IT", "n_IT",
+          "doi", "name", "description", 
+          "Contributor_name", "Contributor_lastname")]
+
+
+#tasks: 1. change (,) to (.)  2. Empty space--> NA?  3. species rename? 4. find author and DOI
+
 
 #5) Write dataset?
 
 
+write.csv(d, file = "processed_data/unknown.csv", row.names = FALSE)
 
