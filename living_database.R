@@ -119,7 +119,7 @@ write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
 
 #Data from unknown author
 
-#1) Read data (read.table, read.csv...)
+#1) Read data 
 
 d <- read.csv("raw_data/unknown.csv", header = TRUE, sep = ";")
 
@@ -169,4 +169,11 @@ d <- d[,c("local_id", "species",
 
 
 write.csv(d, file = "processed_data/unknown.csv", row.names = FALSE)
+
+#Data from Stone & Willmer, 1989
+
+#1) Read data (in prep)
+
+d <- read.csv("raw_data/¿?", header = TRUE, sep = ";")
+
 
