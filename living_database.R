@@ -117,11 +117,11 @@ d <- d[,c("local_id", "species",
 write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
 
 
-#Data from unknown author
+#Data from Osorio-Canadas et al., 2016
 
 #1) Read data 
 
-d <- read.csv("raw_data/unknown.csv", header = TRUE, sep = ";")
+d <- read.csv("raw_data/unknown.csv", header = TRUE, sep =";", na.strings = "" )
 
 #2) Check observations colnames
 
@@ -146,13 +146,16 @@ colnames(d)[10] <- "n_IT"
 #3) Add known missing columns (name, description, credit, doi)
 
 #Add doi
-d$doi <- "????" 
+d$doi <- "10.1111/ele.12687" 
 # Add name of the dataset
-d$name <- "????"
-d$description <- "????"
+d$name <- "Osorio-Canadas_2016"
+d$description <- "Dataset with IT measure, standard error and sample size, also coldest temperature but was not included"
 #the fllwing lines are not necesary as there is doi, but for completness of the example
 d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
+d$Contributor_name[1:6] <- c("S", "X", "A", "A","R", "J") 
 d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
+d$Contributor_lastname[1:6] <- c("Osorio-Canadas", "Arnan", "Rodrigo", "Torne-Noguera", "Molowny", "Bosch") #populate the first forut rows
+
 
 #4) Remove unused columns
 
