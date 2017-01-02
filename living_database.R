@@ -121,7 +121,7 @@ write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
 
 #1) Read data 
 
-d <- read.csv("raw_data/unknown.csv", header = TRUE, sep =";", na.strings = "" )
+d <- read.csv("raw_data/Osorio-Canadas_etal.csv", header = TRUE, sep =";", dec= ",", na.strings = "" )
 
 #2) Check observations colnames
 
@@ -165,8 +165,7 @@ d <- d[,c("local_id", "species",
           "Contributor_name", "Contributor_lastname")]
 
 
-#tasks: 1. change (,) to (.)  2. Empty space--> NA?  3. species rename? 4. find author and DOI
-
+#tasks: 1. change (,) to (.)   
 
 #5) Write dataset?
 
@@ -175,8 +174,45 @@ write.csv(d, file = "processed_data/unknown.csv", row.names = FALSE)
 
 #Data from Stone & Willmer, 1989
 
+#I have to create the Csv and pass the data manually (old paper)
+
 #1) Read data (in prep)
 
-d <- read.csv("raw_data/¿?", header = TRUE, sep = ";")
+d <- read.csv("raw_data/Stone_etal.csv", header = TRUE, sep = ";", dec= ",")
+
+#2) Check observations colnames
+
+d$local_id <- c(1:nrow(d))
+
+colnames(d)[1] <- "species" 
+
+colnames(d)[2] <- "m_mass" 
+
+colnames(d)[3] <- "n_mass" 
+
+colnames(d)[4] <- "data_source"
+    
+#3) Add known missing columns (name, description, credit, doi)
+
+
+#Add doi
+#d$doi <- No doi
+# Add name of the dataset
+d$name <- "Stone_1989"
+d$description <- "Dataset with body mass and minimum ambient temperature at foraging occurs"
+#the fllwing lines are not necesary as there is doi, but for completness of the example
+d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
+d$Contributor_name[1:2] <- c("G.N.", "P.G.") 
+d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
+d$Contributor_lastname[1:2] <- c("Stone", "Willmer") #populate the first forut rows
+
+#4) Remove unused columns
+
+d <- d[,c("local_id", "species",
+          "m_mass", "n_mass",
+          "name", "description", "data_source", 
+          "Contributor_name", "Contributor_lastname")]
+
+
 
 
