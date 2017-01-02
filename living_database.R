@@ -186,7 +186,7 @@ d$local_id <- c(1:nrow(d))
 
 colnames(d)[1] <- "species" 
 
-colnames(d)[2] <- "m_mass" 
+colnames(d)[2] <- "m_mass(g)"  #fresh weight
 
 colnames(d)[3] <- "n_mass" 
 
@@ -209,7 +209,7 @@ d$Contributor_lastname[1:2] <- c("Stone", "Willmer") #populate the first forut r
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species",
-          "m_mass", "n_mass",
+          "m_mass", "n_mass(g)",
           "name", "description", "data_source", 
           "Contributor_name", "Contributor_lastname")]
 
