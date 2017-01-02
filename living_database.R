@@ -121,8 +121,10 @@ write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
 
 #1) Read data 
 
-d <- read.csv("raw_data/Osorio-Canadas_etal.csv", header = TRUE, sep =";", dec= ",", na.strings = "" )
-
+d <- read.csv("raw_data/Osorio-Canadas_etal.csv", 
+              header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
+head(d)
+str(d)
 #2) Check observations colnames
 
 #Delete first row (it is useless)
@@ -163,9 +165,11 @@ d <- d[,c("local_id", "species",
           "m_IT", "se_IT", "n_IT",
           "doi", "name", "description", 
           "Contributor_name", "Contributor_lastname")]
-
+head(d)
 
 #tasks: 1. change (,) to (.)   
+d$m_IT <- as.numeric(gsub(pattern = ",", replacement = ".", fixed = TRUE, as.character(d$m_IT)))
+d$se_IT <- as.numeric(gsub(pattern = ",", replacement = ".", fixed = TRUE, as.character(d$se_IT)))
 
 #5) Write dataset?
 
@@ -179,6 +183,7 @@ write.csv(d, file = "processed_data/Osorio_2016.csv", row.names = FALSE)
 #1) Read data (in prep)
 
 d <- read.csv("raw_data/Stone_etal.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
 
 #2) Check observations colnames
 
@@ -208,10 +213,10 @@ d$Contributor_lastname[1:2] <- c("Stone", "Willmer") #populate the first forut r
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species",
-          "m_mass", "n_mass(g)",
-          "name", "description", "data_source", 
+          "m_fresh_mass", "n_fresh_mass",
+          "name", "description", 
           "Contributor_name", "Contributor_lastname")]
 
-
+d$species #need to remove names in species. Maybe can be done in raw data.
 
 
