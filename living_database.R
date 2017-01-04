@@ -5,6 +5,7 @@
 #source helper functions and packages
 source("R/clean_species.R")
 library(reshape2)
+library(traitbaser)
 
 #Input data needs to be in a data.frame with the following columns:
 
@@ -113,8 +114,32 @@ d <- d[,c("local_id", "species",
           "doi", "name", "description", 
           "Contributor_name", "Contributor_lastname")]
 
-#5) Write dataset?
-write.csv(d, file = "processed_data/Oliveira_2016.csv", row.names = FALSE)
+#5) test and upload dataset
+head(d)
+cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
+
+#temporal function
+df_to_rl <- function(x){
+    header <- paste(colnames(d), collapse = ", ")
+    temp <- apply(d, MARGIN = 1, paste, collapse = ", ")
+    c(header, temp)
+} 
+
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt)
+errors
+#txt <- readLines("processed_data/Oliveira_2016.csv")
+
+unique(d$month) #great catch!
+d[which(d$month > 12),"month"] <- c(7,4,5)
+
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt)
+errors
+
+importDataset(cnx, txt) #fails!
+
+#test query
 
 
 #Data from Osorio-Canadas et al., 2016----
