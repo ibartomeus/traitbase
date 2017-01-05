@@ -6,6 +6,13 @@
 source("R/clean_species.R")
 library(reshape2)
 library(traitbaser)
+cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
+#temporal function
+df_to_rl <- function(x){
+    header <- paste(colnames(d), collapse = ", ")
+    temp <- apply(d, MARGIN = 1, paste, collapse = ", ")
+    c(header, temp)
+} 
 
 #Input data needs to be in a data.frame with the following columns:
 
@@ -116,15 +123,6 @@ d <- d[,c("local_id", "species",
 
 #5) test and upload dataset
 head(d)
-cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
-
-#temporal function
-df_to_rl <- function(x){
-    header <- paste(colnames(d), collapse = ", ")
-    temp <- apply(d, MARGIN = 1, paste, collapse = ", ")
-    c(header, temp)
-} 
-
 txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt)
 errors
@@ -133,14 +131,12 @@ errors
 unique(d$month) #great catch!
 d[which(d$month > 12),"month"] <- c(7,4,5)
 
+head(d)
 txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt)
 errors
 
-importDataset(cnx, txt) #fails!
-
-#test query
-
+importDataset(cnx, txt) #works!
 
 #Data from Osorio-Canadas et al., 2016----
 
@@ -176,7 +172,7 @@ colnames(d)[10] <- "n_IT"
 d$doi <- "10.1111/ele.12687" 
 # Add name of the dataset
 d$name <- "Osorio-Canadas_2016"
-d$description <- "Dataset with IT measure, standard error and sample size, also coldest temperature but was not included"
+d$description <- "Dataset with IT measure standard error and sample size also coldest temperature but was not included"
 #the fllwing lines are not necesary as there is doi, but for completness of the example
 d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
 d$Contributor_name[1:6] <- c("S", "X", "A", "A","R", "J") 
@@ -196,10 +192,13 @@ head(d)
 d$m_IT <- as.numeric(gsub(pattern = ",", replacement = ".", fixed = TRUE, as.character(d$m_IT)))
 d$se_IT <- as.numeric(gsub(pattern = ",", replacement = ".", fixed = TRUE, as.character(d$se_IT)))
 
-#5) Write dataset?
-
-
-write.csv(d, file = "processed_data/Osorio_2016.csv", row.names = FALSE)
+#5) test and upload dataset
+head(d)
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt)
+errors
+head(txt)
+importDataset(cnx, txt) #fails, only adds a few rows!
 
 #Data from Stone & Willmer, 1989----
 
@@ -244,4 +243,10 @@ d <- d[,c("local_id", "species",
 
 d$species #need to remove names in species. Maybe can be done in raw data.
 
+#5) test and upload dataset
+head(d)
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt)
+errors #should complain about species?
+importDataset(cnx, txt) #fails!
 

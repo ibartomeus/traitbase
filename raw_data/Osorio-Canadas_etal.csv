@@ -1,10 +1,10 @@
-Acronym;Genus;Species;First week;last week;First week temperature (Species temperature) (õC);Coldest week temperature;ITS (mm);ITS SD;n
-;;;;;;(õC);;;
+Acronym;Genus;Species;First week;last week;First week temperature (Species temperature) (?C);Coldest week temperature;ITS (mm);ITS SD;n
+;;;;;;(?C);;;
 XAL;Xylocopa;valga;7;29;11,32;11,32;6,68;0,45;5
 XVI;Xylocopa;violacea;6;50;11,42;11;6,46;0,54;9
 BTE;Bombus;terrestris;1;52;9,99;9,99;5,72;0,53;4
 BPA;Bombus;pascuorum;4;50;10,57;10,57;4,69;0,07;4
-BPRA;Bombus;pratorum;11;25;14,01;14,01;4,6;;1
+BPRA;Bombus;pratorum;11;25;14,01;14,01;4,6;NA;1
 ANBI;Anthophora;biciliata;13;24;15,16;15,16;4,39;;1
 ANFU;Anthophora;fulvitarsis;8;38;11,84;11,84;4,32;;1
 AFE;Anthophora;femorata;15;33;16;16;4,12;0,19;2
