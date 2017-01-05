@@ -158,8 +158,9 @@ d$local_id <- c(1:nrow(d))
 
 d$species <- paste(d$Genus, d$Species)
 
+d$country <- "Spain"
+
 #missing: "collector","taxonomist", "day","month","year","lat","long","location","country"
-#NB: check country can not be inferred from paper, maybe even lat long.
 colnames(d)[8] <- "m_IT" 
 
 colnames(d)[9] <- "se_IT" 
@@ -182,7 +183,7 @@ d$Contributor_lastname[1:6] <- c("Osorio-Canadas", "Arnan", "Rodrigo", "Torne-No
 
 #4) Remove unused columns
 
-d <- d[,c("local_id", "species",
+d <- d[,c("local_id", "species", "country"
           "m_IT", "se_IT", "n_IT",
           "doi", "name", "description", 
           "Contributor_name", "Contributor_lastname")]
@@ -219,11 +220,10 @@ colnames(d)[2] <- "m_fresh_mass"  #fresh weight #NB I edited for clarity
 
 colnames(d)[3] <- "n_fresh_mass" 
 
-colnames(d)[4] <- "data_source" #This is not a valid field.
-    
+
 #3) Add known missing columns (name, description, credit, doi)
 
-#Add doi
+#Add doi, no doi found in crossref
 #d$doi <- No doi # NB you can check if there is doi here: http://www.questionpoint.org/crs/servlet/org.oclc.ask.AskPatronFetchQA?&language=1&qid=196591
 # Add name of the dataset
 d$name <- "Stone_1989"
