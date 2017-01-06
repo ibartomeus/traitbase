@@ -138,6 +138,8 @@ errors
 
 importDataset(cnx, txt) #works!
 
+
+
 #Data from Osorio-Canadas et al., 2016----
 
 #1) Read data 
@@ -201,6 +203,8 @@ errors
 head(txt)
 importDataset(cnx, txt) #fails, only adds a few rows!
 
+
+
 #Data from Stone & Willmer, 1989----
 
 #I have to create the Csv and pass the data manually (old paper)
@@ -250,3 +254,31 @@ errors <- validateDataset(cnx, txt)
 errors #should complain about species?
 importDataset(cnx, txt) #fails!
 
+
+
+#Data from Borrel_2007  #CHECK SPECIES EX. WHAT GENUS IS?
+
+#CHECK ALSO ONLINE MATERIAL
+
+#Problema: Autores que ponen datos en sus tablas de otros papers, no hay columna para el source original
+#Ocurre tmbn en el otro paper
+
+#1) Read data (in prep)
+
+d <- read.csv("raw_data/Borrell_2006.csv", head= T, sep =  ";")
+
+#2) Check observations colnames
+
+d$local_id <- c(1:nrow(d))
+
+colnames(d)[1] <- "species" 
+
+colnames(d)[2] <-"m_mass" #Unit mg Convert to g? FRESH They don´t say anything again
+    
+colnames(d)[3] <-"m_tongue_halflength" #tongue length folded: unit mm
+    
+d$country <- "Costa Rica & Panama"
+
+#3) Add known missing columns (name, description, credit, doi)
+
+d$doi <- ""
