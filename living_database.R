@@ -273,7 +273,7 @@ d$local_id <- c(1:nrow(d))
 
 colnames(d)[1] <- "species" 
 
-colnames(d)[2] <-"m_fresh_mass" #Unit mg!!!!! Convert to g? FRESH They don´t say anything again
+colnames(d)[2] <-"m_fresh_mass" #FRESH They don´t say anything again
     
 colnames(d)[3] <-"m_tongue_halflength" #tongue length folded: unit mm ¿?
     
