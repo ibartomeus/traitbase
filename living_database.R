@@ -273,12 +273,28 @@ d$local_id <- c(1:nrow(d))
 
 colnames(d)[1] <- "species" 
 
-colnames(d)[2] <-"m_mass" #Unit mg Convert to g? FRESH They don´t say anything again
+colnames(d)[2] <-"m_fresh_mass" #Unit mg!!!!! Convert to g? FRESH They don´t say anything again
     
-colnames(d)[3] <-"m_tongue_halflength" #tongue length folded: unit mm
+colnames(d)[3] <-"m_tongue_halflength" #tongue length folded: unit mm ¿?
     
 d$country <- "Costa Rica & Panama"
 
 #3) Add known missing columns (name, description, credit, doi)
 
-d$doi <- ""
+d$doi <- "10.1086/512689" #Searched in crossref
+d$name <- "Borrell_2006"
+d$description <- "Dataset with body mass and the length of the tongue folded"
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:2] <- c("B.J") 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:2] <- c("Borrell") 
+
+#4) Remove unused columns
+
+d <- d[,c("local_id", "species", "country",
+          "m_fresh_mass", "doi", 
+          "name", "description", 
+          "Contributor_name", "Contributor_lastname")]
+
+#5 test and upload dataset
+
