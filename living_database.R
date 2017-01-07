@@ -254,13 +254,11 @@ errors <- validateDataset(cnx, txt)
 errors #should complain about species?
 importDataset(cnx, txt) #fails!
 
-
-
 #Data from Borrel_2007  
 
 #CHECK ALSO ONLINE MATERIAL
 
-#1) Read data (in prep)
+#1) Read data 
 
 d <- read.csv("raw_data/Borrell_2006.csv", head= T, sep =  ";")
 
@@ -295,3 +293,6 @@ d <- d[,c("local_id", "species", "country",
 
 #5 test and upload dataset
 
+#Data from Gonzalez, Torres & Gayubo, 1999
+
+#1) Read data 
