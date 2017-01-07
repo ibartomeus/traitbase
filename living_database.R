@@ -220,7 +220,7 @@ d$local_id <- c(1:nrow(d))
 
 colnames(d)[1] <- "species" 
 
-colnames(d)[2] <- "m_fresh_mass"  #fresh weight #NB I edited for clarity
+colnames(d)[2] <- "m_fresh_mass"  #fresh mass in the paper the unit is g, but I think it is wrong and it is mg
 
 colnames(d)[3] <- "n_fresh_mass" 
 
@@ -256,12 +256,9 @@ importDataset(cnx, txt) #fails!
 
 
 
-#Data from Borrel_2007  #CHECK SPECIES EX. WHAT GENUS IS?
+#Data from Borrel_2007  
 
 #CHECK ALSO ONLINE MATERIAL
-
-#Problema: Autores que ponen datos en sus tablas de otros papers, no hay columna para el source original
-#Ocurre tmbn en el otro paper
 
 #1) Read data (in prep)
 
@@ -273,9 +270,9 @@ d$local_id <- c(1:nrow(d))
 
 colnames(d)[1] <- "species" 
 
-colnames(d)[2] <-"m_fresh_mass" #FRESH They don´t say anything again
+colnames(d)[2] <-"m_fresh_mass" # unit:mg
     
-colnames(d)[3] <-"m_tongue_halflength" #tongue length folded: unit mm ¿?
+colnames(d)[4] <-"m_tongue_length" #unit: mm
     
 d$country <- "Costa Rica & Panama"
 
@@ -283,7 +280,7 @@ d$country <- "Costa Rica & Panama"
 
 d$doi <- "10.1086/512689" #Searched in crossref
 d$name <- "Borrell_2006"
-d$description <- "Dataset with body mass and the length of the tongue folded"
+d$description <- "Dataset with body mass and the length of the tongue (the real measure of the tongue was with the tongue folded, half of the total tongue lenght) "
 d$Contributor_name <- rep(NA, nrow(d)) 
 d$Contributor_name[1:2] <- c("B.J") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
@@ -292,7 +289,7 @@ d$Contributor_lastname[1:2] <- c("Borrell")
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species", "country",
-          "m_fresh_mass", "doi", 
+          "m_fresh_mass", "m_tongue_length", "doi", 
           "name", "description", 
           "Contributor_name", "Contributor_lastname")]
 
