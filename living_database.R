@@ -5,6 +5,8 @@
 #source helper functions and packages
 source("R/clean_species.R")
 library(reshape2)
+#library(devtools)
+#install_github("metadevpro/traitbaser")
 library(traitbaser)
 cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
 #temporal function
@@ -254,7 +256,7 @@ errors <- validateDataset(cnx, txt)
 errors #should complain about species?
 importDataset(cnx, txt) #fails!
 
-#Data from Borrel_2007  
+#Data from Borrel_2007  ----
 
 #CHECK ALSO ONLINE MATERIAL
 
@@ -290,9 +292,17 @@ d <- d[,c("local_id", "species", "country",
           "m_fresh_mass", "m_tongue_length", "doi", 
           "name", "description", 
           "Contributor_name", "Contributor_lastname")]
+head(d)
 
 #5 test and upload dataset
 
-#Data from Gonzalez, Torres & Gayubo, 1999
+head(d)
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt)
+errors
+importDataset(cnx, txt) #same error about species not in ITIS
+
+
+#Data from Gonzalez, Torres & Gayubo, 1999------
 
 #1) Read data 
