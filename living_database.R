@@ -344,7 +344,6 @@ d <- d[,c("local_id", "country", "location",
           "m_tongue_length", "n_tongue_length", "m_IT", "n_IT", "doi", 
           "name", "description", 
           "Contributor_name", "Contributor_lastname")]
-head(d)
 
 #5 test and upload dataset
 
