@@ -3,7 +3,7 @@
 #from scratch.
 
 #source helper functions and packages
-source("R/clean_species.R")
+#source("R/clean_species.R")
 library(reshape2)
 library(devtools)
 install_github("metadevpro/traitbaser")
@@ -140,8 +140,6 @@ errors
 
 importDataset(cnx, txt) #works!
 
-
-
 #Data from Osorio-Canadas et al., 2016----
 
 #1) Read data 
@@ -187,7 +185,7 @@ d$Contributor_lastname[1:6] <- c("Osorio-Canadas", "Arnan", "Rodrigo", "Torne-No
 
 #4) Remove unused columns
 
-d <- d[,c("local_id", "species", "country"
+d <- d[,c("local_id", "species", "country",
           "m_IT", "se_IT", "n_IT",
           "doi", "name", "description", 
           "Contributor_name", "Contributor_lastname")]
@@ -198,14 +196,14 @@ d$m_IT <- as.numeric(gsub(pattern = ",", replacement = ".", fixed = TRUE, as.cha
 d$se_IT <- as.numeric(gsub(pattern = ",", replacement = ".", fixed = TRUE, as.character(d$se_IT)))
 
 #5) test and upload dataset
+d$se_IT[is.na(d$se_IT)] <- 0
+str(d)
 head(d)
 txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt)
 errors
 head(txt)
 importDataset(cnx, txt) #fails, only adds a few rows!
-
-
 
 #Data from Stone & Willmer, 1989----
 
