@@ -3,16 +3,18 @@
 #from scratch.
 
 #source helper functions and packages
-#source("R/clean_species.R")
+source("R/clean_species.R")
+library(taxize)
 library(reshape2)
-library(devtools)
-install_github("metadevpro/traitbaser")
+#library(devtools)
+#install_github("metadevpro/traitbaser")
 library(traitbaser)
 cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
 #temporal function
 df_to_rl <- function(x){
-    header <- paste(colnames(d), collapse = ", ")
-    temp <- apply(d, MARGIN = 1, paste, collapse = ", ")
+    x[is.na(x)] <- ""
+    header <- paste(colnames(x), collapse = ", ")
+    temp <- apply(x, MARGIN = 1, paste, collapse = ", ")
     c(header, temp)
 } 
 
@@ -202,6 +204,20 @@ head(d)
 txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt)
 errors
+
+#synonim:
+d$species[which(d$species == "Anthophora mucida")] <- "Anthophora biciliata"
+d$species[which(d$species == "Anthophora acervorum")] <- "Anthophora plumipes"
+d$species[which(d$species == "Anthophora salviae")] <- "Amegilla cognata"
+
+#clean species!
+temp <- clean_species(d$species)
+
+#test Amegilla cognata added manually
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt)
+errors
+
 head(txt)
 importDataset(cnx, txt) #fails, only adds a few rows!
 
@@ -251,7 +267,7 @@ d$species #need to remove names in species. Maybe can be done in raw data.
 head(d)
 txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt)
-errors #should complain about species?
+errors #Yeah! it complains for species names :D
 importDataset(cnx, txt) #fails!
 
 #Data from Borrel_2007  ----
@@ -298,8 +314,16 @@ head(d)
 txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt)
 errors
-importDataset(cnx, txt) #same error about species not in ITIS
 
+d$species <- as.character(d$species)
+d$species[which(d$species == "Euglossa flammea ")] <- "Euglossa flammea"
+d <- d[-which(d$species == "Eualema meriana"),]  #BAD SOLUTION IN TESTING ONLY
+d <- d[-which(d$species == "Eualema polychroma"),]  #BAD SOLUTION IN TESTING ONLY
+d <- d[-which(d$species == "Eualema cingulata"),]  #BAD SOLUTION IN TESTING ONLY
+d$species[which(d$species == "Exaerete Frontalis")] <- "Exaerete frontalis"
+d <- d[-which(d$species == "Eualema nigrita"),]  #BAD SOLUTION IN TESTING ONLY
+
+importDataset(cnx, txt) #same error about species not in ITIS
 
 #Data from Cariveau et al., 2016 ------
 
@@ -340,7 +364,7 @@ d$Contributor_lastname[1:7] <- c("Cariveau", "Nayak", "Bartomeus", "Zientek", "A
 
 #4) Remove unused columns
 
-d <- d[,c("local_id", "country", "location",
+d <- d[,c("local_id", "species", "country", "location",
           "m_tongue_length", "n_tongue_length", "m_IT", "n_IT", "doi", 
           "name", "description", 
           "Contributor_name", "Contributor_lastname")]
@@ -349,8 +373,18 @@ d <- d[,c("local_id", "country", "location",
 
 head(d)
 txt <- df_to_rl(d)
-errors <- validateDataset(cnx, txt)
+errors <- validateDataset(cnx, txt[1:28])
 errors
-importDataset(cnx, txt) #same error about species not in ITIS
 
+importDataset(cnx, txt[1:28]) #same error about species not in ITIS
+
+
+#test
+head(d)
+d$test <- NA
+d$name <- "test"
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt[1:28])
+errors
+importDataset(cnx, txt[1:28]) #same error about species not in ITIS
 
