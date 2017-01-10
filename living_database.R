@@ -5,8 +5,8 @@
 #source helper functions and packages
 source("R/clean_species.R")
 library(reshape2)
-#library(devtools)
-#install_github("metadevpro/traitbaser")
+library(devtools)
+install_github("metadevpro/traitbaser")
 library(traitbaser)
 cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
 #temporal function
@@ -303,6 +303,57 @@ errors
 importDataset(cnx, txt) #same error about species not in ITIS
 
 
-#Data from Gonzalez, Torres & Gayubo, 1999------
+#Data from Cariveau et al., 2016 ------
 
 #1) Read data 
+
+
+load("raw_data/Cariveau_2016.rda")
+
+tongues -> d
+
+d$local_id <- c(1:nrow(d))
+
+d$species <- paste(d$genus, d$species)
+
+#2 and 3, this time I did it creating new columns instead of reaclling them...
+
+d$country <- "United States"
+
+d$location <- "New Jersey"
+
+d$mean_tongue_length_mm -> d$m_tongue_length #Unit: mm
+
+d$mean_IT_length_mm -> d$m_IT #Unit: mm
+
+d$sample_size -> d$n_tongue_length #Same sample size for both
+
+d$sample_size -> d$n_IT #Same sample size for both
+
+d$doi <- "10.1371/journal.pone.0151482" 
+
+d$name <- "Cariveau_2016"
+
+d$description <- "Dataset with measures of tongue, IT, glossa, prementum and their residuals, just included tongue and IT"
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:7] <- c("D.P.", "G.K.","I.", "J.", "J.", "J.", "R." ) 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:7] <- c("Cariveau", "Nayak", "Bartomeus", "Zientek", "Ascher", "Gibbs", "Winfree") 
+
+#4) Remove unused columns
+
+d <- d[,c("local_id", "country", "location",
+          "m_tongue_length", "n_tongue_length", "m_IT", "n_IT", "doi", 
+          "name", "description", 
+          "Contributor_name", "Contributor_lastname")]
+head(d)
+
+#5 test and upload dataset
+
+head(d)
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt)
+errors
+importDataset(cnx, txt) #same error about species not in ITIS
+
+
