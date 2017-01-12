@@ -353,4 +353,11 @@ errors <- validateDataset(cnx, txt)
 errors
 importDataset(cnx, txt) #same error about species not in ITIS
 
+#Data from Bartomeus 2013------
+
+#1) Read data 
+
+d <- read.csv("raw_data/Bartomeus_2013.csv", header = TRUE, sep = ";", dec= ",")
+
+d$local_id <- c(1:nrow(d))
 
