@@ -92,9 +92,8 @@ head(d)
 d$local_id <- c(1:nrow(d)) #Add local_id manually 
 d$species <- paste(d$Sample, d$species) #build species
 #note collector and taxonomist is missing and it's ok.
-colnames(d)[8] <- "month" #update name of the column 
-colnames(d)[7] <- "year" #update name of the column 
-#extract day
+colnames(d)[8] <- "month"
+colnames(d)[7] <- "year" 
 date <- as.POSIXlt(strptime(d$date, "%d/%m/%Y")) #convert to date class
 d$day <- date$mday #extract the day only
 #lat long and location missing. It's ok
@@ -107,11 +106,9 @@ levels(d$m_sex) <- c("female", "male") #recode for standardizing all datsets.
 
 #3) Add known missing columns (name, description, credit, doi)
 #Add contributor information (if doi, can be ignored)
-    #Do not look for contributor info in detail.
 d$doi <- "10.1371/journal.pone.0148983" #Add doi
 d$name <- "Oliveira_2016" # Add name of the dataset
 d$description <- "Dataset describing bodi sizes for 10 bee species alomg > 100 years in the Nederlands" # Add name of the dataset
-#the fllwing lines are not necesary as there is doi, but for completness of the example
 d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
 d$Contributor_name[1:4] <- c("MO", "BM", "J", "D") #populate the first forut rows
 d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
@@ -155,20 +152,11 @@ str(d)
 #Delete first row (it is useless)
 
 d <- d[-1,]
-
 d$local_id <- c(1:nrow(d))
-
-#build species
-
 d$species <- paste(d$Genus, d$Species)
-
 d$country <- "Spain"
-
-#missing: "collector","taxonomist", "day","month","year","lat","long","location","country"
 colnames(d)[8] <- "m_IT" 
-
 colnames(d)[9] <- "se_IT" 
-
 colnames(d)[10] <- "n_IT" 
 
 #3) Add known missing columns (name, description, credit, doi)
@@ -178,7 +166,6 @@ d$doi <- "10.1111/ele.12687"
 # Add name of the dataset
 d$name <- "Osorio-Canadas_2016"
 d$description <- "Dataset with IT measure standard error and sample size also coldest temperature but was not included"
-#the fllwing lines are not necesary as there is doi, but for completness of the example
 d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
 d$Contributor_name[1:6] <- c("S", "X", "A", "A","R", "J") 
 d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
@@ -233,11 +220,8 @@ head(d)
 #2) Check observations colnames
 
 d$local_id <- c(1:nrow(d))
-
 colnames(d)[1] <- "species" 
-
 colnames(d)[2] <- "m_fresh_mass"  #fresh mass in the paper the unit is g, but I think it is wrong and it is mg
-
 colnames(d)[3] <- "n_fresh_mass" 
 
 
@@ -245,7 +229,6 @@ colnames(d)[3] <- "n_fresh_mass"
 
 #Add doi, no doi found in crossref
 #d$doi <- No doi # NB you can check if there is doi here: http://www.questionpoint.org/crs/servlet/org.oclc.ask.AskPatronFetchQA?&language=1&qid=196591
-# Add name of the dataset
 d$name <- "Stone_1989"
 d$description <- "Dataset with body mass and minimum ambient temperature at foraging occurs"
 #the fllwing lines are not necesary as there is doi, but for completness of the example
@@ -270,7 +253,7 @@ errors <- validateDataset(cnx, txt)
 errors #Yeah! it complains for species names :D
 importDataset(cnx, txt) #fails!
 
-#Data from Borrel_2007  ----
+#Data from Borrel, 2007  ----
 
 #CHECK ALSO ONLINE MATERIAL
 
@@ -281,13 +264,9 @@ d <- read.csv("raw_data/Borrell_2006.csv", head= T, sep =  ";")
 #2) Check observations colnames
 
 d$local_id <- c(1:nrow(d))
-
 colnames(d)[1] <- "species" 
-
 colnames(d)[2] <-"m_fresh_mass" # unit:mg
-    
 colnames(d)[4] <-"m_tongue_length" #unit: mm
-    
 d$country <- "Costa Rica & Panama"
 
 #3) Add known missing columns (name, description, credit, doi)
@@ -302,9 +281,7 @@ d$Contributor_lastname[1:2] <- c("Borrell")
 
 #4) Remove unused columns
 
-d <- d[,c("local_id", "species", "country",
-          "m_fresh_mass", "m_tongue_length", "doi", 
-          "name", "description", 
+d <- d[,c("local_id", "species", "country","m_fresh_mass", "m_tongue_length", "doi", "name", "description", 
           "Contributor_name", "Contributor_lastname")]
 head(d)
 
@@ -329,33 +306,21 @@ importDataset(cnx, txt) #same error about species not in ITIS
 
 #1) Read data 
 
-
 load("raw_data/Cariveau_2016.rda")
-
 tongues -> d
-
 d$local_id <- c(1:nrow(d))
-
 d$species <- paste(d$genus, d$species)
 
 #2 and 3, this time I did it creating new columns instead of reaclling them...
 
 d$country <- "United States"
-
 d$location <- "New Jersey"
-
 d$mean_tongue_length_mm -> d$m_tongue_length #Unit: mm
-
 d$mean_IT_length_mm -> d$m_IT #Unit: mm
-
 d$sample_size -> d$n_tongue_length #Same sample size for both
-
 d$sample_size -> d$n_IT #Same sample size for both
-
 d$doi <- "10.1371/journal.pone.0151482" 
-
 d$name <- "Cariveau_2016"
-
 d$description <- "Dataset with measures of tongue, IT, glossa, prementum and their residuals, just included tongue and IT"
 d$Contributor_name <- rep(NA, nrow(d)) 
 d$Contributor_name[1:7] <- c("D.P.", "G.K.","I.", "J.", "J.", "J.", "R." ) 
@@ -364,10 +329,8 @@ d$Contributor_lastname[1:7] <- c("Cariveau", "Nayak", "Bartomeus", "Zientek", "A
 
 #4) Remove unused columns
 
-d <- d[,c("local_id", "species", "country", "location",
-          "m_tongue_length", "n_tongue_length", "m_IT", "n_IT", "doi", 
-          "name", "description", 
-          "Contributor_name", "Contributor_lastname")]
+d <- d[,c("local_id", "species", "country", "location", "m_tongue_length", "n_tongue_length", 
+          "m_IT", "n_IT", "doi", "name", "description", "Contributor_name", "Contributor_lastname")]
 
 #5 test and upload dataset
 
@@ -376,15 +339,6 @@ txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt[1:28])
 errors
 
-<<<<<<< HEAD
-#Data from Bartomeus 2013------
-
-#1) Read data 
-
-d <- read.csv("raw_data/Bartomeus_2013.csv", header = TRUE, sep = ";", dec= ",")
-
-d$local_id <- c(1:nrow(d))
-=======
 importDataset(cnx, txt[1:28]) #same error about species not in ITIS
 
 
@@ -396,5 +350,44 @@ txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt[1:28])
 errors
 importDataset(cnx, txt[1:28]) #same error about species not in ITIS
->>>>>>> 4b38be757f7cdb075a85cfa9a409a6d407d1213b
+
+
+#Data from Bartomeus, 2013------
+
+#add IT, think how integrate both
+
+#1) Read data 
+
+d <- read.csv("raw_data/Bartomeus_2013.csv", header = TRUE, sep = ";", dec= ",")
+
+#2) Check observations colnames
+
+d$local_id <- c(1:nrow(d))
+d$species <- paste(d$Genus, d$species)
+colnames(d)[7] <- "nest_site" 
+colnames(d)[9] <- "sociality" 
+colnames(d)[10] <- "parasitic" 
+colnames(d)[11] <- "dietary_specialization" 
+
+#col 11: Dietary_specialization. Maybe floral specialization like in the paper?
+
+#This paper has new columns as 1)nest site, 2)Sociality; 3)Parasitic, 4) dietary specialization
+
+#3) Add known missing columns 
+
+d$country <- "United States"
+d$doi <- "10.1073/pnas.1218503110" 
+d$name <- "Bartomeus_2013"
+d$description <- "Dataset with information about "
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:7] <- c("I.", "J.", "J.", "B.", "D.", "S.", "R.") 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:7] <- c("Bartomeus", "Ascher", "Gibbs", "Danforth", "Wagner", "Hedtke", "Winfree") 
+
+#4) Remove unused columns
+
+d <- d[,c("local_id", "species", "country", "nest_site", "sociality", "parasitic", "description", 
+          "dietary_specialization","doi", "name", "Contributor_name", "Contributor_lastname")]
+
+
 
