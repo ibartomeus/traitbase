@@ -389,5 +389,15 @@ d$Contributor_lastname[1:7] <- c("Bartomeus", "Ascher", "Gibbs", "Danforth", "Wa
 d <- d[,c("local_id", "species", "country", "nest_site", "sociality", "parasitic", "description", 
           "dietary_specialization","doi", "name", "Contributor_name", "Contributor_lastname")]
 
+#5) test and upload dataset
+
+#1) Read data from Kremen, 2015
+
+d <- read.csv("raw_data/Kremen_2015.csv", header = TRUE, sep = ";", dec= ",")
+
+#2) Check observations colnames
+
+d$local_id <- c(1:nrow(d))
+colnames(d)[1] <- "species" 
 
 
