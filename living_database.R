@@ -410,13 +410,13 @@ colnames(d)[10] <- "dietary_specialization"
 #3) Add known missing columns 
 
 d$country <- ""
-d$doi <- "" 
+d$doi <- "10.1111/1365-2664.12418" 
 d$name <- "Kremen_2015"
 d$description <- ""
 d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:] <- c("") 
+d$Contributor_name[1:2] <- c("") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:] <- c("") 
+d$Contributor_lastname[1:2] <- c("") 
 
 #4) Remove unused columns
 
