@@ -391,7 +391,10 @@ d <- d[,c("local_id", "species", "country", "nest_site", "sociality", "parasitic
 
 #5) test and upload dataset
 
-#1) Read data from Kremen, 2015
+
+#Read data from Kremen, 2015-----
+
+#1) Read data 
 
 d <- read.csv("raw_data/Kremen_2015.csv", header = TRUE, sep = ";", dec= ",")
 
@@ -399,5 +402,23 @@ d <- read.csv("raw_data/Kremen_2015.csv", header = TRUE, sep = ";", dec= ",")
 
 d$local_id <- c(1:nrow(d))
 colnames(d)[1] <- "species" 
+colnames(d)[9] <- "sociality" 
+colnames(d)[10] <- "dietary_specialization" 
 
+#date??
+
+#3) Add known missing columns 
+
+d$country <- ""
+d$doi <- "" 
+d$name <- "Kremen_2015"
+d$description <- ""
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:] <- c("") 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:] <- c("") 
+
+#4) Remove unused columns
+
+#5) test and upload dataset
 
