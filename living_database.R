@@ -364,10 +364,10 @@ d <- read.csv("raw_data/Bartomeus_2013.csv", header = TRUE, sep = ";", dec= ",")
 
 d$local_id <- c(1:nrow(d))
 d$species <- paste(d$Genus, d$species)
-colnames(d)[7] <- "nest_site" 
-colnames(d)[9] <- "sociality" 
-colnames(d)[10] <- "parasitic" 
-colnames(d)[11] <- "dietary_specialization" 
+colnames(d)[8] <- "m_nest_site" 
+colnames(d)[9] <- "m_sociality" 
+colnames(d)[10] <- "m_parasitic" 
+colnames(d)[11] <- "m_dietary_specialization" 
 
 #col 11: Dietary_specialization. Maybe floral specialization like in the paper?
 
@@ -386,10 +386,17 @@ d$Contributor_lastname[1:7] <- c("Bartomeus", "Ascher", "Gibbs", "Danforth", "Wa
 
 #4) Remove unused columns
 
-d <- d[,c("local_id", "species", "country", "nest_site", "sociality", "parasitic", "description", 
-          "dietary_specialization","doi", "name", "Contributor_name", "Contributor_lastname")]
+d <- d[,c("local_id", "species", "country", "m_nest_site", "m_sociality", "m_parasitic", "description", 
+          "m_dietary_specialization","doi", "name", "Contributor_name", "Contributor_lastname")]
 
 #5) test and upload dataset
+
+head(d)
+txt <- df_to_rl(d)
+errors <- validateDataset(cnx, txt[1:84])
+errors
+
+importDataset(cnx, txt[1:84]) #fix to upload full dataset.
 
 
 #Read data from Kremen, 2015-----
@@ -402,8 +409,8 @@ d <- read.csv("raw_data/Kremen_2015.csv", header = TRUE, sep = ";", dec= ",")
 
 d$local_id <- c(1:nrow(d))
 colnames(d)[1] <- "species" 
-colnames(d)[9] <- "sociality" 
-colnames(d)[10] <- "dietary_specialization" 
+colnames(d)[9] <- "m_sociality" 
+colnames(d)[10] <- "m_dietary_specialization" 
 
 #date??
 
