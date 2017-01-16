@@ -439,4 +439,38 @@ d <- d[,c("local_id", "species", "country", "location", "m_sociality",  "m_dieta
 
 #Read data from Gonzalez, 2016-----
 
+#1) Read data 
+
+d <- read.csv("raw_data/Gonzalez_2016.csv", header = TRUE, sep = ";", dec= ",")
+
+#2) Check observations colnames
+
+d$local_id <- c(1:nrow(d))
+colnames(d)[1] <- "species"
+colnames(d)[2] <- "m_IT"
+
+#3) Add known missing columns 
+
+d$country <- "Turkey"
+d$location <- "Bursa, Gorukle Campus of Uludag University"
+d$lat <- "40-13-35N, 28-52-13E"
+d$doi <- "10.3897/jhr.51.9353" 
+d$name <- "Gonzalez_2016"
+d$description <- "Dataset with information about IT measure and the postion of the trap to capture the bee"
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:5] <- c("V.H.", "K.E.", "I.", "J.M.", "J.F.") 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:5] <- c("Gonzalez", "Park", "Cakmak", "Hranitz", "Barthell") 
+
+#4) Remove unused columns
+
+
+d <- d[,c("local_id", "species", "country", "location", "lat",  
+          "m_IT",  "description","doi", "name", "Contributor_name", "Contributor_lastname")]
+
+
+#5) test and upload dataset
+
+
+#Read data from Forrest, 2015-----
 
