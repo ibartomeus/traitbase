@@ -378,7 +378,7 @@ colnames(d)[11] <- "m_dietary_specialization"
 d$country <- "United States"
 d$doi <- "10.1073/pnas.1218503110" 
 d$name <- "Bartomeus_2013"
-d$description <- "Dataset with information about "
+d$description <- "Dataset with qualitative traits (nest site, sociality, pasatism, dietary specialization)"
 d$Contributor_name <- rep(NA, nrow(d)) 
 d$Contributor_name[1:7] <- c("I.", "J.", "J.", "B.", "D.", "S.", "R.") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
@@ -411,21 +411,32 @@ d$local_id <- c(1:nrow(d))
 colnames(d)[1] <- "species" 
 colnames(d)[9] <- "m_sociality" 
 colnames(d)[10] <- "m_dietary_specialization" 
+colnames(d)[11] <- "m_IT" 
 
 #date??
 
 #3) Add known missing columns 
 
-d$country <- ""
+d$country <- "United States"
+d$location <- "Centra Valley of California (Yolo County)"
 d$doi <- "10.1111/1365-2664.12418" 
 d$name <- "Kremen_2015"
-d$description <- ""
+d$description <- "Dataset with qualitative traits (sociality, dietary specialization) and quantitative traits 
+(IT for bess and wing length for flies, also the coefficient d' whih is the deviation of the interaction)"
 d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:2] <- c("") 
+d$Contributor_name[1:2] <- c("C.", "L.") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:2] <- c("") 
+d$Contributor_lastname[1:2] <- c("Kremen", "Gonigle") 
 
 #4) Remove unused columns
 
+
+d <- d[,c("local_id", "species", "country", "location", "m_sociality",  "m_dietary_specialization", 
+          "m_IT",  "description","doi", "name", "Contributor_name", "Contributor_lastname")]
+
+
 #5) test and upload dataset
+
+#Read data from Gonzalez, 2016-----
+
 
