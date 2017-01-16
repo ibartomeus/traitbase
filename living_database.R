@@ -143,7 +143,7 @@ importDataset(cnx, txt) #works!
 
 #1) Read data 
 
-d <- read.csv("raw_data/Osorio-Canadas_etal.csv", 
+d <- read.csv("raw_data/Osorio-Canadas_2016.csv", 
               header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
 head(d)
 str(d)
@@ -214,7 +214,7 @@ importDataset(cnx, txt) #fails, only adds a few rows!
 
 #1) Read data (in prep)
 
-d <- read.csv("raw_data/Stone_etal.csv", header = TRUE, sep = ";", dec= ",")
+d <- read.csv("raw_data/Stone_1989.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
 #2) Check observations colnames
@@ -437,7 +437,7 @@ d <- d[,c("local_id", "species", "country", "location", "m_sociality",  "m_dieta
 
 #5) test and upload dataset
 
-#Read data from Gonzalez, 2016-----
+#Read data from Gonzalez et al., 2016-----
 
 #1) Read data 
 
@@ -452,18 +452,18 @@ colnames(d)[2] <- "m_IT"
 #3) Add known missing columns 
 
 d$country <- "Turkey"
-d$location <- "Bursa, Gorukle Campus of Uludag University"
+d$location <- "Gorukle Campus of Uludag University, Bursa"
 d$lat <- "40-13-35N, 28-52-13E"
 d$doi <- "10.3897/jhr.51.9353" 
 d$name <- "Gonzalez_2016"
 d$description <- "Dataset with information about IT measure and the postion of the trap to capture the bee"
+#When the data was until the level of genus was eliminated
 d$Contributor_name <- rep(NA, nrow(d)) 
 d$Contributor_name[1:5] <- c("V.H.", "K.E.", "I.", "J.M.", "J.F.") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
 d$Contributor_lastname[1:5] <- c("Gonzalez", "Park", "Cakmak", "Hranitz", "Barthell") 
 
 #4) Remove unused columns
-
 
 d <- d[,c("local_id", "species", "country", "location", "lat",  
           "m_IT",  "description","doi", "name", "Contributor_name", "Contributor_lastname")]
@@ -472,5 +472,38 @@ d <- d[,c("local_id", "species", "country", "location", "lat",
 #5) test and upload dataset
 
 
-#Read data from Forrest, 2015-----
+#Read data from Forrest et al., 2015-----
+
+
+#1) Read data 
+
+d <- read.csv("raw_data/Forrest_2015.csv", header = TRUE, sep = ";", dec= ",")
+
+#2) Check observations colnames
+
+colnames(d)[1] <- "species"
+colnames(d)[5] <- "m_IT"
+colnames(d)[10] <- "m_sociality"
+colnames(d)[11] <- "m_detary_specialization"  #MODIFY!!!
+
+#3) Add known missing columns 
+
+d$country <- "United States"
+d$location <- "Sacramento Valley, California"
+d$doi <- "10.1111/1365-2664.12433" 
+d$name <- "Forrest_2015"
+d$description <-""
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:3] <- c("J.R.K.", "R.W.","C.") 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:3] <- c("Forrest", "Thorp", "Kremen") 
+
+#4) Remove unused columns
+
+d <- d[,c("local_id", "species", "country", "location", "m_IT", "m_sociality", "m_dietary_spcialization",
+         "description","doi", "name", "Contributor_name", "Contributor_lastname")]
+
+#5) test and upload dataset
+
+
 
