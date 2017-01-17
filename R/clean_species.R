@@ -15,6 +15,7 @@
 #' clean_species(species)
 #' @export
 clean_species <- function(species, verbose = TRUE, db = "itis"){ 
+    species <- as.character(species)
     #misspellings
     species2 <- unique(species) 
     temp <- gnr_resolve(species2, best_match_only = TRUE, canonical = TRUE)
