@@ -16,10 +16,14 @@ df_to_rl <- function(x){
 } 
 
 #Issues
-#Why capital/lower case letters
-#ambigous not kept.
-#do not fail with irreal lat/longs
+#Why capital/lower case letters OK
+#ambigous not kept. OK
+#do not fail with irreal lat/longs OK
 #NA in day do not show up. Imposrts well. Which is the behaviour of NA? Or is any non numeric value?
+
+#Questions
+#Schema is linked to validation by Superfamily, right?
+
 
 #test data
 d <- read.csv("processed_data/testdata.csv", header = TRUE)
@@ -36,4 +40,5 @@ unlist(errors[[4]], use.names = FALSE) #warnings
 temp <- clean_species(d$species[1:3])
 temp
 
+importDataset(cnx, txt[c(1,3)]) 
 importDataset(cnx, txt[c(1,3)]) 
