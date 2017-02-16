@@ -1,26 +1,26 @@
-Species;Mean mass (g);n;Source
-Apis m. mellifera L.;89;7;This paper 
-Apis m. mellifera L.;92,7;1;Heinrich (1979)
-Apis m. mellifera L.;100,8;1;Cooper et al. (1985)
-Apis m. Adansonii Latreille;60,8;1;Heinrich (1979)
-Boumbus lapidarius (L.);136;12;This paper 
-Bombus pascuorum (Scop);123;8;This paper 
-Bombus terrestris (L.);250;8;This paper 
-Bombus vosnesenskii Rad. (queen);550;1;Heinrich (1972c,d, 1975), Heinrich & Heinrich (1983)
-Bombus edwarsii Cresson (queen);400;1;Heinrich (1972c,d, 1975), Heinrich & Heinrich (1983)
-Bombus edwarsii Cresson ;120;1;Heinrich (1972c,d, 1975), Heinrich & Heinrich (1983)
-Bombus vagans Smith;120;1;Heinrich (1972a, 1975), Heinrich & Heinrich (1983)
-Bombus terricola Kirby;150;1;Heinrich (1972b, 1975), Heinrich & Heinrich (1983)
-Psithyrus vestalis (Geoffroy);195;4;This paper 
-Euglossa variabilis Friese;95;1;May (1976)
-Euglossa igneiventris Friese;102;1;May (1976)
-Euglossa imperialis Cockerell;160;1;May (1976), May & Casey (1983)
-Euglossa saphirina Moure;70;1;May & Casey (1983)
-Euglossa tridentata Moure;110;1;May & Casey (1983)
-Exaerete smaragdina (Guerin);383;1;May (1976)
-Exaerete frontalis (Guerin);680;1;May (1976), May & Casey (1983)
-Eulaema nigrita Lep.;420;1;May (1976), May & Casey (1983)
-Eulaema meriana (Oliver);880;1;May (1976), May & Casey (1983)
-Eufriesa pulchra (Smith);460;1;May (1976), May & Casey (1983)
-Euplusia schmiditiana (Friese);460;1;May (1976)
-Xylocopa capiata Smith;1300;1;Louw & Nicolson (1983), Nicolson & Louw (1982)
+Species;Mean mass (g);n;Source;sex
+Apis mellifera;89;7;This paper;female
+Apis mellifera;92,7;1;Heinrich (1979);female
+Apis mellifera;100,8;1;Cooper et al. (1985);female
+Apis mellifera;60,8;1;Heinrich (1979);female
+Boumbus lapidarius;136;12;This paper;female
+Bombus pascuorum;123;8;This paper;female
+Bombus terrestris;250;8;This paper;female
+Bombus vosnesenskii;550;1;Heinrich (1972c,d, 1975), Heinrich & Heinrich (1983);queen
+Bombus edwarsii;400;1;Heinrich (1972c,d, 1975), Heinrich & Heinrich (1983);queen
+Bombus edwarsii;120;1;Heinrich (1972c,d, 1975), Heinrich & Heinrich (1983);female
+Bombus vagans;120;1;Heinrich (1972a, 1975), Heinrich & Heinrich (1983);female
+Bombus terricola;150;1;Heinrich (1972b, 1975), Heinrich & Heinrich (1983);female
+Psithyrus vestalis;195;4;This paper;NA
+Euglossa variabilis;95;1;May (1976);NA
+Euglossa igneiventris;102;1;May (1976);NA
+Euglossa imperialis;160;1;May (1976), May & Casey (1983);NA
+Euglossa saphirina;70;1;May & Casey (1983);NA
+Euglossa tridentata;110;1;May & Casey (1983);NA
+Exaerete smaragdina;383;1;May (1976);NA
+Exaerete frontalis;680;1;May (1976), May & Casey (1983);NA
+Eulaema nigrita;420;1;May (1976), May & Casey (1983);NA
+Eulaema meriana;880;1;May (1976), May & Casey (1983);NA
+Eufriesa pulchra;460;1;May (1976), May & Casey (1983);NA
+Euplusia schmiditiana;460;1;May (1976);NA
+Xylocopa capiata;1300;1;Louw & Nicolson (1983), Nicolson & Louw (1982);NA
