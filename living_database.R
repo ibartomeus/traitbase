@@ -228,7 +228,7 @@ errors <- validate_sliced(cnx, d)
 errors
 
 #clean species!
-temp <- clean_species(d$species)
+temp <- clean_species(d$species) #SLOWWWW needs used inputs.
 temp$final_names <- as.character(d$final_names)
 temp[which(temp$species == "Andrena carbonaria"), 4] <- "Andrena pilipes" 
 temp[which(temp$species == "Andrena niveata lecana"), 4] <- "Andrena niveata" 
@@ -555,5 +555,8 @@ d <- d[,c("local_id", "species", "country", "location", "m_IT", "m_sociality", "
 
 #5) test and upload dataset
 
-
+d <- read.csv("processed_data/testdata_add.csv")
+head(d)
+validateDataset(cnx, d)
+importDataset(cnx, d) #fix names
 
