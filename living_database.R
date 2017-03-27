@@ -8,8 +8,8 @@ library(taxize)
 library(reshape2)
 #library(devtools)
 #install_github("metadevpro/traitbaser")
-library(traitbaser)
-cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
+#library(traitbaser)
+#cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
 #temporal function
 #df_to_rl <- function(x){
@@ -59,7 +59,7 @@ import_sliced <- function(cnx, d){
 #"doi": UNIQUE. If published doi of the dataset/paper
 
 #"local_id": Any id set in the original paper
-#"species": Genua species (needs to be a valid taxon name
+#"species": Genus species (needs to be a valid taxon name
 #"collector": If known who the collector was
 #"taxonomist": If known who the taxonomist was
 #"day","month","year": In separate columns
