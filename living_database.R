@@ -390,6 +390,9 @@ importDataset(cnx, d) #same error about species not in ITIS
 
 d <- read.csv("raw_data/Bartomeus_2013.csv", header = TRUE, sep = ";", dec= ",")
 
+
+
+
 #2) Check observations colnames
 
 d$local_id <- c(1:nrow(d))
@@ -559,4 +562,38 @@ d <- read.csv("processed_data/testdata_add.csv")
 head(d)
 validateDataset(cnx, d)
 importDataset(cnx, d) #fix names
+
+
+
+#Read data from Carstensen_et_al_2012-----
+
+
+#1) Read data 
+
+d <- read.csv("raw_data/Carstensen_et_al_2012.csv", 
+              header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
+
+head(d)
+str(d)
+
+#2) Check observations colnames
+
+d$local_id <- c(1:nrow(d))
+colnames(d)[3] <- "plant_species"
+colnames(d)[4] <- "species"
+
+head(d)
+str(d)
+
+#3) Add known missing columns 
+
+d$country <- "Brazil"
+d$location <- "National Park of Serra do Cipó"
+d$doi <- "10.1371/journal.pone.0117763"
+d$name <- "Carstensen_et_al_2015"
+d$description <- "Dataset about interactions"
+
+head(d)
+str(d)
+
 
