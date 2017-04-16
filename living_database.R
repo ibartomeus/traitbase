@@ -567,7 +567,6 @@ importDataset(cnx, d) #fix names
 
 #Read data from Carstensen_et_al_2012-----
 
-
 #1) Read data 
 
 d <- read.csv("raw_data/Carstensen_et_al_2012.csv", 
@@ -584,6 +583,30 @@ colnames(d)[4] <- "species"
 
 head(d)
 str(d)
+#split plant 
+position <- regexpr(pattern = " ", d$plant_species)
+d$m_plant_genus <- substr(d$plant_species, 1, position-1)
+d$m_plant_species <- substr(d$plant_species, position+1, nchar(as.character(d$plant_species)))
+d$n_plant_genus <- 1
+d$n_plant_species <- 1
+d$se_plant_genus <- 0
+d$se_plant_species <- 0
+    
+#split date #tenias el ejemplo en la linea 128 
+date <- as.POSIXlt(strptime(d$Date, "%d/%m/%Y")) #convert to date class
+d$day <- date$mday #extract the day only
+d$month <- date$mon+1 #extract the day only
+d$year <- date$year + 1900 #extract the day only
+
+#clean species (i.e. I don't want the parenthesis)
+unique(d$species)
+position1 <- regexpr(pattern = "(", d$species, fixed = TRUE)
+position2 <- regexpr(pattern = ")", d$species, fixed = TRUE)
+d$species2 <- ifelse(grepl("(",d$species, fixed = TRUE),
+                     paste(substr(d$species, 1, position1-1),
+                           substr(d$species, position2+1, nchar(as.character(d$species)))),
+                     as.character(d$species)) #need to clean spaces
+d$species <- d$species2
 
 #3) Add known missing columns 
 
@@ -593,7 +616,28 @@ d$doi <- "10.1371/journal.pone.0117763"
 d$name <- "Carstensen_et_al_2015"
 d$description <- "Dataset about interactions"
 
+#Add lat/long per site and maybe keep in location via 
+levels(d$Site)
+d$location <- paste(d$location, ":", d$Site)
+d$lat <- "" #NEED TO DO
+d$long <- "" #NEED TO DO
+ 
 head(d)
 str(d)
 
+#4) Remove unused columns ...
+
+
+
+#I keep the template for later:
+#1) Read data (read.table, read.csv...)
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+#"day","month","year","lat","long","location","country")
+#Add lat long from google maps or paper if possible.
+#Check traits colnames(m_trait, se_trait, n_trait)
+#3) Add known missing columns (name, description, credit, doi)
+#Add contributor information (if doi, can be ignored)
+#Do not look for contributor info in detail.
+#4) Remove unused columns
+#5) Upload dataset
 
