@@ -5,9 +5,10 @@ library(taxize)
 source("R/clean_species.R")
 library(reshape2)
 #library(devtools)
-#install_github("metadevpro/traitbaser")
+install_github("metadevpro/traitbaser")
 library(traitbaser)
 cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
+cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #temporal function
 df_to_rl <- function(x){
     header <- paste(colnames(d), collapse = ", ")
@@ -26,7 +27,7 @@ df_to_rl <- function(x){
 
 
 #test data
-d <- read.csv("processed_data/testdata.csv", header = TRUE)
+d <- read.csv("processed_data/testdata.csv", header = TRUE, sep = ";")
 head(d)
 txt <- df_to_rl(d)
 errors <- validateDataset(cnx, txt)
@@ -42,3 +43,11 @@ temp
 
 importDataset(cnx, txt[c(1,3)]) 
 importDataset(cnx, txt[c(1,3)]) 
+
+#one by one
+d$test
+validateDataset(cnx, txt[c(1,13)])
+validateDataset(cnx, txt[c(1,14)])
+validateDataset(cnx, txt[c(1,15)])
+validateDataset(cnx, txt[c(1,16)])
+validateDataset(cnx, txt[c(1,17)])
