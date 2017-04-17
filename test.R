@@ -37,6 +37,9 @@ unlist(errors[[2]])
 unlist(errors[[3]], use.names = FALSE) #errors
 unlist(errors[[4]], use.names = FALSE) #warnings
 
+#Can we select failing lines so I can skip them direcly?
+#Using regex, probbaly
+
 #way to clean errors
 temp <- clean_species(d$species[1:3])
 temp
