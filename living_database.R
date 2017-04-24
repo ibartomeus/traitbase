@@ -624,12 +624,26 @@ d$Contributor_lastname[1:4] <- c("Carstensen", "Sabatino", "Trøjelsgaard", "Mor
 #Add lat/long per site and maybe keep in location via 
 levels(d$Site)
 d$location <- paste(d$location, ":", d$Site)
-d$lat <- ifelse(d$Site =="Cedro", "-19.2320778",NA)
-d$long <- ifelse(d$Site =="Cedro","-43.576394444444446",NA) #casi lo tenias
+d$lat <- ifelse(d$Site =="Cedro", "-19.2320778",
+                ifelse (d$Site=="Gigante","-19.2473083",
+                        ifelse (d$Site=="Paulino","-19.2553111",
+                                ifelse (d$Site=="Tinkerbell","-19.220725",
+                                        ifelse (d$Site=="Midway", "-19.2702972",
+                                                ifelse (d$Site=="Elefante", "-19.2934528",
+                                                        ifelse (d$Site=="Soizig", "-19.2728028",NA)))))))
+d$long <- ifelse(d$Site =="Cedro","-43.576394444444446",
+                 ifelse (d$Site=="Gigante","-43.510197222222224",
+                         ifelse (d$Site=="Paulino","-43.583869444444446",
+                                 ifelse (d$Site=="Tinkerbell","-43.58296388888889",
+                                         ifelse (d$Site=="Midway", "-43.550352777777775",
+                                                 ifelse (d$Site=="Elefante", "-43.55553333333333",
+                                                         ifelse (d$Site=="Soizig", "-43.57983611111111",NA))))))) #casi lo tenias
 
 head(d)
-str(d) 
-
+str(d)
+print(d$lat)
+print(d$long)
+print(d$Site)
 
 #4) Remove unused columns ...
 
