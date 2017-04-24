@@ -624,8 +624,8 @@ d$Contributor_lastname[1:4] <- c("Carstensen", "Sabatino", "Trøjelsgaard", "Mor
 #Add lat/long per site and maybe keep in location via 
 levels(d$Site)
 d$location <- paste(d$location, ":", d$Site)
-d$lat <- if(d$Site =="Cedro")"-19.2320778" #NEED TO DO
-d$long <- if(d$Site =="Cedro")"-43.576394444444446" #NEED TO DO
+d$lat <- ifelse(d$Site =="Cedro", "-19.2320778",NA)
+d$long <- ifelse(d$Site =="Cedro","-43.576394444444446",NA) #casi lo tenias
 
 head(d)
 str(d) 
