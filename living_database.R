@@ -572,17 +572,17 @@ importDataset(cnx, d) #fix names
 d <- read.csv("raw_data/Carstensen_et_al_2012.csv", 
               header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
 
-head(d)
-str(d)
+
 
 #2) Check observations colnames
 
 d$local_id <- c(1:nrow(d))
+colnames(d)[1]<- "Site"
 colnames(d)[3] <- "plant_species"
 colnames(d)[4] <- "species"
 
-head(d)
-str(d)
+
+
 #split plant 
 position <- regexpr(pattern = " ", d$plant_species)
 d$m_plant_genus <- substr(d$plant_species, 1, position-1)
@@ -591,7 +591,7 @@ d$n_plant_genus <- 1
 d$n_plant_species <- 1
 d$se_plant_genus <- 0
 d$se_plant_species <- 0
-    
+   
 #split date #tenias el ejemplo en la linea 128 
 date <- as.POSIXlt(strptime(d$Date, "%d/%m/%Y")) #convert to date class
 d$day <- date$mday #extract the day only
@@ -615,17 +615,30 @@ d$location <- "National Park of Serra do Cipó"
 d$doi <- "10.1371/journal.pone.0117763"
 d$name <- "Carstensen_et_al_2015"
 d$description <- "Dataset about interactions"
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:4] <- c("D.W.C", "M.S.", "K.T.", "L.P.C.M.") 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:4] <- c("Carstensen", "Sabatino", "Trøjelsgaard", "Morellato")
+
 
 #Add lat/long per site and maybe keep in location via 
 levels(d$Site)
 d$location <- paste(d$location, ":", d$Site)
-d$lat <- "" #NEED TO DO
-d$long <- "" #NEED TO DO
- 
+d$lat <- if(d$Site =="Cedro")"-19.2320778" #NEED TO DO
+d$long <- if(d$Site =="Cedro")"-43.576394444444446" #NEED TO DO
+
 head(d)
-str(d)
+str(d) 
+
 
 #4) Remove unused columns ...
+
+d <- d[,c("Date")]
+
+#5) Upload dataset
+
+
+
 
 
 
