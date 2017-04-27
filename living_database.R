@@ -668,3 +668,7 @@ d <- d[,c("Date")]
 #4) Remove unused columns
 #5) Upload dataset
 
+d <- read.csv("raw_data/Gonzalez-VH_2016.csv", 
+              header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
+head(d)
+
