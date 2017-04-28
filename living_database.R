@@ -647,7 +647,7 @@ print(d$Site)
 
 #4) Remove unused columns ...
 
-d <- d[,c("Date")]
+
 
 #5) Upload dataset
 
@@ -668,7 +668,84 @@ d <- d[,c("Date")]
 #4) Remove unused columns
 #5) Upload dataset
 
-d <- read.csv("raw_data/Gonzalez-VH_2016.csv", 
+
+
+#Read data from Fortel_et_al_2014.csv-----
+
+#1) Read data (read.table, read.csv...)
+
+d <- read.csv("raw_data/Fortel_et_al_2014.csv", 
               header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
+
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+#"day","month","year","lat","long","location","country")
+
+d$local_id <- c(1:nrow(d))
+
+colnames(d)[1]<- "species"
+colnames(d)[4]<-"IT"
+colnames(d)[5]<-"tongue_lenght"
+colnames(d)[7]<- "Sociality"
+colnames(d)[8]<-"nest_location"
+colnames(d)[3]<-"N"
+
+#3) Add known missing columns (name, description, credit, doi)
+d$country <- "France"
+d$location <- "Grand Lyon"
+d$doi <- "10.1371/journal.pone.0104679"
+d$name <- "Fortel_et_al_2014"
+d$description <- "Dataset about traits"
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:8] <- c("L.F","M.H.","L.G.","A.L.G.", "M.K.", "H.M.", "O.R.","B.V.") 
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:8] <- c("Fortel", "Henry", "Guilbaud", "Guirao","Kuhlmann","Mouret","Rollin","Vaissière")
+
+d$lat <-"45.7666667"
+d$long <-"4.833333333333333"
+
+position <- regexpr(pattern = " ", d$species)
+d$m_genus <- substr(d$species, 1, position-1)
+d$m_species <- substr(d$species, position+1, nchar(as.character(d$species)))
+d$n_genus <- 1
+d$n_species <- 1
+d$se_genus <- 0
+d$se_species <- 0
+
+#4) Remove unused columns
+
+
+#5) Upload dataset
+
+
 head(d)
 
+
+#Read data from Gonzalez_et_al_Tabla_1_1999.csv-----
+
+#1) Read data (read.table, read.csv...)
+
+d <- read.csv("raw_data/Gonzalez_et_al_Tabla_1_1999.csv", 
+              header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
+
+d$local_id <- c(1:nrow(d))
+colnames(d)[1]<-"Date"
+colnames(d)[2]<-"family"
+colnames(d)[3]<-"genus"
+colnames(d)[4]<-"species"
+
+date <- as.POSIXlt(strptime(d$Date, "%d/%m/%Y")) #convert to date class
+d$day <- date$mday #extract the day only
+d$month <- date$mon+1 #extract the day only
+d$year <- date$year + 1900 #extract the day only
+
+d$country <- "Spain"
+d$location <- "Viana de Cega"
+d$issn <- "1130-4251"
+d$name <- "Gonzalez_et_al_Tabla_1_1999"
+d$description <-"Dataset about relationship of species studied, with indication of the number of specimens collected
+during each of the sampling periods. "
+
+d$lat <-"41.5129466"
+d$long <-"-4.758804199999986"
+
+head(d)
