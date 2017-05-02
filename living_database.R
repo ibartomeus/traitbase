@@ -727,11 +727,16 @@ head(d)
 d <- read.csv("raw_data/Gonzalez_et_al_Tabla_1_1999.csv", 
               header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
 
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+#"day","month","year","lat","long","location","country")
+
 d$local_id <- c(1:nrow(d))
 colnames(d)[1]<-"Date"
 colnames(d)[2]<-"family"
 colnames(d)[3]<-"genus"
 colnames(d)[4]<-"species"
+
+#3) Add known missing columns (name, description, credit, doi)
 
 date <- as.POSIXlt(strptime(d$Date, "%d/%m/%Y")) #convert to date class
 d$day <- date$mday #extract the day only
@@ -747,5 +752,57 @@ during each of the sampling periods. "
 
 d$lat <-"41.5129466"
 d$long <-"-4.758804199999986"
+
+
+#4) Remove unused columns
+
+
+#5) Upload dataset
+head(d)
+
+
+
+
+#Read data from Skandalis_2009.csv-----
+
+
+d <- read.csv("raw_data/Skandalis_2009.csv", header = TRUE, sep = ";", dec= ",")
+d$local_id <- c(1:nrow(d))
+
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+#"day","month","year","lat","long","location","country")
+
+d$local_id <- c(1:nrow(d))
+colnames(d)[3]<-"IT"
+colnames(d)[9]<-"fresh_mass"
+colnames(d)[10]<-"dry_mass"
+
+
+#3) Add known missing columns (name, description, credit, doi)
+
+d$country <- ifelse(d$Location =="Maryland", "USA",
+                    ifelse (d$Location=="Ontario","Canada", NA))
+
+d$site<- ifelse(d$Location =="Maryland", "campus of the USDA Beltsville Agricultural Research Station",
+                ifelse (d$Location=="Ontario","St. Catharines", NA))
+                    
+
+d$doi<-"http://dx.doi.org/10.2317/JKES711.05.1"
+d$name <- "Skandalis_2009"
+d$description <-"Dataset about traits"
+
+d$lat <-ifelse(d$Location =="Maryland", "39",
+               ifelse (d$Location=="Ontario","43", NA))
+d$long <-ifelse(d$Location =="Maryland", "-76",
+                 ifelse (d$Location=="Ontario","-79", NA))
+
+head(d)
+
+
+#4) Remove unused columns
+
+
+#5) Upload dataset
+
 
 head(d)
