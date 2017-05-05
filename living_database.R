@@ -612,7 +612,7 @@ d$doi <- "10.1371/journal.pone.0117763"
 d$name <- "Carstensen_et_al_2015"
 d$description <- "Dataset about interactions"
 d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:4] <- c("D.W.C", "M.S.", "K.T.", "L.P.C.M.") 
+d$Contributor_name[1:4] <- c("D.W.", "M.", "K.", "L.P.C.") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
 d$Contributor_lastname[1:4] <- c("Carstensen", "Sabatino", "Trøjelsgaard", "Morellato")
 
@@ -689,7 +689,7 @@ d$doi <- "10.1371/journal.pone.0104679"
 d$name <- "Fortel_et_al_2014"
 d$description <- "Dataset about traits"
 d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:8] <- c("L.F","M.H.","L.G.","A.L.G.", "M.K.", "H.M.", "O.R.","B.V.") 
+d$Contributor_name[1:8] <- c("L.","M.","L.","A.L.", "M.", "H.", "O.","B.") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
 d$Contributor_lastname[1:8] <- c("Fortel", "Henry", "Guilbaud", "Guirao","Kuhlmann","Mouret","Rollin","Vaissière")
 
@@ -797,5 +797,32 @@ head(d)
 
 #5) Upload dataset
 
+
+head(d)
+
+
+
+#Read data from Ascher_et_al_2016.csv-----
+
+d <- read.csv("raw_data/Ascher_et_al_2016.csv", header = TRUE, sep = ";", dec= ",")
+
+
+d$local_id <- c(1:nrow(d))
+colnames(d)[1]<-"Genus"
+colnames(d)[2]<-"Specie"
+colnames(d)[3]<-"total_lenght"
+
+d$name <- "Ascher_et_al_2016"
+d$description <-"Dataset about Megachile traits"
+d$species <- paste(d$Genus, d$Specie)
+d$country<- "Singapore"
+d$url<-"http://zoobank.org/urn:lsid:zoobank.org:pub:0F042FC4-23A3-4C6F-8CDC-DDBAA412DB1A"
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:5] <- c("J.S.","S.R.","Z.W.W.","J.X.Q.","E.J.Y.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:5] <- c("Ascher", "Risch", "Soh", "Lee", "Soh")
+
+#CONSULTAR PAPER CON NACHO.
 
 head(d)
