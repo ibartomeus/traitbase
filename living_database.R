@@ -572,16 +572,12 @@ importDataset(cnx, d) #fix names
 d <- read.csv("raw_data/Carstensen_et_al_2012.csv", 
               header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
 
-
-
 #2) Check observations colnames
 
 d$local_id <- c(1:nrow(d))
 colnames(d)[1]<- "Site"
 colnames(d)[3] <- "plant_species"
 colnames(d)[4] <- "species"
-
-
 
 #split plant 
 position <- regexpr(pattern = " ", d$plant_species)
@@ -653,9 +649,6 @@ print(d$Site)
 
 
 
-
-
-
 #I keep the template for later:
 #1) Read data (read.table, read.csv...)
 #2) Check observations colnames ("local_id", "species","collector","taxonomist",
@@ -676,7 +669,7 @@ print(d$Site)
 
 d <- read.csv("raw_data/Fortel_et_al_2014.csv", 
               header = TRUE, sep =";", dec= ",", na.strings = c("", "-"))
-
+head(d)
 #2) Check observations colnames ("local_id", "species","collector","taxonomist",
 #"day","month","year","lat","long","location","country")
 
@@ -766,7 +759,7 @@ head(d)
 #Read data from Skandalis_2009.csv-----
 
 
-d <- read.csv("raw_data/Skandalis_2009.csv", header = TRUE, sep = ";", dec= ",")
+d <- read.csv("raw_data/Skandalis_2009.csv", header = TRUE, sep = ";", dec= ",") #A mi no me carga¿? Quizas hay que editar caracteres raros de la tabla original.
 d$local_id <- c(1:nrow(d))
 
 #2) Check observations colnames ("local_id", "species","collector","taxonomist",
