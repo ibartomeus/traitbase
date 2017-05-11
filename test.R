@@ -7,38 +7,37 @@ library(reshape2)
 #library(devtools)
 install_github("metadevpro/traitbaser")
 library(traitbaser)
-cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
+#cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
 cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
-#temporal function
-df_to_rl <- function(x){
-    header <- paste(colnames(d), collapse = ", ")
-    temp <- apply(d, MARGIN = 1, paste, collapse = ", ")
-    c(header, temp)
-} 
-
-#Issues
-#Why capital/lower case letters OK
-#ambigous not kept. OK
-#do not fail with irreal lat/longs OK
-#NA in day do not show up. Imposrts well. Which is the behaviour of NA? Or is any non numeric value?
-
-#Questions
-#Schema is linked to validation by Superfamily, right?
-
 
 #test data
 d <- read.csv("processed_data/testdata.csv", header = TRUE, sep = ";")
 head(d)
-txt <- df_to_rl(d)
-errors <- validateDataset(cnx, txt)
+errors <- validateDataset(cnx, d)
 errors
-unlist(errors[[1]])
-unlist(errors[[2]])
-unlist(errors[[3]], use.names = FALSE) #errors
-unlist(errors[[4]], use.names = FALSE) #warnings
+str(errors)
+parse_errors <- function(errors){
+    if(errors$valid){
+        message("This dataset is valid")
+    } else{
+        message("This dataset is NOT valid")
+    }
+    if(length(errors$warnings)){
+        temp <- unlist(errors$warnings, use.names = FALSE)
+        message(temp[seq(2,length(temp),2)])
+    } 
+    if(length(errors$errors)){
+        temp <- unlist(errors$errors, use.names = FALSE)
+        err <- temp[seq(2,length(temp),2)]
+        cod <- temp[seq(1,length(temp),2)]
+        taxonomy <- err[which(cod == "402")]
+        tax <- as.numeric(substr(taxonomy,nchar(taxonomy)-1, nchar(taxonomy)))
+    } 
+    list(err, tax)
+}
 
-#Can we select failing lines so I can skip them direcly?
-#Using regex, probbaly
+parse_errors(errors)
+
 
 #way to clean errors
 temp <- clean_species(d$species[1:3])
