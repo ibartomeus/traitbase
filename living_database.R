@@ -7,9 +7,9 @@ source("R/clean_species.R")
 library(taxize)
 library(reshape2)
 #library(devtools)
-#install_github("metadevpro/traitbaser")
-#library(traitbaser)
-#cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
+#install_github("metadevpro/traitbaser", force = TRUE) #works with basic R...
+library(traitbaser)
+cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
 #temporal function
 #df_to_rl <- function(x){
@@ -293,8 +293,10 @@ d <- d[,c("local_id", "species", "credit",
 #5) test and upload dataset
 head(d)
 errors <- validateDataset(cnx, d)
+d$name <- "test_contrib"
 errors #Yeah! it complains for species names :D
-importDataset(cnx, d) 
+
+importDataset(cnx, d[1:4,]) 
 
 #Data from Borrel, 2007  ----
 
@@ -676,11 +678,11 @@ head(d)
 d$local_id <- c(1:nrow(d))
 
 colnames(d)[1]<- "species"
-colnames(d)[4]<-"IT"
+colnames(d)[4]<-"m_IT"
 colnames(d)[5]<-"tongue_lenght"
 colnames(d)[7]<- "Sociality"
 colnames(d)[8]<-"nest_location"
-colnames(d)[3]<-"N"
+colnames(d)[3]<-"n_IT" #check!
 
 #3) Add known missing columns (name, description, credit, doi)
 d$country <- "France"
@@ -697,7 +699,7 @@ d$lat <-"45.7666667"
 d$long <-"4.833333333333333"
 
 position <- regexpr(pattern = " ", d$species)
-d$m_genus <- substr(d$species, 1, position-1)
+d$m_genus <- substr(d$species, 1, position-1) #WRONG!
 d$m_species <- substr(d$species, position+1, nchar(as.character(d$species)))
 d$n_genus <- 1
 d$n_species <- 1
@@ -738,7 +740,7 @@ d$year <- date$year + 1900 #extract the day only
 
 d$country <- "Spain"
 d$location <- "Viana de Cega"
-d$issn <- "1130-4251"
+d$issn <- "1130-4251" #credit ()
 d$name <- "Gonzalez_et_al_Tabla_1_1999"
 d$description <-"Dataset about relationship of species studied, with indication of the number of specimens collected
 during each of the sampling periods. "
@@ -759,7 +761,7 @@ head(d)
 #Read data from Skandalis_2009.csv-----
 
 
-d <- read.csv("raw_data/Skandalis_2009.csv", header = TRUE, sep = ";", dec= ",") #A mi no me carga¿? Quizas hay que editar caracteres raros de la tabla original.
+d <- read.csv("raw_data/Skandalis_2009_.csv", header = TRUE, sep = ";", dec= ",", encoding = "") #A mi no me carga¿? Quizas hay que editar caracteres raros de la tabla original.
 d$local_id <- c(1:nrow(d))
 
 #2) Check observations colnames ("local_id", "species","collector","taxonomist",
@@ -805,18 +807,18 @@ head(d)
 #Read data from Ascher_et_al_2016.csv-----
 
 d <- read.csv("raw_data/Ascher_et_al_2016.csv", header = TRUE, sep = ";", dec= ",")
-
+head(d)
 
 d$local_id <- c(1:nrow(d))
-colnames(d)[1]<-"Genus"
-colnames(d)[2]<-"Specie"
+colnames(d)[1]<-"genus"
+colnames(d)[2]<-"specie"
 colnames(d)[3]<-"total_lenght"
 
 d$name <- "Ascher_et_al_2016"
 d$description <-"Dataset about Megachile traits"
 d$species <- paste(d$Genus, d$Specie)
 d$country<- "Singapore"
-d$url<-"http://zoobank.org/urn:lsid:zoobank.org:pub:0F042FC4-23A3-4C6F-8CDC-DDBAA412DB1A"
+d$url<-"Ascher et al. 2016. Journal, numero: http://zoobank.org/urn:lsid:zoobank.org:pub:0F042FC4-23A3-4C6F-8CDC-DDBAA412DB1A" #credit (referemnce: url)
 
 d$Contributor_name <- rep(NA, nrow(d)) 
 d$Contributor_name[1:5] <- c("J.S.","S.R.","Z.W.W.","J.X.Q.","E.J.Y.")
