@@ -811,3 +811,60 @@ d$Contributor_lastname[1:5] <- c("Ascher", "Risch", "Soh", "Lee", "Soh")
 #CONSULTAR PAPER CON NACHO.
 
 head(d)
+
+
+#Read data from Cane_1987.csv-----
+
+d <- read.csv("raw_data/Cane_1987.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+
+
+d$name <- "Cane_1987"
+d$description <-"Dataset about Apoidea IT"
+d$species <- paste(d$genus, d$specie)
+
+
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:1] <- c("J.H.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:1] <- c("Cane")
+d$credit<- "Journal of the Kansas Entomological Society Vol. 60, No. 1 (Jan., 1987), pp. 145-147, http://www.jstor.org/stable/25084877"
+
+#SIN DATOS SOBRE LOCALIDAD, PAÍS, LAT Y LONG, ETC.
+head(d)
+
+
+
+
+
+#Read data from  Hoehn_2008----------
+
+
+d <- read.csv("raw_data/Hoehn_2008.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+
+
+d$local_id <- c(1:nrow(d))
+
+
+d$name <- "Hoehn_2008"
+d$description <-"Dataset about body sizes"
+d$species <- paste(d$genus, d$specie)
+d$location<-"Lore Lindu National Park, Central Sulawesi"
+d$lat<- "-1.5"
+d$long<- "120.03333333333333"
+d$country<- "Indonesia"
+d$doi<-"10.1098/rspb.2008.0405 " 
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:4] <- c("P.","T.","J.M.","I.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:4] <- c("Hoehn", "Tscharntke", "Tylianakis", "Steffan-Dewenter")
+
+
+head(d)
+ 
