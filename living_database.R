@@ -818,13 +818,14 @@ head(d)
 d <- read.csv("raw_data/Cane_1987.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
+
+colnames(d)[4]<-"dry_mass"
+
+
 d$local_id <- c(1:nrow(d))
-
-
 d$name <- "Cane_1987"
 d$description <-"Dataset about Apoidea IT"
 d$species <- paste(d$genus, d$specie)
-
 
 
 d$Contributor_name <- rep(NA, nrow(d)) 
