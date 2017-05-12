@@ -4,6 +4,7 @@
 
 #source helper functions and packages
 source("R/clean_species.R")
+source("R/help_functions.R")
 library(taxize)
 library(reshape2)
 #library(devtools)
@@ -11,43 +12,6 @@ library(reshape2)
 library(traitbaser)
 cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
-#temporal function
-#df_to_rl <- function(x){
-#    x[is.na(x)] <- ""
-#    header <- paste(colnames(x), collapse = ", ")
-#    temp <- apply(x, MARGIN = 1, paste, collapse = ", ")
-#    c(header, temp)
-#} #not needed anymore, I think. 
-
-#two functions I may need
-validate_sliced <- function(cnx, d){
-    if(length(unique(d$species)) > 50){
-        errors <- list()
-        cuts <- seq(1,nrow(d),50)
-        cuts[length(cuts)+1] <- nrow(d)
-        for(i in 1:(length(cuts)-1)){
-            insert <- d[cuts[i]:cuts[i+1],]
-            errors[[i]] <- validateDataset(cnx, insert)
-        }
-    } else {
-        errors <- validateDataset(cnx, d)
-    }
-    errors
-}
-import_sliced <- function(cnx, d){
-    if(length(unique(d$species)) > 50){
-        errors <- list()
-        cuts <- seq(1,nrow(d),50)
-        cuts[length(cuts)+1] <- nrow(d)
-        for(i in 1:(length(cuts)-1)){
-            insert <- d[cuts[i]:cuts[i+1],]
-            errors[[i]] <- importDataset(cnx, insert)
-        }
-    } else {
-        errors <- importDataset(cnx, d)
-    }
-    errors
-}
 
 #Input data needs to be in a data.frame with the following columns:
 
@@ -85,13 +49,13 @@ import_sliced <- function(cnx, d){
     #"n_plant_species"
     #...
 
-#"Contributor_name": Who to give credit name. Usa as many rows as contributors. Rest can be NA.
-#"Contributor_lastname": Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
-#"Contributor_country": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
-#"Contributor_organization": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
-#"Contributor_url": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
-#"Contributor_email": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
-#"Contributor_ORCID": Who to give credit ORCID. Usa as many rows as contributors. Rest can be NA.
+#"contributor_name": Who to give credit name. Usa as many rows as contributors. Rest can be NA.
+#"contributor_lastname": Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"contributor_country": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"contributor_organization": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"contributor_url": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"contributor_email": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
+#"contributor_ORCID": Who to give credit ORCID. Usa as many rows as contributors. Rest can be NA.
 
 #Add data---
 #template:
@@ -143,10 +107,10 @@ d$se_sex <- 0 #se is 0 for all
 d$doi <- "10.1371/journal.pone.0148983" #Add doi
 d$name <- "Oliveira_2016" # Add name of the dataset
 d$description <- "Dataset describing bodi sizes for 10 bee species alomg > 100 years in the Nederlands" # Add name of the dataset
-d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
-d$Contributor_name[1:4] <- c("MO", "BM", "J", "D") #populate the first forut rows
-d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
-d$Contributor_lastname[1:4] <- c("Oliveira", "Freitas", "Scheper", "Kleijn") #populate the first forut rows
+d$contributor_name <- rep(NA, nrow(d)) #create an empty column
+d$contributor_name[1:4] <- c("MO", "BM", "J", "D") #populate the first forut rows
+d$contributor_lastname <- rep(NA, nrow(d)) #create an empty column
+d$contributor_lastname[1:4] <- c("Oliveira", "Freitas", "Scheper", "Kleijn") #populate the first forut rows
 
 #4) Remove unused columns
 head(d)
@@ -155,21 +119,20 @@ d <- d[,c("local_id", "species",
           "m_IT", "n_IT", "se_IT", "m_sex",
           "n_sex", "se_sex",
           "doi", "name", "description", 
-          "Contributor_name", "Contributor_lastname")]
+          "contributor_name", "contributor_lastname")]
 
 #5) test and upload dataset
 head(d)
 #txt <- df_to_rl(d)
 errors <- validateDataset(cnx, d)
-errors
-#txt <- readLines("processed_data/Oliveira_2016.csv")
+parse_errors(errors)
 
 unique(d$month) #great catch!
 d[which(d$month > 12),"month"] <- c(7,4,5)
 
 head(d)
 errors <- validateDataset(cnx, d)
-errors
+parse_errors(errors)
 
 importDataset(cnx, d) #works!
 
@@ -200,10 +163,10 @@ d$doi <- "10.1111/ele.12687"
 # Add name of the dataset
 d$name <- "OsorioCanadas_2016"
 d$description <- "Dataset with IT measure standard error and sample size for spanish bees (phenology sumaries not included)"
-d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
-d$Contributor_name[1:6] <- c("S", "X", "A", "A","R", "J") 
-d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
-d$Contributor_lastname[1:6] <- c("Osorio-Canadas", "Arnan", "Rodrigo", "Torne-Noguera", "Molowny", "Bosch") #populate the first forut rows
+d$contributor_name <- rep(NA, nrow(d)) #create an empty column
+d$contributor_name[1:6] <- c("S", "X", "A", "A","R", "J") 
+d$contributor_lastname <- rep(NA, nrow(d)) #create an empty column
+d$contributor_lastname[1:6] <- c("Osorio-Canadas", "Arnan", "Rodrigo", "Torne-Noguera", "Molowny", "Bosch") #populate the first forut rows
 
 
 #4) Remove unused columns
@@ -211,7 +174,7 @@ d$Contributor_lastname[1:6] <- c("Osorio-Canadas", "Arnan", "Rodrigo", "Torne-No
 d <- d[,c("local_id", "species", "country",
           "m_IT", "se_IT", "n_IT",
           "doi", "name", "description", 
-          "Contributor_name", "Contributor_lastname")]
+          "contributor_name", "contributor_lastname")]
 head(d)
 
 #tasks: 1. change (,) to (.)   
@@ -225,10 +188,10 @@ head(d)
 #errors <- validateDataset(cnx, d) #time out
 
 errors <- validate_sliced(cnx, d)
-errors
+parse_errors(errors)
 
 #clean species!
-temp <- clean_species(d$species) #SLOWWWW needs used inputs.
+temp <- clean_species(d$species) #SLOWWWW needs user inputs.
 temp$final_names <- as.character(d$final_names)
 temp[which(temp$species == "Andrena carbonaria"), 4] <- "Andrena pilipes" 
 temp[which(temp$species == "Andrena niveata lecana"), 4] <- "Andrena niveata" 
@@ -264,6 +227,7 @@ head(d)
 d$local_id <- c(1:nrow(d))
 colnames(d)[1] <- "species" 
 colnames(d)[2] <- "m_fresh_mass"  #fresh mass in the paper the unit is g, but I think it is wrong and it is mg
+d$m_fresh_mass <- d$m_fresh_mass/10 #NOt mg... crap...
 colnames(d)[3] <- "n_fresh_mass" 
 d$m_sex <- d$sex
 d$n_sex <- d$n_fresh_mass
@@ -276,11 +240,11 @@ d$n_sex <- d$n_fresh_mass
 d$name <- "Stone_1989"
 d$credit <- "Stone, G. N., and P. G. Willmer. 1989. “Warm-Up Rates and Body Temperatures in Bees: The Importance of Body Size, Thermal Regime and Phylogeny.” The Journal of Experimental Biology 147 (1): 303–28.9"
 d$description <- "Dataset with body mass and minimum ambient temperature for foraging"
-#the fllwing lines are not necesary as there is doi, but for completness of the example
-d$Contributor_name <- rep(NA, nrow(d)) #create an empty column
-d$Contributor_name[1:2] <- c("G.N.", "P.G.") 
-d$Contributor_lastname <- rep(NA, nrow(d)) #create an empty column
-d$Contributor_lastname[1:2] <- c("Stone", "Willmer") #populate the first forut rows
+#the follwing lines are not necesary as there is doi, but for completness of the example
+d$contributor_name <- rep(NA, nrow(d)) #create an empty column
+d$contributor_name[1:2] <- c("G.N.", "P.G.") 
+d$contributor_lastname <- rep(NA, nrow(d)) #create an empty column
+d$contributor_lastname[1:2] <- c("Stone", "Willmer") #populate the first forut rows
 
 #4) Remove unused columns
 
@@ -288,15 +252,16 @@ d <- d[,c("local_id", "species", "credit",
           "m_fresh_mass", "n_fresh_mass",
           "m_sex", "n_sex",
           "name", "description", 
-          "Contributor_name", "Contributor_lastname")]
+          "contributor_name", "contributor_lastname")]
 
 #5) test and upload dataset
 head(d)
 errors <- validateDataset(cnx, d)
-d$name <- "test_contrib"
-errors #Yeah! it complains for species names :D
+temp <- parse_errors(errors)
 
-importDataset(cnx, d[1:4,]) 
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
 
 #Data from Borrel, 2007  ----
 
@@ -320,33 +285,28 @@ d$m_tongue_length <- d$m_tongue_length*2
 d$doi <- "10.1086/512689" #Searched in crossref
 d$name <- "Borrell_2006"
 d$description <- "Dataset with body mass and folded tongue length (to get real tongue length we x2 as stated in the paper) "
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:2] <- c("B.J") 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:2] <- c("Borrell") 
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:2] <- c("B.J") 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:2] <- c("Borrell") 
 
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species", "country","m_fresh_mass", "m_tongue_length",
           "doi", "name", "description", 
-          "Contributor_name", "Contributor_lastname")]
+          "contributor_name", "contributor_lastname")]
 head(d)
 
 #5 test and upload dataset
 
 head(d)
 errors <- validateDataset(cnx, d)
-errors
+(temp <- parse_errors(errors))
 
-d$species <- as.character(d$species)
-d$species[which(d$species == "Euglossa flammea ")] <- "Euglossa flammea"
-d <- d[-which(d$species == "Eualema meriana"),]  #BAD SOLUTION IN TESTING ONLY
-d <- d[-which(d$species == "Eualema polychroma"),]  #BAD SOLUTION IN TESTING ONLY
-d <- d[-which(d$species == "Eualema cingulata"),]  #BAD SOLUTION IN TESTING ONLY
-d$species[which(d$species == "Exaerete Frontalis")] <- "Exaerete frontalis"
-d <- d[-which(d$species == "Eualema nigrita"),]  #BAD SOLUTION IN TESTING ONLY
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
 
-importDataset(cnx, d) #same error about species not in ITIS
 
 #Data from Cariveau et al., 2016 ------
 
@@ -368,32 +328,30 @@ d$sample_size -> d$n_IT #Same sample size for both
 d$doi <- "10.1371/journal.pone.0151482" 
 d$name <- "Cariveau_2016"
 d$description <- "Dataset with measures of tongue, IT, glossa, prementum and their residuals, just included tongue and IT"
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:7] <- c("D.P.", "G.K.","I.", "J.", "J.", "J.", "R." ) 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:7] <- c("Cariveau", "Nayak", "Bartomeus", "Zientek", "Ascher", "Gibbs", "Winfree") 
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:7] <- c("D.P.", "G.K.","I.", "J.", "J.", "J.", "R." ) 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:7] <- c("Cariveau", "Nayak", "Bartomeus", "Zientek", "Ascher", "Gibbs", "Winfree") 
 
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species", "country", "location", "m_tongue_length", "n_tongue_length", 
-          "m_IT", "n_IT", "doi", "name", "description", "Contributor_name", "Contributor_lastname")]
+          "m_IT", "n_IT", "doi", "name", "description", "contributor_name", "contributor_lastname")]
 
 #5 test and upload dataset
 
 head(d)
 errors <- validateDataset(cnx, d)
-errors
-
-importDataset(cnx, d) #same error about species not in ITIS
+(temp <- parse_errors(errors))
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
 
 #Data from Bartomeus, 2013------
 
 #1) Read data 
 
 d <- read.csv("raw_data/Bartomeus_2013.csv", header = TRUE, sep = ";", dec= ",")
-
-
-
 
 #2) Check observations colnames
 
@@ -408,7 +366,7 @@ levels(d$m_parasitic) <- c("no", "yes")
 colnames(d)[11] <- "m_floral_specialization" 
 levels(d$m_floral_specialization) <- c("oligolectic", "polylectic")
 colnames(d)[12] <- "m_voltinism" 
-levels(d$m_voltinism) <- c("multivoltina", "univoltine")
+levels(d$m_voltinism) <- c("multivoltine", "univoltine")
 colnames(d)[13] <- "m_IT" 
 d$m_sex <- "female" 
 #need to rescue info on queens!
@@ -428,25 +386,26 @@ d$country <- "United States"
 d$doi <- "10.1073/pnas.1218503110" 
 d$name <- "Bartomeus_2013"
 d$description <- "Dataset with qualitative traits (nest site, sociality, pasatism, dietary specialization)"
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:7] <- c("I.", "J.", "J.", "B.", "D.", "S.", "R.") 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:7] <- c("Bartomeus", "Ascher", "Gibbs", "Danforth", "Wagner", "Hedtke", "Winfree") 
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:7] <- c("I.", "J.", "J.", "B.", "D.", "S.", "R.") 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:7] <- c("Bartomeus", "Ascher", "Gibbs", "Danforth", "Wagner", "Hedtke", "Winfree") 
 
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species", "country", "m_nest_site", "m_sociality", "m_parasitic", 
           "m_sex", "m_IT", "m_voltinism", "description", "m_floral_specialization","doi",
-          "name", "Contributor_name", "Contributor_lastname")]
+          "name", "contributor_name", "contributor_lastname")]
 
 #5) test and upload dataset
 
 head(d)
 errors <- validateDataset(cnx, d)
-errors
+(temp <- parse_errors(errors))
 
-importDataset(cnx, d) #fix names
-
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
 
 #Read data from Kremen, 2015-----
 
@@ -476,19 +435,28 @@ d$doi <- "10.1111/1365-2664.12418"
 d$name <- "Kremen_2015"
 d$description <- "Dataset with qualitative traits (sociality, dietary specialization) and quantitative traits 
 (IT for bess and wing length for flies, also the coefficient d' whih is the deviation of the interaction)"
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:2] <- c("C.", "L.") 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:2] <- c("Kremen", "Gonigle") 
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:2] <- c("C.", "L.") 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:2] <- c("Kremen", "Gonigle") 
 
 #4) Remove unused columns
 
 
 d <- d[,c("local_id", "species", "country", "location", "m_sociality",  "m_dietary_specialization", 
-          "m_IT",  "description","doi", "name", "Contributor_name", "Contributor_lastname")]
+          "m_IT",  "description","doi", "name", "contributor_name", "contributor_lastname")]
 
 
 #5) test and upload dataset
+
+head(d)
+errors <- validateDataset(cnx, d) #split!
+(temp <- parse_errors(errors))
+
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
+
 
 #Read data from Gonzalez et al., 2016-----
 
@@ -506,7 +474,8 @@ colnames(d)[2] <- "m_IT"
 
 d$country <- "Turkey"
 d$location <- "Gorukle Campus of Uludag University, Bursa"
-d$lat <- "40-13-35N, 28-52-13E" #FIX THAT!
+d$lat <- "40-13-35N" #FIX THAT!
+d$long <- "28-52-13E" #FIX THAT!
 d$doi <- "10.3897/jhr.51.9353" 
 d$name <- "Gonzalez_2016"
 d$description <- "Dataset with information about IT measure and the postion of the trap to capture the bee"
@@ -524,6 +493,14 @@ d <- d[,c("local_id", "species", "country", "location", "lat",
 
 #5) test and upload dataset
 
+head(d)
+errors <- validateDataset(cnx, d)
+(temp <- parse_errors(errors))
+
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
+
 
 #Read data from Forrest et al., 2015-----
 
@@ -539,15 +516,19 @@ colnames(d)[1] <- "species"
 colnames(d)[5] <- "m_IT"
 colnames(d)[10] <- "m_sociality" 
 colnames(d)[11] <- "m_floral_specialization"  #MODIFY!!! yo polylectic/oligolectic
+d$m_floral_specialization <- as.factor(d$m_floral_specialization)
+levels(d$m_floral_specialization) <- c("oligolectic", "polylectic", NA) #check NA!
 #Add nesting behaviour/location!
+levels(d$m_sociality) <- c("solitary", "social" ,  "solitary") #check NA!
 
 #3) Add known missing columns 
 
+d$local_id <- NA
 d$country <- "United States"
 d$location <- "Sacramento Valley, California"
 d$doi <- "10.1111/1365-2664.12433" 
 d$name <- "Forrest_2015"
-d$description <-""
+d$description <- ""
 d$Contributor_name <- rep(NA, nrow(d)) 
 d$Contributor_name[1:3] <- c("J.R.K.", "R.W.","C.") 
 d$Contributor_lastname <- rep(NA, nrow(d)) 
@@ -555,16 +536,18 @@ d$Contributor_lastname[1:3] <- c("Forrest", "Thorp", "Kremen")
 
 #4) Remove unused columns
 
-d <- d[,c("local_id", "species", "country", "location", "m_IT", "m_sociality", "m_dietary_spcialization",
+d <- d[,c("local_id", "species", "country", "location", "m_IT", "m_sociality", "m_floral_specialization",
          "description","doi", "name", "Contributor_name", "Contributor_lastname")]
 
 #5) test and upload dataset
 
-d <- read.csv("processed_data/testdata_add.csv")
 head(d)
-validateDataset(cnx, d)
-importDataset(cnx, d) #fix names
+errors <- validateDataset(cnx, d)
+(temp <- parse_errors(errors))
 
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
 
 
 #Read data from Carstensen_et_al_2012-----
