@@ -819,7 +819,7 @@ d <- read.csv("raw_data/Cane_1987.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
 
-colnames(d)[4]<-"dry_mass"
+colnames(d)[4]<-"m_dry_mass"
 
 
 d$local_id <- c(1:nrow(d))
