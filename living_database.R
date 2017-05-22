@@ -723,7 +723,7 @@ d$year <- date$year + 1900 #extract the day only
 
 d$country <- "Spain"
 d$location <- "Viana de Cega"
-d$issn <- "1130-4251" #credit ()
+d$credit <- "Zoologica Baetica vol. 10, 87-111"
 d$name <- "Gonzalez_et_al_Tabla_1_1999"
 d$description <-"Dataset about relationship of species studied, with indication of the number of specimens collected
 during each of the sampling periods. "
@@ -801,7 +801,7 @@ d$name <- "Ascher_et_al_2016"
 d$description <-"Dataset about Megachile traits"
 d$species <- paste(d$Genus, d$Specie)
 d$country<- "Singapore"
-d$url<-"Ascher et al. 2016. Journal, numero: http://zoobank.org/urn:lsid:zoobank.org:pub:0F042FC4-23A3-4C6F-8CDC-DDBAA412DB1A" #credit (referemnce: url)
+d$credit<-"Ascher et al. 2016. Journal, numero: http://zoobank.org/urn:lsid:zoobank.org:pub:0F042FC4-23A3-4C6F-8CDC-DDBAA412DB1A" #credit (referemnce: url)
 
 d$Contributor_name <- rep(NA, nrow(d)) 
 d$Contributor_name[1:5] <- c("J.S.","S.R.","Z.W.W.","J.X.Q.","E.J.Y.")
@@ -847,8 +847,6 @@ head(d)
 d <- read.csv("raw_data/Hoehn_2008.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
-
-
 d$local_id <- c(1:nrow(d))
 
 
@@ -866,6 +864,28 @@ d$Contributor_name[1:4] <- c("P.","T.","J.M.","I.")
 d$Contributor_lastname <- rep(NA, nrow(d)) 
 d$Contributor_lastname[1:4] <- c("Hoehn", "Tscharntke", "Tylianakis", "Steffan-Dewenter")
 
-
 head(d)
- 
+
+
+
+#Read data from  Hagen_2013----------
+
+d <- read.csv("raw_data/Hagen_2013.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+
+d$name <- "Hagen_2013"
+d$description <-"Dataset about life type"
+d$species <- paste(d$genus, d$specie)
+d$location<-" Aarhus"
+d$country<- "Denmark"
+d$doi<-"10.1007/s00040-013-0290-x" 
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:2] <- c("M.","Y.L.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:2] <- c("Hagen", "Dupont")
+
+#NO LAT AND LONG DATA
+head(d)
