@@ -889,3 +889,45 @@ d$Contributor_lastname[1:2] <- c("Hagen", "Dupont")
 
 #NO LAT AND LONG DATA
 head(d)
+
+
+
+#Read data from  Burkle_2013----------
+
+d <- read.csv("raw_data/Burkle_2013.csv", header = TRUE, sep = ",", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+
+d$name <- "Burkle_2013"
+d$description <-"The paper use historic data sets to quantified the degree to which global change over 120 
+years disrupted plant-pollinator interactions."
+d$location<-"Carlinville, Illinois"
+d$country<-"USA"
+d$doi<-"10.1126/science.1232728"
+#d$year<-
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:3] <- c("L.A.","J.C.","T.M.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:3] <- c("Burkle", "Marlin","Knight")
+
+colnames(d)[2]<-"pollinator"
+
+#split plant
+position <- regexpr(pattern = "_", d$plant)
+d$plant_genus <- substr(d$plant, 1, position-1)
+d$plant_species <- substr(d$plant, position+1, nchar(as.character(d$plant)))
+
+#split pollinator
+position <- regexpr(pattern = "_", d$pollinator)
+d$pollinator_genus <- substr(d$pollinator, 1, position-1)
+d$pollinator_species <- substr(d$pollinator, position+1, nchar(as.character(d$pollinator)))
+
+
+
+
+d <- d[,c("local_id", "plant_genus","plant_species", "pollinator_genus", "pollinator_species", "name","description",
+          "location","country","doi","Contributor_name","Contributor_lastname")]
+
+head(d)
