@@ -1,0 +1,140 @@
+Genus;species;Host-plant
+Andrena;accepta;Helianthus
+Andrena;aliciae;Helianthus
+Andrena;andrenoides;Salix
+Andrena;arabis;Arabis,  Cardamine
+Andrena;asteris;Solidago,  Symphyotrichum 
+Andrena;asteroides;Symphyotrichum
+Andrena;bisalicis;Salix
+Andrena;braccata;Euthamia, Solidago
+Andrena;bradleyi;Gaylussacia, Vaccinium
+Andrena;canadensis;Solidago
+Andrena;carolina;Vaccinium
+Andrena;chromotricha;Asteraceae
+Andrena;clarkella;Salix
+Andrena;cornelli;Rhododendron
+Andrena;distans;Geranium
+Andrena;duplicata;Asteraceae
+Andrena;erigeniae;Claytonia
+Andrena;erythrogaster;Salix
+Andrena;erythronii;Erythronium
+Andrena;fragilis;Cornus
+Andrena;frigida;Salix
+Andrena;fulvipennis;Chrysopsis, Heterotheca, Pityopsis
+Andrena;gardineri;Packera
+Andrena;geranii;Hydrophyllum
+Andrena;helianthi;Helianthus
+Andrena;hirticincta;Euthamia, Solidago
+Andrena;integra;Cornus
+Andrena;illinoiensis;Salix
+Andrena;kalmiae;Kalmia, Vaccinium
+Andrena;krigiana;Krigia
+Andrena;lamelliterga;Phacelia
+Andrena;macoupinensis;Salix
+Andrena;mariae;Salix
+Andrena;melanochroa;Rosaceae
+Andrena;nida;Salix
+Andrena;nigrae;Salix
+Andrena;nubecula;Solidago, Symphyotrichum
+Andrena;perisimulata;Cornus
+Andrena;phaceliae;Phacelia
+Andrena;placata;Solidago, Symphyotrichum
+Andrena;platyparia;Cornus
+Andrena;polemonii;Polemonium
+Andrena;rudbeckiae;Rudbeckia
+Andrena;salictaria;Salix
+Andrena;sigmundi;Salix
+Andrena;simplex;Solidago, Symphyotrichum
+Andrena;uvulariae*;Uvularia
+Andrena;violae;Viola
+Andrena;wellesleyana;Salix
+Andrena;ziziae;Zizia
+Andrena;ziziaeformis;Potentilla, Waldsteinia
+Calliopsis;nebraskensis**;Verbena
+Panurginus;atramontensis;Vaccinium
+Panurginus;potentillae;Potentilla
+Perdita;bequaerti;Asteraceae
+Perdita;bishoppi;Chrysopsis, Heterotheca, Pityopsis
+Perdita;boltoniae;Chrysopsis, Heterotheca, Pityopsis
+Perdita;consobrina;Asteraceae
+Perdita;gerardiae;Agalinis
+Perdita;gerhardi;Monarda
+Perdita;halictoides;Physalis
+Perdita;maculigera;Salix
+Perdita;novaeangliae;Lyonia
+Perdita;octomaculata;Solidago
+Perdita;swenki;Asteraceae
+Protandrena;abdominalis;Monarda
+Pseudopanurgus;aestivalis;Solidago, Symphyotrichum
+Pseudopanurgus;albitarsis;Asteraceae
+Pseudopanurgus;andrenoides;Asteraceae
+Pseudopanurgus;compositarum;Asteraceae
+Pseudopanurgus;illinoiensis;Asteraceae
+Pseudopanurgus;labrosiformis;Asteraceae
+Pseudopanurgus;labrosus;Asteraceae
+Pseudopanurgus;pauper;Ceanothus
+Pseudopanurgus;rugosus;Asteraceae
+Pseudopanurgus;virginicus;Houstonia
+Anthophorula;micheneri;Agalinis
+Cemolobus;ipomoeae;Calystegia,  Ipomoea
+Florilegus;condignus;Pontederia
+Habropoda;laboriosa;Cercis, Vaccinium
+Melissodes;agilis;Asteraceae
+Melissodes;apicatus;Pontederia
+Melissodes;boltoniae;Asteraceae
+Melissodes;denticulatus;Asteraceae,
+Melissodes;dentiventris;Asteraceae
+Melissodes;desponsus;Asteraceae,
+Melissodes;druriellus;Asteraceae
+Melissodes;fimbriatus;Oenothera
+Melissodes;fumosus;Asteraceae
+Melissodes;illatus;Asteraceae
+Melissodes;niveus;Asteraceae
+Melissodes;subillatus;Asteraceae
+Melissodes;trinodis;Asteraceae
+Melitoma;taurea;Calystegia,  Ipomoea
+Peponapis;pruinosa;Cucurbita
+Ptilothrix;bombiformis;Hibiscus
+Svastra;compta;Oenothera
+Svastra;obliqua;Asteraceae
+Svastra;petulca;Asteraceae
+Xenoglossa;strenua;Cucurbita
+Colletes;aestivalis;Heuchera
+Colletes;banksi;Ilex
+Colletes;brevicornis;Campanula,  Triodanis
+Colletes;compactus;Asteraceae
+Colletes;latitarsis;Physalis
+Colletes;productus;Lyonia, Vaccinium
+Colletes;simulans;Euthamia, Solidago, Symphyotrichum
+Colletes;solidaginis;Solidago
+Colletes;speculiferus;Asteraceae
+Colletes;thysanellae;Asteraceae
+Colletes;validus;Ericaceae
+Colletes;willistoni;Physalis
+Dieunomia;heteropoda;Bidens, Helianthus
+Dieunomia;nevadensis;Asteraceae
+Dufourea;monardae;Monarda
+Dufourea;novaeangliae;Pontederia
+Lasioglossum;lustrans;Pyrrhopappus
+Lasioglossum;oenotherae;Oenothera
+Lasioglossum;pectinatum;Physalis
+Hoplitis;simplex;Nemophila, Phacelia
+Megachile;inimica;Asteraceae
+Megachile;integra;Galactia,  Strophostyles
+Megachile;oenotherae;Oenothera
+Megachile;parallela;Asteraceae
+Megachile;pugnata;Asteraceae
+Megachile;xylocopoides;Asteraceae
+Osmia;chalybea;Cirsium
+Osmia;distincta;Penstemon
+Osmia;texana;Cirsium
+Osmia;virga;Vaccinium
+Paranthidium;jugatorium;Helianthus
+Trachusa;dorsalis;Strophostyles
+Macropis;ciliata;Lysimachia
+Macropis;nuda;Lysimachia
+Macropis;patellata;Lysimachia
+Macropis;steironematis;Lysimachia
+Melitta;americana;Vaccinium
+Melitta;eickworti;Vaccinium
+Melitta;melittoides;Lyonia

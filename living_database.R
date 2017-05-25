@@ -895,7 +895,7 @@ head(d)
 #Read data from  Burkle_2013----------
 
 d <- read.csv("raw_data/Burkle_2013.csv", header = TRUE, sep = ",", dec= ",")
-head(d)
+
 
 d$local_id <- c(1:nrow(d))
 
@@ -922,12 +922,42 @@ d$plant_species <- substr(d$plant, position+1, nchar(as.character(d$plant)))
 #split pollinator
 position <- regexpr(pattern = "_", d$pollinator)
 d$pollinator_genus <- substr(d$pollinator, 1, position-1)
-d$pollinator_species <- substr(d$pollinator, position+1, nchar(as.character(d$pollinator)))
+d$pollinator_specie <- substr(d$pollinator, position+1, nchar(as.character(d$pollinator)))
 
 
 
 
-d <- d[,c("local_id", "plant_genus","plant_species", "pollinator_genus", "pollinator_species", "name","description",
+d <- d[,c("local_id", "plant_genus","plant_species", "pollinator_genus", "pollinator_specie", "name","description",
           "location","country","doi","Contributor_name","Contributor_lastname")]
 
+
+#HAY QUE CORREGIR Y REPASAR. POLLINATOR?
+
+head(d)
+
+
+#Read data from  Fowler_2016----------
+
+d <- read.csv("raw_data/Fowler_2016.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Fowler_2016"
+d$description <-"Webpage about specialist bees and pollinator-plant interactions."
+d$location<-"Mid-Atlantic and Northeastern United States"
+d$country<-"USA"
+d$credit<-"http://jarrodfowler.com/specialist_bees.html"
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:2] <- c("J.","S.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:2] <- c("Fowler", "Droege")
+
+
+colnames(d)[2]<-"specie"
+colnames(d)[3]<-"plant_genus"
+
+
+d <- d[,c("local_id", "plant_genus","Genus", "specie", "name","description",
+          "location","country","credit","Contributor_name","Contributor_lastname")]
 head(d)
