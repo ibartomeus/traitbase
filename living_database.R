@@ -994,3 +994,34 @@ d <- d[,c("local_id","Genus", "specie", "floral_specialization", "sociality", "n
 head(d)
 
 #REPASAR. RELLENAR ESPACIOS EN BLANCO CON "NA"
+
+
+
+
+#Read data from  Hupfenmüller_2014----------
+
+
+d <- read.csv("raw_data/Hupfenmüller_2014.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Hupfenmüller_2014"
+d$description <-"Dataset about ecologycal traits and abundance"
+d$location<-"Upper Franconia, Bavaria"
+d$country<-"Germany"
+d$doi<-"10.1371/journal.pone.0104439"
+d$year<-"2010"
+
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:3] <- c("S.","I.","A.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:3] <- c("Hupfenmüller","Steffan-Dewenter","Holzschuh")
+
+
+colnames(d)[6]<-"sociality"
+
+d <- d[,c("local_id","Genus", "specie", "Abundance", "sociality","year","name","description",
+          "location","country","doi","Contributor_name","Contributor_lastname")]
+head(d)

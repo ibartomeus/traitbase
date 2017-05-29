@@ -1,0 +1,190 @@
+Family;Genus;specie;Abundance;Frequency;Sociality;habitat;body
+Andrenidae;Andrena;barbilabris;1;1;solitary;generalists;
+Andrenidae;Andrena;bicolor;3;3;solitary;generalists;
+Andrenidae;Andrena;chrysosceles;11;6;solitary;generalists;
+Andrenidae;Andrena;cineraria;47;15;solitary;generalists;
+Andrenidae;Andrena;combinata;6;4;;specialist;
+Andrenidae;Andrena;curvungula;1;1;;specialist;
+Andrenidae;Andrena;falsifica;57;15;solitary;generalists;
+Andrenidae;Andrena;flavipes;157;22;solitary;generalists;
+Andrenidae;Andrena;fucata;1;1;solitary;generalists;
+Andrenidae;Andrena;fulva;1;1;solitary;generalists;
+Andrenidae;Andrena;fulvago;2;2;solitary;generalists;
+Andrenidae;Andrena;fulvata;4;3;solitary;generalists;
+Andrenidae;Andrena;gravida;9;7;solitary;generalists;
+Andrenidae;Andrena;haemorrhoa;25;13;solitary;generalists;
+Andrenidae;Andrena;hattorfiana;3;2;solitary;generalists;
+Andrenidae;Andrena;helvola;5;4;solitary;generalists;
+Andrenidae;Andrena;humilis;1;1;solitary;generalists;
+Andrenidae;Andrena;intermedia;1;1;;specialist;
+Andrenidae;Andrena;jacobi;6;4;solitary;generalists;
+Andrenidae;Andrena;labialis;4;2;solitary;generalists;
+Andrenidae;Andrena;labiata;9;6;solitary;generalists;
+Andrenidae;Andrena;minutula;12;6;solitary;generalists;
+Andrenidae;Andrena;minutuloides;19;10;solitary;generalists;
+Andrenidae;Andrena;nigroaenea;20;12;solitary;generalists;
+Andrenidae;Andrena;nitida;15;10;solitary;generalists;
+Andrenidae;Andrena;ovatula;51;19;;specialist;
+Andrenidae;Andrena;pandellei;2;2;solitary;generalists;
+Andrenidae;Andrena;proxima;12;9;solitary;generalists;
+Andrenidae;Andrena;strohmella;9;5;solitary;generalists;
+Andrenidae;Andrena;subopaca;8;7;;specialist;
+Andrenidae;Andrena;tibialis;1;1;solitary;generalists;
+Andrenidae;Andrena;vaga;3;3;solitary;generalists;
+Apidae;Anthophora;aestivalis;13;7;;specialist;
+Apidae;Anthophora;furcata;1;1;solitary;generalists;
+Apidae;Anthophora;plumipes;3;3;solitary;generalists;
+Apidae;Anthophora;quadrimaculata;3;3;solitary;generalists;
+Apidae;Bombus;hortorum;17;10;social;generalist;Large
+Apidae;Bombus;humilis;39;16;social;generalist;Large
+Apidae;Bombus;hypnorum;1;1;social;generalist;Large
+Apidae;Bombus;jonellus;1;1;social;generalist;Large
+Apidae;Bombus;lapidarius;172;23;social;generalist;Large
+Apidae;Bombus;lucorum;6;2;social;generalist;Large
+Apidae;Bombus;pascuorum;137;23;social;generalist;Large
+Apidae;Bombus;pratorum;33;17;social;generalist;Large
+Apidae;Bombus;ruderarius;1;1;social;generalist;Large
+Apidae;Bombus;soroeensis;29;11;social;generalist;Large
+Apidae;Bombus;subterraneus;1;1;social;generalist;Large
+Apidae;Bombus;sylvarum;47;11;social;generalist;Large
+Apidae;Bombus;terrestris agg;98;21;social;generalist;Large
+Apidae;Bombus;wurflenii;13;9;social;generalist;Large
+Apidae;Ceratina;cyanea;22;11;;specialist;
+Apidae;Epeolus;variegatus;8;6;cuckoo bee;;
+Apidae;Melecta;albifrons;1;1;cuckoo bee;;
+Apidae;Melecta;luctuosa;3;2;cuckoo bee;;
+Apidae;Nomada;alboguttata;1;1;cuckoo bee;;
+Apidae;Nomada;bifasciata;20;13;cuckoo bee;;
+Apidae;Nomada;conjungens;4;4;cuckoo bee;;
+Apidae;Nomada;distinguenda;1;1;cuckoo bee;;
+Apidae;Nomada;emerginata;1;1;cuckoo bee;;
+Apidae;Nomada;fabriciana;5;4;cuckoo bee;;
+Apidae;Nomada;ferruginata;1;1;cuckoo bee;;
+Apidae;Nomada;flava;9;7;cuckoo bee;;
+Apidae;Nomada;flavoguttata;27;12;cuckoo bee;;
+Apidae;Nomada;flavopicta;1;1;cuckoo bee;;
+Apidae;Nomada;fucata;23;10;cuckoo bee;;
+Apidae;Nomada;goodeniana;25;11;cuckoo bee;;
+Apidae;Nomada;integra;1;1;cuckoo bee;;
+Apidae;Nomada;lathburiana;19;12;cuckoo bee;;
+Apidae;Nomada;marshamella;18;13;cuckoo bee;;
+Apidae;Nomada;piccioliana;1;1;cuckoo bee;;
+Apidae;Nomada;ruficornis;6;4;cuckoo bee;;
+Apidae;Nomada;sexfasciata;4;2;cuckoo bee;;
+Apidae;Nomada;sheppardana;3;3;cuckoo bee;;
+Apidae;Nomada;signata;1;1;cuckoo bee;;
+Apidae;Nomada;succincta;15;7;cuckoo bee;;
+Apidae;Psithyrus;barbutellus;4;3;cuckoo bee;;
+Apidae;Psithyrus;bohemicus;37;11;cuckoo bee;;
+Apidae;Psithyrus;campestris;5;5;cuckoo bee;;
+Apidae;Psithyrus;norvegicus;5;3;cuckoo bee;;
+Apidae;Psithyrus;rupestris;10;5;cuckoo bee;;
+Apidae;Psithyrus;sylvestris;5;5;cuckoo bee;;
+Apidae;Thyreus;orbatus;1;1;cuckoo bee;;
+Colletidae;Colletes;cunicularius;4;4;solitary;generalists;
+Colletidae;Colletes;daviesanus;7;2;solitary;generalists;
+Colletidae;Colletes;similis;2;2;;specialist;
+Colletidae;Hylaeus;annularis;6;6;;specialist;
+Colletidae;Hylaeus;brevicornis;5;3;solitary;generalists;
+Colletidae;Hylaeus;communis;4;2;solitary;generalists;
+Colletidae;Hylaeus;confusus;6;5;solitary;generalists;
+Colletidae;Hylaeus;difformis;2;2;solitary;generalists;
+Colletidae;Hylaeus;gredleri;3;2;solitary;generalists;
+Colletidae;Hylaeus;hyalinatus;22;10;solitary;generalists;
+Colletidae;Hylaeus;kahri;1;1;solitary;generalists;
+Colletidae;Hylaeus;nigritus;5;3;;specialist;
+Colletidae;Hylaeus;paulus;2;2;solitary;generalists;
+Colletidae;Hylaeus;sinuatus;6;4;solitary;generalists;
+Colletidae;Hylaeus;styriacus;3;3;solitary;generalists;
+Colletidae;Hylaeus;variegatus;1;1;;specialist;
+Halictidae;Dufourea;dentiventris;3;2;solitary;generalists;
+Halictidae;Dufourea;inermis;2;2;solitary;generalists;
+Halictidae;Halictus;confusus;2;1;;specialist;
+Halictidae;Halictus;eurygnathus;1;1;;specialist;
+Halictidae;Halictus;maculatus;32;6;social;generalist;Small
+Halictidae;Halictus;rubicundus;34;9;social;generalist;Small
+Halictidae;Halictus;scabiosae;18;7;;specialist;
+Halictidae;Halictus;sexcinctus;2;2;solitary;generalists;
+Halictidae;Halictus;simplex agg;58;11;;specialist;
+Halictidae;Halictus;tumulorum;185;22;social;generalist;Small
+Halictidae;Lasioglossum;aeratum;1;1;solitary;generalists;
+Halictidae;Lasioglossum;albipes;27;12;solitary;generalists;
+Halictidae;Lasioglossum;calceatum;196;23;social;generalist;Small
+Halictidae;Lasioglossum;costulatum;15;7;solitary;generalists;
+Halictidae;Lasioglossum;fratellum;11;9;solitary;generalists;
+Halictidae;Lasioglossum;fulvicorne;152;21;solitary;generalists;
+Halictidae;Lasioglossum;laevigatum;3;3;solitary;generalists;
+Halictidae;Lasioglossum;laticeps;31;14;social;generalist;Small
+Halictidae;Lasioglossum;lativentre;14;11;solitary;generalists;
+Halictidae;Lasioglossum;leucopus;6;5;;specialist;
+Halictidae;Lasioglossum;leucozonium;31;16;solitary;generalists;
+Halictidae;Lasioglossum;lineare;2;2;;specialist;
+Halictidae;Lasioglossum;lissonotum;1;1;;specialist;
+Halictidae;Lasioglossum;malachurum;3;1;;specialist;
+Halictidae;Lasioglossum;minutulum;6;6;;specialist;
+Halictidae;Lasioglossum;morio;134;23;social;generalist;Small
+Halictidae;Lasioglossum;nitidulum;29;12;solitary;generalists;
+Halictidae;Lasioglossum;parvulum;6;5;;specialist;
+Halictidae;Lasioglossum;pauxillum;108;18;social;generalist;Small
+Halictidae;Lasioglossum;punctatissimum;3;2;solitary;generalists;
+Halictidae;Lasioglossum;puncticolle;2;2;social;generalist;Small
+Halictidae;Lasioglossum;pygmaeum;1;1;;specialist;
+Halictidae;Lasioglossum;quadrinotatum;1;1;solitary;generalists;
+Halictidae;Lasioglossum;villosulum;48;15;solitary;generalists;
+Halictidae;Lasioglossum;xanthopus;2;1;solitary;generalists;
+Halictidae;Lasioglossum;zonulum;3;2;solitary;generalists;
+Halictidae;Rophites;algirus;8;1;;specialist;
+Halictidae;Sphecodes;albilabris;3;3;cuckoo bee;;
+Halictidae;Sphecodes;crassus;10;6;cuckoo bee;;
+Halictidae;Sphecodes;ephippius;86;22;cuckoo bee;;
+Halictidae;Sphecodes;ferruginatus;29;12;cuckoo bee;;
+Halictidae;Sphecodes;geofrellus;1;1;cuckoo bee;;
+Halictidae;Sphecodes;gibbus;15;9;cuckoo bee;;
+Halictidae;Sphecodes;hyalinatus;20;10;cuckoo bee;;
+Halictidae;Sphecodes;monilicornis;56;18;cuckoo bee;;
+Halictidae;Sphecodes;pellucidus;1;1;cuckoo bee;;
+Halictidae;Sphecodes;puncticeps;10;8;cuckoo bee;;
+Halictidae;Sphecodes;reticulatus;2;2;cuckoo bee;;
+Halictidae;Sphecodes;rufiventris;6;1;cuckoo bee;;
+Megachilidae;Anthidium;manicatum;6;5;solitary;generalists;
+Megachilidae;Anthidium;oblongatum;3;2;;specialist;
+Megachilidae;Anthidium;punctatum;25;11;;specialist;
+Megachilidae;Anthidium;strigatum;6;5;;specialist;
+Megachilidae;Chelostoma;campanularum;17;9;solitary;generalists;
+Megachilidae;Chelostoma;distinctum;1;1;solitary;generalists;
+Megachilidae;Chelostoma;florisomne;1;1;solitary;generalists;
+Megachilidae;Chelostoma;rapunculi;7;5;solitary;generalists;
+Megachilidae;Coelioxys;afra;7;4;cuckoo bee;;
+Megachilidae;Coelioxys;conica;3;3;cuckoo bee;;
+Megachilidae;Coelioxys;elongata;2;2;cuckoo bee;;
+Megachilidae;Coelioxys;mandibularis;4;4;cuckoo bee;;
+Megachilidae;Heriades;truncorum;15;8;solitary;generalists;
+Megachilidae;Megachile;alpicola;2;2;solitary;generalists;
+Megachilidae;Megachile;centuncularis;3;3;solitary;generalists;
+Megachilidae;Megachile;circumcincta;4;2;;specialist;
+Megachilidae;Megachile;ericetorum;1;1;;specialist;
+Megachilidae;Megachile;nigriventris;6;5;solitary;generalists;
+Megachilidae;Megachile;pilidens;15;8;;specialist;
+Megachilidae;Megachile;versicolor;5;5;solitary;generalists;
+Megachilidae;Megachile;willughbiella;1;1;solitary;generalists;
+Megachilidae;Osmia;adunca;22;6;;specialist;
+Megachilidae;Osmia;andrenoides;5;1;;specialist;
+Megachilidae;Osmia;aurulenta;60;19;;specialist;
+Megachilidae;Osmia;bicolor;125;21;solitary;generalists;
+Megachilidae;Osmia;brevicornis;6;4;solitary;generalists;
+Megachilidae;Osmia;caerulescens;1;1;solitary;generalists;
+Megachilidae;Osmia;claviventris;5;4;solitary;generalists;
+Megachilidae;Osmia;leaiana;1;1;solitary;generalists;
+Megachilidae;Osmia;leucomelana;9;8;solitary;generalists;
+Megachilidae;Osmia;mitis;7;4;;specialist;
+Megachilidae;Osmia;rufa;23;10;solitary;generalists;
+Megachilidae;Osmia;rufohirta;43;11;;specialist;
+Megachilidae;Osmia;spinulosa;60;13;;specialist;
+Megachilidae;Osmia;uncinata;3;2;solitary;generalists;
+Megachilidae;Osmia;xanthomelana;9;6;;specialist;
+Megachilidae;Stelis;ornatula;1;1;cuckoo bee;;
+Megachilidae;Stelis;punctulatissima;5;4;cuckoo bee;;
+Megachilidae;Stelis;signata;1;1;cuckoo bee;;
+Megachilidae;Trachusa;byssina;31;13;;specialist;
+Melittidae;Melitta;haemorrhoidalis;10;7;solitary;generalists;
+Melittidae;Melitta;leporina;1;1;solitary;generalists;
