@@ -1001,12 +1001,12 @@ head(d)
 #Read data from  Hupfenmüller_2014----------
 
 
-d <- read.csv("raw_data/Hupfenmüller_2014.csv", header = TRUE, sep = ";", dec= ",")
+d <- read.csv("raw_data/Hupfenmuller_2014.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
 
 d$local_id <- c(1:nrow(d))
-d$name <- "Hupfenmüller_2014"
+d$name <- "Hupfenmuller_2014"
 d$description <-"Dataset about ecologycal traits and abundance"
 d$location<-"Upper Franconia, Bavaria"
 d$country<-"Germany"
