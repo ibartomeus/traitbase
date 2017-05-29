@@ -961,3 +961,36 @@ colnames(d)[3]<-"plant_genus"
 d <- d[,c("local_id", "plant_genus","Genus", "specie", "name","description",
           "location","country","credit","Contributor_name","Contributor_lastname")]
 head(d)
+
+
+
+
+#Read data from  Mafalda_2017----------
+
+
+d <- read.csv("raw_data/Mafalda_2017.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Mafalda_2017"
+d$description <-"Dataset about ecologycal traits and some interacctions data"
+d$location<-"Tapada da Ajuda, Lisboa"
+d$country<-"Portugal"
+d$credit<-"http://hdl.handle.net/10451/27533"
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:1] <- c("M.N.C.C")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:1] <- c("Rocha")
+
+
+colnames(d)[2]<-"specie"
+colnames(d)[3]<-"floral_specialization"
+colnames(d)[5]<-"nest_location"
+
+d <- d[,c("local_id","Genus", "specie", "floral_specialization", "sociality", "nest_location", "plant_genus","plant_specie","name","description",
+          "location","country","credit","Contributor_name","Contributor_lastname")]
+head(d)
+
+#REPASAR. RELLENAR ESPACIOS EN BLANCO CON "NA"

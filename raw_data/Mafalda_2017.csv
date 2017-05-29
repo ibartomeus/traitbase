@@ -1,0 +1,66 @@
+Genus;specie;especialización;sociality;NIDIFICACIÓN;plant_genus;plant_specie
+Andrena;spp.;;;;Sinapis;arvensis
+Andrena;aeneiventris;polylectic;solitary;soil;;
+Andrena;agilissima;oligolectic;solitary;soil;Brassica;oleracea
+Andrena;lagopus;oligolectic;solitary;soil;;
+Andrena;propinqua;polylectic;solitary;soil;;
+Andrena;similis;oligolectic;solitary;soil;;
+Panurginus;albopilosus;oligolectic;solitary;soil;;
+Panurgus;calcaratus;oligolectic;solitary;soil;;
+Amegilla;albigena;polylectic;solitary;soil;Lavandula;angustifolia
+Amegilla;quadrifasciata;polylectic;solitary;soil;Lantana;camara
+Anthophora;plumipes;polylectic;solitary;soil;Vinca;difformis
+Anthophora;plumipes;polylectic;solitary;soil;Oxalis;pes-caprae
+Apis;mellifera;polylectic;social;colmena;Rosmarinus;officinalis
+Bombus;lucorum;polylectic;social;soil;;
+Bombus;ruderatus;polylectic;social;soil;Hedysarum;coronarium
+Bombus;terrestris;polylectic;social;soil;Hedysarum;coronarium
+Bombus;vestalis;[polylectic];cleptoparasite;host substrate;;
+Ceratina;cucurbitina;polylectic;solitary;cavity;;
+Ceratina;nigrolabiata;polylectic;solitary;cavity;;
+Eucera;codinai;oligolectic;solitary;soil;Vinca;difformis
+Eucera;nigrilabris;oligolectic;solitary;soil;;
+Eucera;notata;oligolectic;solitary;soil;Vinca;difformis
+Melecta;albifrons;[polylectic];cleptoparasite;host substrate;Vinca;difformis
+Nomada;agrestis;[polylectic];cleptoparasite;host substrate;;
+Nomada;basalis;[polylectic];cleptoparasite;host substrate;;
+Nomada;integra;[polylectic];cleptoparasite;host substrate;;
+Xylocopa;violacea;polylectic;solitary;cavity;;
+Collete;spp.;;;;Maurocenia;frangularia
+Hylaeus;dilatatus;polylectic;solitary;cavity;;
+Hylaeus;pictipes;polylectic;solitary;cavity;Sinapis;arvensis
+Halictus;fulvipes;polylectic;;soil;;
+Halictus;gemmeus;polylectic;;soil;;
+Halictus;scabiosae;polylectic;social;soil;Cynara;cardunculus
+Halictus;scabiosae;polylectic;social;soil;Origanum;vulgare
+Lasioglossum;discum fertoni;oligolectic;;soil;;
+Lasioglossum;interruptum;polylectic;social;soil;;
+Lasioglossum;malachurum;polylectic;social;soil;Cynara;cardunculus
+Lasioglossum;perclavipes;polylectic;;soil;;
+Anthidium;cingulatum;polylectic;solitary;cavity;Ononis;ramosissima
+Anthidium;manicatum;polylectic;solitary;cavity;Stachys;ocymastrum
+Anthidium;manicatum;polylectic;solitary;cavity;Rosmarinus;officinalis
+Anthidium;oblongatum;polylectic;solitary;cavity;Ononis;ramosissima
+Heriades;crenulatus;oligolectic;solitary;cavity;;
+Hoplitis;adunca;oligolectic;solitary;cavity;Echium;tuberculatum
+Hoplitis;benoisti;oligolectic;solitary;cavity;Echium;tuberculatum
+Megachile;spp.;;;;Galactites;tomentosus
+Megachile;spp.;;;;Galactites;tomentosus
+Megachile;centuncularis;polylectic;solitary;cavity;;
+Megachile;ericetorum;polylectic;solitary;cavity;Rosmarinus;officinalis
+Megachile;fertoni;polylectic;solitary;cavity;;
+Megachile;lagopoda;polylectic;solitary;soil;;
+Megachile;melanopyga;polylectic;solitary;cavity;;
+Megachile;pilidens;polylectic;solitary;cavity;;
+Megachile;willughbiella;polylectic;solitary;cavity;;
+Osmia;spp.;;;;Hedysarum;coronarium
+Osmia;aurulenta;polylectic;solitary;cavity;;
+Osmia;bicornis;polylectic;solitary;cavity;;
+Osmia;brevicornis;oligolectic;solitary;cavity;;
+Osmia;caerulescens;polylectic;solitary;cavity;;
+Osmia;latreillei;oligolectic;solitary;cavity;;
+Osmia;niveata;oligolectic;solitary;cavity;;
+Osmia;rufohirta;polylectic;solitary;cavity;;
+Osmia;signata;oligolectic;solitary;cavity;;
+Rhodanthidium;septemdentatum;polylectic;solitary;cavity;;
+Rhodanthidium;sticticum;polylectic;solitary;cavity;;
