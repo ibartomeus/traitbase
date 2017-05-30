@@ -1025,3 +1025,35 @@ colnames(d)[6]<-"sociality"
 d <- d[,c("local_id","Genus", "specie", "Abundance", "sociality","year","name","description",
           "location","country","doi","Contributor_name","Contributor_lastname")]
 head(d)
+
+
+
+#Read data from  Barbir_2014----------
+
+
+d <- read.csv("raw_data/Barbir_2014.csv", header = TRUE, sep = ",", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Barbir_2014"
+d$description <-"Dataset about size traits"
+d$location<-" La Poveda, Arganda del Rey, Madrid"
+d$country<-"Spain"
+d$doi<-"10.1111/afe.12076"
+d$year<-"2011/2012"
+d$lat<-"40.3166667"
+d$long<-"-3.4833333333333334"
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:4] <- c("J.","F.R.","C.","J.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:4] <- c("Barbir","Badenes-Pérez","Fernández-Quintanilla","Dorado")
+
+colnames(d)[5]<-"m_bsize"
+
+d <- d[,c("local_id","Genus", "specie","m_bsize","year","name","description",
+          "location","country","lat","long","doi","Contributor_name","Contributor_lastname")]
+
+head(d)
+
+#REPASAR Y ESTANDARIZAR.
