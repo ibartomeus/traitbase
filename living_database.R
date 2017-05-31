@@ -1057,3 +1057,34 @@ d <- d[,c("local_id","Genus", "specie","m_bsize","year","name","description",
 head(d)
 
 #REPASAR Y ESTANDARIZAR.
+
+
+
+#Read data from  Sydenham_2016----------
+
+
+
+d <- read.csv("raw_data/Sydenham_2016.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Sydenham_2016"
+d$description <-"Dataset about IT size"
+d$country<-"Norway"
+d$doi<-"10.1002/ece3.1871"
+d$year<-"2009/2010/2013"
+
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:4] <- c("M.A.K.","L.D.","S.R.","K.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:4] <- c("Sydenham","Häusler","Moe","Eldegard")
+
+colnames(d)[3]<-"individuals"
+
+d <- d[,c("local_id","Genus", "specie","individuals","m_IT", "n_IT","se_IT","year","name","description",
+          "country","doi","Contributor_name","Contributor_lastname")]
+
+
+#SIN LOCALIZACIÓN EXACTA. NO LAT, NO LONG. ¿CREAR COLUMNA PARA REMARCAR QUE SON CAVITY NESTING?
+head(d)
