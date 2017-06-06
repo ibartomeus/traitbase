@@ -1,0 +1,491 @@
+Plant Family;Plant genus;Plant specie;Pollinator Family;Pollinator genus;Pollinator specie;Interaction frequency;Site
+Liliaceae;Allium;roseum;Apidae;Apis;mellifera;0.52;SB
+Liliaceae;Allium;roseum;Anthomyiidae;Delia;platura;0.04;SB
+Liliaceae;Allium;roseum;Bibionidae;Dilophus;antipedalis;2.22;SB
+Liliaceae;Allium;roseum;Formicidae;Linepithema;humile;0.42;SB
+Liliaceae;Allium;roseum;Nitidulidae;Meligethes;sp.;0.72;SB
+Liliaceae;Allium;roseum;Apidae;Osmia;caerulescens;0.06;SB
+Liliaceae;Allium;roseum;Apidae;Osmia;latreillei;0.12;SB
+Liliaceae;Allium;roseum;Chrysomelidae;Spermophagus;sp.;0.30;SB
+Liliaceae;Allium;roseum;Vespidae;Stenodynerus;fastidiosissimus;0.04;SB
+Liliaceae;Allium;roseum;Formicidae;Tapinoma;madeirense;0.04;SB
+Liliaceae;Allium;roseum;Curculionidae;Tychius;aureolus;0.04;SB
+Liliaceae;Asphodelus;fistulosus;Apidae;Apis;mellifera;0.36;SB
+Liliaceae;Asphodelus;fistulosus;Apidae;Ceratina;sp.(cucurbitina + dellatorreana);0.07;SB
+Liliaceae;Asphodelus;fistulosus;Bibionidae;Dilophus;antipedalis;0.12;SB
+Liliaceae;Asphodelus;fistulosus;Eurytomidae;Eurytomidae;sp.;0.05;SB
+Liliaceae;Asphodelus;fistulosus;Apidae;Lasioglossum;griseolum;0.01;SB
+Liliaceae;Asphodelus;fistulosus;Apidae;Lasioglossum;villosulum;0.01;SB
+Liliaceae;Asphodelus;fistulosus;Formicidae;Linepithema;humile;0.03;SB
+Liliaceae;Asphodelus;fistulosus;Nitidulidae;Meligethes;sp.;0.15;SB
+Liliaceae;Asphodelus;fistulosus;Mordellidae;Mordellistena;sp.;0.01;SB
+Liliaceae;Asphodelus;fistulosus;Lygaeidae;Nysius;cymoides;0.01;SB
+Liliaceae;Asphodelus;fistulosus;Chrysomelidae;Spermophagus;sp.;0.01;SB
+Liliaceae;Asphodelus;fistulosus;Rhinophoridae;Stevenia;deceptoria;0.01;SB
+Scrophulariaceae;Bellardia;trixago;Apidae;Lasioglossum;malachurum;0.01;SB
+Scrophulariaceae;Bellardia;trixago;Nitidulidae;Meligethes;sp.;0.18;SB
+Scrophulariaceae;Bellardia;trixago;Apidae;Osmia;aurulenta;0.08;SB
+Scrophulariaceae;Bellardia;trixago;Dasytidae;Psilotrix;sp.(illustris + cyaneus+ aureolus);0.06;SB
+Gentianaceae;Blackstonia;perfoliata;Curculionidae;Aulacobaris;sp.;0.06;SB
+Gentianaceae;Blackstonia;perfoliata;Vespidae;Eumenes;coarctatus;0.02;SB
+Gentianaceae;Blackstonia;perfoliata;Syrphidae;Sphaerophoria;sp. (scripta+ ruppellii);0.03;SB
+Asteraceae;Centaurea;aspera;-;Acari;sp.;0.12;SB
+Asteraceae;Centaurea;aspera;Apidae;Apis;mellifera;0.98;SB
+Asteraceae;Centaurea;aspera;Braconidae;Braconidae;sp2;0.01;SB
+Asteraceae;Centaurea;aspera;Apidae;Halictus;sp. (scabiosae+ fulvipes);2.81;SB
+Asteraceae;Centaurea;aspera;Apidae;Lasioglossum;albocinctum;0.01;SB
+Asteraceae;Centaurea;aspera;Formicidae;Linepithema;humile;0.19;SB
+Asteraceae;Centaurea;aspera;Apidae;Megachile;apicalis;0.08;SB
+Asteraceae;Centaurea;aspera;Apidae;Megachile;pilidens;0.03;SB
+Asteraceae;Centaurea;aspera;Nitidulidae;Meligethes;sp.;0.15;SB
+Asteraceae;Centaurea;aspera;Mordellidae;Mordellistena;sp.;0.02;SB
+Asteraceae;Centaurea;aspera;Oedemeridae;Oedemera;caudata;0.02;SB
+Asteraceae;Centaurea;aspera;Oedemeridae;Oedemera;flavipes;0.01;SB
+Asteraceae;Centaurea;aspera;Oedemeridae;Oedemera;simplex;0.03;SB
+Asteraceae;Centaurea;aspera;Apidae;Osmia;latreillei;0.01;SB
+Asteraceae;Centaurea;aspera;Lycenidae;Polyommatus;icarus;0.06;SB
+Asteraceae;Centaurea;aspera;Apidae;Rhodanthidium;septemdentatum;0.05;SB
+Asteraceae;Centaurea;aspera;Nymphalidae;Vanessa;carduii;0.01;SB
+Gentianaceae;Centaurium;erythraea;Apidae;Ceylalictus;variegatus;0.03;SB
+Gentianaceae;Centaurium;erythraea;Syrphidae;Helophilus;trivittatus;0.09;SB
+Gentianaceae;Centaurium;erythraea;Syrphidae;Sphaerophoria;sp. (scripta + rueppellii);0.03;SB
+Cistaceae;Cistus;salviifolius;-;Acari;sp;0.30;SB
+Cistaceae;Cistus;salviifolius;Apidae;Andrena subgen. Micrandrena;;0.02;SB
+Cistaceae;Cistus;salviifolius;Dermestidae;Anthrenus;miniopictus;0.02;SB
+Cistaceae;Cistus;salviifolius;Dermestidae;Anthrenus;pimpinellae;0.02;SB
+Cistaceae;Cistus;salviifolius;Apidae;Apis;mellifera;0.36;SB
+Cistaceae;Cistus;salviifolius;Chrysomelidae;Bruchidius;sp1;0.09;SB
+Cistaceae;Cistus;salviifolius;Chrysomelidae;Bruchidae;sp3;0.02;SB
+Cistaceae;Cistus;salviifolius;Milichiidae;Desmometopa;m-nigrum;0.02;SB
+Cistaceae;Cistus;salviifolius;Malachiidae;Ebaeua;apendiculatus;0.04;SB
+Cistaceae;Cistus;salviifolius;Apidae;Eucera;oraniensis;0.28;SB
+Cistaceae;Cistus;salviifolius;Sciomyzidae;Euthycera;alaris;0.02;SB
+Cistaceae;Cistus;salviifolius;Tenebrionidae;Isomira;sp.;0.08;SB
+Cistaceae;Cistus;salviifolius;Apidae;Lasioglossum;prasinum;0.04;SB
+Cistaceae;Cistus;salviifolius;Formicidae;Linepithema;humile;0.17;SB
+Cistaceae;Cistus;salviifolius;Nitidulidae;Meligethes;sp.;0.91;SB
+Cistaceae;Cistus;salviifolius;Mordellidae;Mordellistena;sp.;0.02;SB
+Cistaceae;Cistus;salviifolius;Stratiomyidae;Nemotelus;pantherinus;0.04;SB
+Cistaceae;Cistus;salviifolius;Oedemeridae;Oedemera;flavipes;0.09;SB
+Cistaceae;Cistus;salviifolius;Cetoniidae;Oxythyrea;funesta;0.08;SB
+Cistaceae;Cistus;salviifolius;Dasytidae;Psilotrix ;sp. (illustris + cyaneus + aureolus);0.04;SB
+Cistaceae;Cistus;salviifolius;Apidae;Rhodanthidium;septemdentatum;0.04;SB
+Cistaceae;Cistus;salviifolius;Chrysomelidae;Spermophagus;sp.;0.26;SB
+Cistaceae;Cistus;salviifolius;Rhinophoridae;Stevenia;deceptoria;0.02;SB
+Convolvulaceae;Convolvulus;althaeoides;Apidae;Apis;mellifera;0.06;SB
+Convolvulaceae;Convolvulus;althaeoides;Apidae;Bombus;terrestris;0.23;SB
+Convolvulaceae;Convolvulus;althaeoides;Pieridae;Colias;croceus;0.03;SB
+Convolvulaceae;Convolvulus;althaeoides;Malachiidae;Ebaeua;apendiculatus;0.01;SB
+Convolvulaceae;Convolvulus;althaeoides;Syrphidae;Helophilus;trivittatus;0.01;SB
+Convolvulaceae;Convolvulus;althaeoides;Nitidulidae;Meligethes;sp.;0.13;SB
+Convolvulaceae;Convolvulus;althaeoides;Stratiomyidae;Nemotelus;pantherinus;0.01;SB
+Convolvulaceae;Convolvulus;althaeoides;Oedemeridae;Oedemera;caudata;0.01;SB
+Convolvulaceae;Convolvulus;althaeoides;Oedemeridae;Oedemera;flavipes;0.01;SB
+Convolvulaceae;Convolvulus;althaeoides;Oedemeridae;Oedemera;simplex;0.06;SB
+Convolvulaceae;Convolvulus;althaeoides;Dasytidae;Psilotrix ;sp. (illustris + cyaneus + aureolus);0.07;SB
+Convolvulaceae;Convolvulus;althaeoides;Apidae;Rhodanthidium;septemdentatum;0.05;SB
+Convolvulaceae;Convolvulus;althaeoides;Chrysomelidae;Spermophagus;sp.;1.83;SB
+Convolvulaceae;Convolvulus;althaeoides;Calliphoridae;Stomorhina;lunata;0.01;SB
+Convolvulaceae;Convolvulus;althaeoides;Curculionidae;Tychius;aureolus;0.01;SB
+Convolvulaceae;Convolvulus;althaeoides;Nymphalidae;Vanessa;carduii;0.01;SB
+Convolvulaceae;Convolvulus;arvensis;-;Acari;sp.;0.04;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Andrena ;sp1 (ovatula + fulvipes);0.04;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Ceratina ;sp. (cucurbitina + dellatorreana);0.22;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Ceylalictus;variegatus;0.04;SB
+Convolvulaceae;Convolvulus;arvensis;Cerambicidae;Chlorophorus;trifasciatus;0.01;SB
+Convolvulaceae;Convolvulus;arvensis;Pieridae;Colias;croceus;0.04;SB
+Convolvulaceae;Convolvulus;arvensis;Malachiidae;Colotes;maculatus;0.01;SB
+Convolvulaceae;Convolvulus;arvensis;Syrphidae;Eristalinus;aeneus;0.03;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Lasioglossum;gemmeus;0.02;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Lasioglossum;griseolum;0.02;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Lasioglossum;malachurum;0.06;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Lasioglossum;minutissimum;0.01;SB
+Convolvulaceae;Convolvulus;arvensis;Apidae;Lasioglossum;villosulum;0.02;SB
+Convolvulaceae;Convolvulus;arvensis;Nitidulidae;Meligethes;sp.;0.16;SB
+Convolvulaceae;Convolvulus;arvensis;Mordellidae;Mordellistena;sp.;0.04;SB
+Convolvulaceae;Convolvulus;arvensis;Stratiomyidae;Nemotelus;pantherinus;0.09;SB
+Convolvulaceae;Convolvulus;arvensis;Oedemeridae;Oedemera;caudata;0.02;SB
+Convolvulaceae;Convolvulus;arvensis;Oedemeridae;Oedemera;flavipes;0.02;SB
+Convolvulaceae;Convolvulus;arvensis;Oedemeridae;Oedemera;simplex;0.01;SB
+Convolvulaceae;Convolvulus;arvensis;Dasytidae;Psilotrix; sp. (illustris + cyaneus + aureolus);0.03;SB
+Convolvulaceae;Convolvulus;arvensis;Cantharidae;Rhagonycha;fulva;0.02;SB
+Convolvulaceae;Convolvulus;arvensis;Chrysomelidae;Spermophagus;sp.;1.66;SB
+Convolvulaceae;Convolvulus;arvensis;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.20;SB
+Convolvulaceae;Convolvulus;arvensis;Calliphoridae;Stomorhina;lunata;0.01;SB
+Convolvulaceae;Convolvulus;arvensis;Formicidae;Tapinoma;madeirense;0.01;SB
+Asteraceae;Crepis;vesicaria;Apidae;Andrena subgen. Micrandrena;;0.03;SB
+Asteraceae;Crepis;vesicaria;Byrrhidae;Byrrhidae;sp.;0.03;SB
+Asteraceae;Crepis;vesicaria;Apidae;Eucera;oraniensis;0.75;SB
+Asteraceae;Crepis;vesicaria;Syrphidae;Helophilus;trivittatus;0.09;SB
+Asteraceae;Crepis;vesicaria;Nitidulidae;Meligethes;sp.;0.40;SB
+Asteraceae;Crepis;vesicaria;Mordellidae;Mordellistena;sp.;0.01;SB
+Asteraceae;Crepis;vesicaria;Stratiomyidae;Nemotelus;pantherinus;0.07;SB
+Asteraceae;Crepis;vesicaria;Oedemeridae;Oedemera;caudata;0.07;SB
+Asteraceae;Crepis;vesicaria;Oedemeridae;Oedemera;flavipes;0.06;SB
+Asteraceae;Crepis;vesicaria;Apidae;Osmia;latreillei;0.12;SB
+Asteraceae;Crepis;vesicaria;Dasytidae;Psilotrix ;sp. (illustris + cyaneus + aureolus);0.30;SB
+Asteraceae;Crepis;vesicaria;Cantharidae;Rhagonycha;fulva;0.01;SB
+Asteraceae;Crepis;vesicaria;Chrysomelidae;Spermophagus;sp.;0.18;SB
+Asteraceae;Crepis;vesicaria;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.03;SB
+Asteraceae;Crepis;vesicaria;Nymphalidae;Vanessa carduii;;0.07;SB
+Umbelliferae;Daucus;carota;-;Acari;sp.;0.42;SB
+Umbelliferae;Daucus;carota;Dermestidae;Anthrenus;sp.;0.13;SB
+Umbelliferae;Daucus;carota;Braconidae;Braconidae;sp1;0.03;SB
+Umbelliferae;Daucus;carota;Ceratopogonidae;Ceratopogonidae;sp.;0.01;SB
+Umbelliferae;Daucus;carota;Apidae;Ceylalictus;variegatus;0.63;SB
+Umbelliferae;Daucus;carota;Chironomidae;Chironomidae;sp.;0.15;SB
+Umbelliferae;Daucus;carota;Cerambicidae;Chlorophorus;trifasciatus;0.64;SB
+Umbelliferae;Daucus;carota;Coccinelidae;Coccinella;septempunctata;0.45;SB
+Umbelliferae;Daucus;carota;Coccinellidae;Coccinella;undecimpunctata;0.03;SB
+Umbelliferae;Daucus;carota;Syrphidae;Eristalinus;aeneus;0.45;SB
+Umbelliferae;Daucus;carota;Syrphidae;Eristalis;arbustorum;0.42;SB
+Umbelliferae;Daucus;carota;Syrphidae;Eristalinus;sepulchralis;0.13;SB
+Umbelliferae;Daucus;carota;Gasteruptiidae;Gasteruption;undulatum;0.26;SB
+Umbelliferae;Daucus;carota;Apidae;Halictus ;sp. (scabiosae + fulvipes);0.42;SB
+Umbelliferae;Daucus;carota;Chrysididae;Holopyga;fervida;1.16;SB
+Umbelliferae;Daucus;carota;Apidae;Hylaeus ;sp. (clypearis + trinotatus + signatus + variegatus);1.09;SB
+Umbelliferae;Daucus;carota;Apidae;Lasioglossum;gemmeus;0.13;SB
+Umbelliferae;Daucus;carota;Miridae;Lepydargyrus;ancorifer;0.03;SB
+Umbelliferae;Daucus;carota;Formicidae;Linepithema;humile;1.89;SB
+Umbelliferae;Daucus;carota;Tiphiidae;Meria;tripunctata;1.54;SB
+Umbelliferae;Daucus;carota;Mordellidae;Mordellistena;sp.;1.05;SB
+Umbelliferae;Daucus;carota;Stratiomyidae;Nemotelus;pantherinus;0.29;SB
+Umbelliferae;Daucus;carota;Muscidae;Neomyia;cornicina;0.49;SB
+Umbelliferae;Daucus;carota;Anthicidae;Notoxus;monoceros;0.03;SB
+Umbelliferae;Daucus;carota;Oedemeridae;Oedemera;caudata;0.47;SB
+Umbelliferae;Daucus;carota;Oedemeridae;Oedemera;simplex;0.38;SB
+Umbelliferae;Daucus;carota;Cetoniidae;Oxythyrea;funesta;0.03;SB
+Umbelliferae;Daucus;carota;Agromyzidae;Phytomyza;sp.;0.01;SB
+Umbelliferae;Daucus;carota;Vespidae;Polistes ;sp. (dominulus + gallicus);1.46;SB
+Umbelliferae;Daucus;carota;Sphecidae;Prionyx;kirbii;0.03;SB
+Umbelliferae;Daucus;carota;Muscidae;Pyrellia;vivida;0.03;SB
+Umbelliferae;Daucus;carota;Cantharidae;Rhagonycha;fulva;2.45;SB
+Umbelliferae;Daucus;carota;Sarcophagidae;Sarcophaga;villeneuveana;0.25;SB
+Umbelliferae;Daucus;carota;Sarcophagidae;Senotainia;tricuspis;0.04;SB
+Umbelliferae;Daucus;carota;Chrysomelidae;Spermophagus;sp.;1.15;SB
+Umbelliferae;Daucus;carota;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.25;SB
+Umbelliferae;Daucus;carota;Rhinophoridae;Stevenia;deceptoria;0.95;SB
+Umbelliferae;Daucus;carota;Syrphidae;Syritta;pipiens;0.35;SB
+Umbelliferae;Daucus;carota;Formicidae;Tapinoma;madeirense;0.55;SB
+Umbelliferae;Daucus;carota;Therevidae;Thereva;spiloptera;0.13;SB
+Umbelliferae;Daucus;carota;Curculionidae;Tychius;aureolus;0.43;SB
+Boraginaceae;Echium;sabulicola;Apidae;Amegilla;balearica;0.50;SB
+Boraginaceae;Echium;sabulicola;Apidae;Amegilla;quadrifasciata;0.13;SB
+Boraginaceae;Echium;sabulicola;Apidae;Ceratina ;sp. (cucurbitina + dellatorreana);1.14;SB
+Boraginaceae;Echium;sabulicola;Apidae;Ceylalictus;variegatus;0.01;SB
+Boraginaceae;Echium;sabulicola;Bibionidae;Dilophus;antipedalis;0.02;SB
+Boraginaceae;Echium;sabulicola;Curculionidae;Gymnetron;sp.;0.01;SB
+Boraginaceae;Echium;sabulicola;Apidae;Hoplitis;adunca;0.03;SB
+Boraginaceae;Echium;sabulicola;Apidae;Hoplitis;benoisti;0.01;SB
+Boraginaceae;Echium;sabulicola;Apidae;Lasioglossum;gemmeus;0.03;SB
+Boraginaceae;Echium;sabulicola;Apidae;Lasioglossum;griseolum;0.02;SB
+Boraginaceae;Echium;sabulicola;Miridae;Lepydargyrus;ancorifer;0.01;SB
+Boraginaceae;Echium;sabulicola;Nitidulidae;Meligethes;sp.;0.48;SB
+Boraginaceae;Echium;sabulicola;Anthocoridae;Orius;niger;0.10;SB
+Boraginaceae;Echium;sabulicola;Apidae;Osmia;adunca;0.05;SB
+Boraginaceae;Echium;sabulicola;Apidae;Osmia;aurulenta;0.17;SB
+Boraginaceae;Echium;sabulicola;Apidae;Osmia;caerulescens;0.33;SB
+Boraginaceae;Echium;sabulicola;Apidae;Osmia;versicolor;0.07;SB
+Boraginaceae;Echium;sabulicola;Dasytidae;Psilotrix;sp. (illustris + cyaneus + aureolus);0.01;SB
+Boraginaceae;Echium;sabulicola;Apidae;Rhodanthidium;septemdentatum;0.04;SB
+Boraginaceae;Echium;sabulicola;Nymphalidae;Vanessa;carduii;0.01;SB
+Umbelliferae;Foeniculum;vulgare;Crabronidae;Bembix occulata;;1.19;SB
+Umbelliferae;Foeniculum;vulgare;Syrphidae;Eristalinus;sepulchralis;0.24;SB
+Umbelliferae;Foeniculum;vulgare;Apidae;Lasioglossum;gemmeus;0.43;SB
+Umbelliferae;Foeniculum;vulgare;Rhinophoridae;Phyto;melanocephala;1.19;SB
+Umbelliferae;Foeniculum;vulgare;Vespidae;Polistes ;sp. (dominulus + gallicus);4.88;SB
+Umbelliferae;Foeniculum;vulgare;Pteromalidae;Pteromalidae;sp.;0.02;SB
+Umbelliferae;Foeniculum;vulgare;Sarcophagidae;Sarcophaga;sp.;1.19;SB
+Umbelliferae;Foeniculum;vulgare;Sarcophagidae;Sarcophaga;unicurva;0.19;SB
+Umbelliferae;Foeniculum;vulgare;Sarcophagidae;Sarcophaga;villeneuveana;0.36;SB
+Umbelliferae;Foeniculum;vulgare;Chrysomelidae;Spermophagus;sp.;2.24;SB
+Asteraceae;Helichrysum;stoechas;-;Acari sp.;;0.88;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Andrena subgen. Micrandrena;;0.25;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Andrena ;sp1 (ovatula + fulvipes);0.19;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Andrena;sp3;0.31;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Apis;mellifera;0.19;SB
+Asteraceae;Helichrysum;stoechas;Blattodea;Blattodea;sp.;0.04;SB
+Asteraceae;Helichrysum;stoechas;Byrrhidae;Byrrhidae;sp.;0.01;SB
+Asteraceae;Helichrysum;stoechas;Cerambicidae;Chlorophorus;trifasciatus;0.85;SB
+Asteraceae;Helichrysum;stoechas;Muscidae;Coenosia;tigrina;0.04;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Colletes;abeillei;1.54;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Halictus ;sp. (scabiosae + fulvipes);0.19;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Heriades;rubicolus;0.19;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Lasioglossum;gemmeus;0.06;SB
+Asteraceae;Helichrysum;stoechas;Apidae;Lasioglossum;minutissimum;0.19;SB
+Asteraceae;Helichrysum;stoechas;Miridae;Lepydargyrus;ancorifer;0.04;SB
+Asteraceae;Helichrysum;stoechas;Gryllidae;Melanogrillus;desertus;0.01;SB
+Asteraceae;Helichrysum;stoechas;Nitidulidae;Meligethes;sp.;0.04;SB
+Asteraceae;Helichrysum;stoechas;Stratiomyidae;Nemotelus;pantherinus;2.63;SB
+Asteraceae;Helichrysum;stoechas;Muscidae;Neomyia;cornicina;0.19;SB
+Asteraceae;Helichrysum;stoechas;Oedemeridae;Oedemera;caudata;0.19;SB
+Asteraceae;Helichrysum;stoechas;Oedemeridae;Oedemera;flavipes;0.05;SB
+Asteraceae;Helichrysum;stoechas;Dasytidae;Psilotrix ;sp. (illustris + cyaneus + aureolus);0.04;SB
+Asteraceae;Helichrysum;stoechas;Cantharidae;Rhagonycha;fulva;0.83;SB
+Asteraceae;Helichrysum;stoechas;Sarcophagidae;Sarcophaga;villeneuveana;0.24;SB
+Asteraceae;Helichrysum;stoechas;Chrysomelidae;Spermophagus;sp.;0.09;SB
+Asteraceae;Helichrysum;stoechas;Rhinophoridae;Stevenia;deceptoria;0.28;SB
+Asteraceae;Helichrysum;stoechas;Syrphidae;Syritta;pipiens;0.06;SB
+Guttiferae;Hypericum;perforatum;Apidae;Andrena; sp1 (ovatula + fulvipes);0.06;SB
+Guttiferae;Hypericum;perforatum;Apidae;Apis;mellifera;0.01;SB
+Guttiferae;Hypericum;perforatum;Apidae;Ceratina ;sp. (cucurbitina + dellatorreana);0.29;SB
+Guttiferae;Hypericum;perforatum;Apidae;Halictus ;sp. (scabiosae + fulvipes);0.01;SB
+Guttiferae;Hypericum;perforatum;Formicidae;Linepithema;humile;0.01;SB
+Guttiferae;Hypericum;perforatum;Apidae;Rhodanthidium;septemdentatum;0.13;SB
+Guttiferae;Hypericum;perforatum;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.05;SB
+Guttiferae;Hypericum;perforatum;Syrphidae;Syritta;pipiens;0.04;SB
+Guttiferae;Hypericum;perforatum;Apidae;Xylocopa;violacea;0.01;SB
+Asteraceae;Hypochoeris;achyrophorus;Buprestidae;Anthaxia;funerula;0.04;SB
+Asteraceae;Hypochoeris;achyrophorus;Braconidae;Braconidae;sp1;0.01;SB
+Asteraceae;Hypochoeris;achyrophorus;Bibionidae;Dilophus;antipedalis;0.04;SB
+Asteraceae;Hypochoeris;achyrophorus;Miridae;Lepydargyrus;ancorifer;0.01;SB
+Asteraceae;Hypochoeris;achyrophorus;Nitidulidae;Meligethes;sp.;0.26;SB
+Asteraceae;Hypochoeris;achyrophorus;Mordellidae;Mordellistena;sp.;0.04;SB
+Asteraceae;Hypochoeris;achyrophorus;Oedemeridae;Oedemera;caudata;0.04;SB
+Asteraceae;Hypochoeris;achyrophorus;Oedemeridae;Oedemera;flavipes;0.03;SB
+Asteraceae;Hypochoeris;achyrophorus;Dasytidae;Psilotrix;sp. (illustris + cyaneus + aureolus);0.37;SB
+Asteraceae;Hypochoeris;achyrophorus;Chrysomelidae;Spermophagus;sp.;0.22;SB
+Asteraceae;Hypochoeris;achyrophorus;Curculionidae;Tychius;aureolus;0.06;SB
+Leguminosae;Lotus;corniculatus;Apidae;Andrena; sp1 (ovatula + fulvipes);0.90;SB
+Leguminosae;Lotus;corniculatus;Apidae;Apis;mellifera;1.06;SB
+Leguminosae;Lotus;corniculatus;Tachinidae;Clairvillia;pninae;0.03;SB
+Leguminosae;Lotus;corniculatus;Apidae;Colletes;abeillei;0.34;SB
+Leguminosae;Lotus;corniculatus;Bibionidae;Dilophus;antipedalis;0.11;SB
+Leguminosae;Lotus;corniculatus;Apidae;Hoplitis;leucomelans;0.20;SB
+Leguminosae;Lotus;corniculatus;Apidae;Lasioglossum;malachurum;0.01;SB
+Leguminosae;Lotus;corniculatus;Apidae;Megachile;apicalis;0.05;SB
+Leguminosae;Lotus;corniculatus;Apidae;Megachile;pilidens;0.10;SB
+Leguminosae;Lotus;corniculatus;Nitidulidae;Meligethes;sp.;0.03;SB
+Leguminosae;Lotus;corniculatus;Apidae;Osmia;andrenoides;0.05;SB
+Leguminosae;Lotus;corniculatus;Apidae;Osmia;aurulenta;0.05;SB
+Leguminosae;Lotus;corniculatus;Apidae;Osmia;caerulescens;0.27;SB
+Leguminosae;Lotus;corniculatus;Apidae;Osmia;versicolor;0.70;SB
+Leguminosae;Lotus;corniculatus;Lycenidae;Polyommatus;icarus;0.34;SB
+Leguminosae;Lotus;corniculatus;Apidae;Rhodanthidium;septemdentatum;0.03;SB
+Leguminosae;Lotus;corniculatus;Sarcophagidae;Sarcophaga;villeneuveana;0.01;SB
+Leguminosae;Lotus;corniculatus;Chrysomelidae;Spermophagus;sp.;0.01;SB
+Leguminosae;Lotus;cytisoides;Apidae;Andrena ;sp1 (ovatula + fulvipes);0.18;SB
+Leguminosae;Lotus;cytisoides;Apidae;Apis;mellifera;1.35;SB
+Leguminosae;Lotus;cytisoides;Apidae;Bombus;terrestris;0.01;SB
+Leguminosae;Lotus;cytisoides;Apidae;Ceratina ;sp. (cucurbitina + dellatorreana);0.06;SB
+Leguminosae;Lotus;cytisoides;Bibionidae;Dilophus;antipedalis;0.06;SB
+Leguminosae;Lotus;cytisoides;Formicidae;Linepithema;humile;0.01;SB
+Leguminosae;Lotus;cytisoides;Nitidulidae;Meligethes;sp.;0.10;SB
+Leguminosae;Lotus;cytisoides;Apidae;Osmia;caerulescens;0.02;SB
+Leguminosae;Lotus;cytisoides;Apidae;Rhodanthidium;septemdentatum;0.13;SB
+Leguminosae;Medicago;littoralis;Curculionidae;Curculionidae;sp1;0.01;SB
+Leguminosae;Medicago;littoralis;Nitidulidae;Meligethes;sp.;0.26;SB
+Leguminosae;Medicago;littoralis;Syrphidae;Paragus;tibialis;0.01;SB
+Leguminosae;Medicago;littoralis;Lycenidae;Polyommatus;icarus;0.01;SB
+Leguminosae;Medicago;littoralis;Tachinidae;Siphona;sp.;0.01;SB
+Leguminosae;Melilotus;indica;Apidae;Andrena subgen. Micrandrena;;0.61;SB
+Leguminosae;Melilotus;indica;Apidae;Andrena ;sp1 (ovatula + fulvipes);1.97;SB
+Leguminosae;Melilotus;indica;Apidae;Andrena;sp4;0.45;SB
+Leguminosae;Melilotus;indica;Apidae;Lasioglossum;griseolum;0.45;SB
+Leguminosae;Melilotus;indica;Cantharidae;Rhagonycha;fulva;0.45;SB
+Leguminosae;Melilotus;indica;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.15;SB
+Leguminosae;Melilotus;segetalis;Apidae;Andrena ;sp1 (ovatula + fulvipes);1.75;SB
+Leguminosae;Melilotus;segetalis;Apidae;Apis;mellifera;7.11;SB
+Leguminosae;Melilotus;segetalis;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.02;SB
+Scrophulariaceae;Parentucellia;viscosa;Apidae;Anthophora;plumipes;0.08;SB
+Scrophulariaceae;Parentucellia;viscosa;Apidae;Lasioglossum;griseolum;0.03;SB
+Rosaceae;Potentilla;reptans;Apidae;Andrena ;sp1 (ovatula + fulvipes);0.03;SB
+Rosaceae;Potentilla;reptans;Apidae;Apis;mellifera;0.43;SB
+Rosaceae;Potentilla;reptans;Blattodea;Blattodea;sp.;0.01;SB
+Rosaceae;Potentilla;reptans;Chrysomelidae;Bruchidius;sp1;0.01;SB
+Rosaceae;Potentilla;reptans;Apidae;Ceratina ;sp. (cucurbitina + dellatorreana);0.01;SB
+Rosaceae;Potentilla;reptans;Cerambicidae;Chlorophorus;trifasciatus;0.02;SB
+Rosaceae;Potentilla;reptans;Gasteruptiidae;Gasteruption;undulatum;0.02;SB
+Rosaceae;Potentilla;reptans;Apidae;Hoplitis;leucomelans;0.07;SB
+Rosaceae;Potentilla;reptans;Apidae;Hylaeus;pictus;0.51;SB
+Rosaceae;Potentilla;reptans;Apidae;Lasioglossum;griseolum;0.03;SB
+Rosaceae;Potentilla;reptans;Apidae;Lasioglossum;malachurum;0.01;SB
+Rosaceae;Potentilla;reptans;Formicidae;Linepithema;humile;0.05;SB
+Rosaceae;Potentilla;reptans;Nitidulidae;Meligethes;sp.;0.01;SB
+Rosaceae;Potentilla;reptans;Mordellidae;Mordellistena;sp.;0.02;SB
+Rosaceae;Potentilla;reptans;Stratiomyidae;Nemotelus;pantherinus;0.03;SB
+Rosaceae;Potentilla;reptans;Oedemeridae;Oedemera;caudata;0.20;SB
+Rosaceae;Potentilla;reptans;Oedemeridae;Oedemera;flavipes;0.05;SB
+Rosaceae;Potentilla;reptans;Apidae;Osmia;caerulescens;0.03;SB
+Rosaceae;Potentilla;reptans;Apidae;Osmia;versicolor;0.17;SB
+Rosaceae;Potentilla;reptans;Syrphidae;Paragus;tibialis;0.05;SB
+Rosaceae;Potentilla;reptans;Dasytidae;Psilotrix ;sp. (illustris + cyaneus + aureolus);0.02;SB
+Rosaceae;Potentilla;reptans;Apidae;Rhodanthidium;septemdentatum;0.01;SB
+Rosaceae;Potentilla;reptans;Chrysomelidae;Spermophagus;sp.;0.60;SB
+Rosaceae;Potentilla;reptans;Syrphidae;Sphaerophoria ;sp. (scripta+rueppellii);0.65;SB
+Rosaceae;Potentilla;reptans;Rhinophoridae;Stevenia;deceptoria;0.01;SB
+Rosaceae;Potentilla;reptans;Syrphidae;Syritta;pipiens;0.01;SB
+Rosaceae;Potentilla;reptans;Formicidae;Tapinoma;madeirense;0.08;SB
+Rosaceae;Potentilla;reptans;Curculionidae;Tychius;aureolus;0.05;SB
+Dipsacaceae;Scabiosa;maritima;-;Acari;sp.;0.17;SB
+Dipsacaceae;Scabiosa;maritima;Buprestidae;Acmaoederella;discoida;0.01;SB
+Dipsacaceae;Scabiosa;maritima;Apidae;Apis;mellifera;5.03;SB
+Dipsacaceae;Scabiosa;maritima;Crabronidae;Bembix;occulata;0.04;SB
+Dipsacaceae;Scabiosa;maritima;Bombyliidae;Bombylius;posticus;0.08;SB
+Dipsacaceae;Scabiosa;maritima;Apidae;Bombus;terrestris;0.02;SB
+Dipsacaceae;Scabiosa;maritima;Lycaenidae;Celastrina;argiolus;0.01;SB
+Dipsacaceae;Scabiosa;maritima;Apidae;Ceratina ;sp. (cucurbitina + dellatorreana);0.46;SB
+Dipsacaceae;Scabiosa;maritima;Pieridae;Colias;croceus;0.02;SB
+Dipsacaceae;Scabiosa;maritima;Apidae;Halictus ;sp. (scabiosae + fulvipes);2.99;SB
+Dipsacaceae;Scabiosa;maritima;Syrphidae;Helophilus;trivittatus;0.12;SB
+Dipsacaceae;Scabiosa;maritima;Scoliidae;Megascolia;sp.;0.02;SB
+Dipsacaceae;Scabiosa;maritima;Nitidulidae;Meligethes;sp.;0.43;SB
+Dipsacaceae;Scabiosa;maritima;Mordellidae;Mordellistena;sp.;0.03;SB
+Dipsacaceae;Scabiosa;maritima;Stratiomyidae;Nemotelus;pantherinus;0.01;SB
+Dipsacaceae;Scabiosa;maritima;Oedemeridae;Oedemera;caudata;0.04;SB
+Dipsacaceae;Scabiosa;maritima;Oedemeridae;Oedemera;flavipes;0.01;SB
+Dipsacaceae;Scabiosa;maritima;Oedemeridae;Oedemera;simplex;0.01;SB
+Dipsacaceae;Scabiosa;maritima;Cetoniidae;Oxythyrea;funesta;0.01;SB
+Dipsacaceae;Scabiosa;maritima;Syrphidae;Paragus;tibialis;0.01;SB
+Dipsacaceae;Scabiosa;maritima;Dasytidae;Psilotrix ;sp. (illustris + cyaneus + aureolus);0.03;SB
+Dipsacaceae;Scabiosa;maritima;Apidae;Rhodanthidium;septemdentatum;0.02;SB
+Dipsacaceae;Scabiosa;maritima;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.02;SB
+Dipsacaceae;Scabiosa;maritima;Nymphalidae;Vanessa;carduii;1.04;SB
+Caryophyllaceae;Silene;vulgaris;Nitidulidae;Meligethes;sp.;0.14;SB
+Caryophyllaceae;Silene;vulgaris;Dasytidae;Psilotrix ;sp. (illustris + cyaneus + aureolus);0.01;SB
+Caryophyllaceae;Silene;vulgaris;Nymphalidae;Vanessa;carduii;0.03;SB
+Labiatae;Teucrium;dunense;Apidae;Andrena ;sp1 (ovatula + fulvipes);1.14;SB
+Labiatae;Teucrium;dunense;Apidae;Andrena;sp2;0.87;SB
+Labiatae;Teucrium;dunense;Apidae;Andrena;sp3;0.54;SB
+Labiatae;Teucrium;dunense;Apidae;Apis;mellifera;40.82;SB
+Labiatae;Teucrium;dunense;Crabronidae;Bembix;occulata;3.15;SB
+Labiatae;Teucrium;dunense;Apidae;Ceratina ;sp. (cucurbitina + dellatorreana);0.16;SB
+Labiatae;Teucrium;dunense;Cerambicidae;Chlorophorus;trifasciatus;0.03;SB
+Labiatae;Teucrium;dunense;Apidae;Colletes;dusmeti;0.16;SB
+Labiatae;Teucrium;dunense;Formicidae;Crematogaster;laestrygon;0.01;SB
+Labiatae;Teucrium;dunense;Syrphidae;Eristalinus;aeneus;0.33;SB
+Labiatae;Teucrium;dunense;Syrphidae;Eristalinus;megacephalus;0.03;SB
+Labiatae;Teucrium;dunense;Apidae;Halictus; sp. (scabiosae + fulvipes);0.57;SB
+Labiatae;Teucrium;dunense;Apidae;Heriades;rubicolus;0.09;SB
+Labiatae;Teucrium;dunense;Apidae;Lasioglossum;gemmeus;0.55;SB
+Labiatae;Teucrium;dunense;Apidae;Lasioglossum;malachurum;0.16;SB
+Labiatae;Teucrium;dunense;Formicidae;Linepithema;humile;0.71;SB
+Labiatae;Teucrium;dunense;Scoliidae;Megascolia;hortorum;0.58;SB
+Labiatae;Teucrium;dunense;Scoliidae;Megascolia;sp.;3.21;SB
+Labiatae;Teucrium;dunense;Nitidulidae;Meligethes;sp.;0.10;SB
+Labiatae;Teucrium;dunense;Crabronidae;Philanthus;triangulum;0.16;SB
+Labiatae;Teucrium;dunense;Lycenidae;Polyommatus;icarus;0.20;SB
+Labiatae;Teucrium;dunense;Vespidae;Polistes;sp. (dominulus + gallicus);0.30;SB
+Labiatae;Teucrium;dunense;Sphecidae;Prionyx;kirbii;1.25;SB
+Labiatae;Teucrium;dunense;Apidae;Rhodanthidium;septemdentatum;0.18;SB
+Labiatae;Teucrium;dunense;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.17;SB
+Labiatae;Teucrium;dunense;Calliphoridae;Stomorhina;lunata;0.11;SB
+Labiatae;Teucrium;dunense;Syrphidae;Syritta;pipiens;0.16;SB
+Labiatae;Teucrium;dunense;Nymphalidae;Vanessa;carduii;1.25;SB
+Scrophulariaceae;Verbascum;sinuatum;Apidae;Ceratina;sp. (cucurbitina + dellatorreana);0.03;SB
+Scrophulariaceae;Verbascum;sinuatum;Apidae;Ceylalictus;variegatus;0.05;SB
+Scrophulariaceae;Verbascum;sinuatum;Syrphidae;Eristalinus;aeneus;0.02;SB
+Scrophulariaceae;Verbascum;sinuatum;Apidae;Hylaeus;pictus;0.02;SB
+Scrophulariaceae;Verbascum;sinuatum;Formicidae;Linepithema;humile;0.50;SB
+Scrophulariaceae;Verbascum;sinuatum;Curculionidae;Mogulones;sp.;0.01;SB
+Scrophulariaceae;Verbascum;sinuatum;Cetoniidae;Oxythyrea;funesta;0.01;SB
+Scrophulariaceae;Verbascum;sinuatum;Syrphidae;Paragus;tibialis;0.01;SB
+Scrophulariaceae;Verbascum;sinuatum;Syrphidae;Sphaerophoria ;sp. (scripta + rueppellii);0.05;SB
+Scrophulariaceae;Verbascum;sinuatum;Calliphoridae;Stomorhina;lunata;0.03;SB
+Scrophulariaceae;Verbascum;sinuatum;Syrphidae;Syritta;pipiens;0.01;SB
+Caryophyllaceae;Arenaria;grandiflora;Anthomyiidae;Adia;cinerella;0.01;PM
+Caryophyllaceae;Arenaria;grandiflora;Bruchidae;Bruchidius;sp.;0.03;PM
+Caryophyllaceae;Arenaria;grandiflora;Syrphidae;Eristalis;tenax;0.05;PM
+Caryophyllaceae;Arenaria;grandiflora;Chrysididae;Holopyga;fervida;0.03;PM
+Caryophyllaceae;Arenaria;grandiflora;Oedemeridae;Oedemera;flavipes;0.01;PM
+Caryophyllaceae;Arenaria;grandiflora;Apidae;Osmia;latreillei;0.04;PM
+Caryophyllaceae;Arenaria;grandiflora;Syrphidae;Paragus;pecciolii;0.04;PM
+Caryophyllaceae;Arenaria;grandiflora;Sarcophagidae;Sarcophaga;nigriventis;0.03;PM
+Asteraceae;Bellium;bellidioides;Anthomyiidae;Anthomyia;pluvialis;0.01;PM
+Asteraceae;Bellium;bellidioides;Malachiidae;Attalus;sp.;0.01;PM
+Asteraceae;Bellium;bellidioides;Braconidae;Chelonus;sp.;0.07;PM
+Asteraceae;Bellium;bellidioides;Tachinidae;Cylindromyia;brassicaria;0.04;PM
+Asteraceae;Bellium;bellidioides;Tachinidae;Gymnosoma;sp.;0.01;PM
+Asteraceae;Bellium;bellidioides;Apidae;Lasioglossum;transitorium planulum;0.01;PM
+Asteraceae;Bellium;bellidioides;Sphingidae;Macroglossum;stellatarum;0.01;PM
+Asteraceae;Bellium;bellidioides;Oedemeridae;Oedemera;flavipes;0.05;PM
+Asteraceae;Bellium;bellidioides;Syrphidae;Paragus;pecciolii;0.02;PM
+Asteraceae;Bellium;bellidioides;Syrphidae;Paragus;tibialis;0.07;PM
+Asteraceae;Bellium;bellidioides;Lycaenidae;Polyommatus;icarus;0.01;PM
+Asteraceae;Bellium;bellidioides;Chloropidae;Polyodaspis;sulcicollis;0.01;PM
+Asteraceae;Bellium;bellidioides;Syrphidae;Sphaerophoria;sp.;0.04;PM
+Asteraceae;Carlina;corymbosa;Apidae;Andrena;sp.;0.04;PM
+Asteraceae;Carlina;corymbosa;Apidae;Apis;mellifera;1.25;PM
+Asteraceae;Carlina;corymbosa;Malachiidae;Attalus;sp.;0.01;PM
+Asteraceae;Carlina;corymbosa;Curculionidae;Baris;sp.;0.01;PM
+Asteraceae;Carlina;corymbosa;Syrphidae;Chrysotoxum;intermedium;0.03;PM
+Asteraceae;Carlina;corymbosa;Syrphidae;Eristalinus;taeniops;0.03;PM
+Asteraceae;Carlina;corymbosa;Syrphidae;Eristalis;tenax;0.01;PM
+Asteraceae;Carlina;corymbosa;Syrphidae;Eupeodes;corollae;0.05;PM
+Asteraceae;Carlina;corymbosa;Apidae;Halictus;scabiosae;0.26;PM
+Asteraceae;Carlina;corymbosa;Apidae;Lasioglossum ;nitidulum hammi;0.01;PM
+Asteraceae;Carlina;corymbosa;Apidae;Megachile;pilidens;0.01;PM
+Asteraceae;Carlina;corymbosa;Mordellidae;Mordellistena;sp.;0.03;PM
+Asteraceae;Carlina;corymbosa;Lycaenidae;Polyommatus;icarus;0.03;PM
+Asteraceae;Carlina;corymbosa;Apidae;Rhodanthidium;septemdentatum;0.03;PM
+Asteraceae;Carlina;corymbosa;Calliphoridae;Stomorhina;lunata;0.20;PM
+Asteraceae;Carlina;corymbosa;Bombyliidae;Villa;hottentotta;0.03;PM
+Asteraceae;Carlina;corymbosa;Bombyliidae;Villa;sp.;0.01;PM
+Asteraceae;Carlina;corymbosa;Apidae;Xylocopa;violacea;0.01;PM
+Asteraceae;Crepis;triasii;Malachiidae;Attalus;sp.;0.04;PM
+Asteraceae;Crepis;triasii;Apidae;Ceratina;cucurbitina;0.01;PM
+Asteraceae;Crepis;triasii;Braconidae;Chelonus;sp.;0.01;PM
+Asteraceae;Crepis;triasii;Syrphidae;Eristalis;tenax;0.07;PM
+Asteraceae;Crepis;triasii;Apidae;Halictus;fulvipes;0.01;PM
+Asteraceae;Crepis;triasii;Apidae;Halictus;vestitus;0.07;PM
+Asteraceae;Crepis;triasii;Tenebrionidae;Isomira;sp.;0.01;PM
+Asteraceae;Crepis;triasii;Apidae;Lasioglossum;nitidulum hammi;0.01;PM
+Asteraceae;Crepis;triasii;Oedemeridae;Oedemera;flavipes;0.14;PM
+Asteraceae;Crepis;triasii;Apidae;Osmia;latreillei;0.01;PM
+Asteraceae;Crepis;triasii;Bombyliidae;Phthiria;pulicaria;0.01;PM
+Asteraceae;Crepis;triasii;Bombyliidae;Phthiria;sp.;0.02;PM
+Asteraceae;Crepis;triasii;Formicidae;Plagiolepis;pygmaea;0.04;PM
+Asteraceae;Crepis;triasii;Apidae;Rhodanthidium;septemdentatum;0.04;PM
+Rubiaceae;Galium;balearicum;Braconidae;Chelonus;sp.;0.09;PM
+Rubiaceae;Galium;cinereum;Mordellidae;Mordellistena;sp.;0.02;PM
+Rubiaceae;Galium;cinereum;Oedemeridae;Oedemera;flavipes;0.14;PM
+Cistaceae;Helianthemum;apenninum;Pieridae;Colias;croceus;0.01;PM
+Cistaceae;Helianthemum;apenninum;Oedemeridae;Oedemera;flavipes;0.09;PM
+Cistaceae;Helianthemum;apenninum;Syrphidae;Sphaerophoria;sp.;0.02;PM
+Cistaceae;Helianthemum;apenninum;Formicidae;Temnothorax;specularis;0.02;PM
+Labiatae;Rosmarinus;officinalis;Apidae;Apis;mellifera;1.60;PM
+Labiatae;Rosmarinus;officinalis;Apidae;Ceratina;cucurbitina;0.11;PM
+Labiatae;Rosmarinus;officinalis;Syrphidae;Eristalis;tenax;0.02;PM
+Labiatae;Rosmarinus;officinalis;Apidae;Eucera;oraniensis;0.02;PM
+Labiatae;Rosmarinus;officinalis;Syrphidae;Helophilus;trivittatus;0.02;PM
+Labiatae;Rosmarinus;officinalis;Sphingidae;Macroglossum;stellatarum;0.13;PM
+Labiatae;Rosmarinus;officinalis;Formicidae;Plagiolepis;pygmaea;0.02;PM
+Labiatae;Rosmarinus;officinalis;Melyridae;Psilotrix;illustris;0.02;PM
+Labiatae;Rosmarinus;officinalis;Nymphalidae;Vanessa;cardui;0.07;PM
+Asteraceae;Santolina;chamaecyparissus;Dermestidae;Anthrenus;pimpinellae;0.01;PM
+Asteraceae;Santolina;chamaecyparissus;Malachiidae;Attalus;sp.;0.01;PM
+Asteraceae;Santolina;chamaecyparissus;Syrphidae;Chrysotoxum;intermedium;0.02;PM
+Asteraceae;Santolina;chamaecyparissus;Tachinidae;Cylindromyia;brassicaria;0.15;PM
+Asteraceae;Santolina;chamaecyparissus;Tachinidae;Dionaea;aurifrons;0.01;PM
+Asteraceae;Santolina;chamaecyparissus;Syrphidae;Eristalis;tenax;0.06;PM
+Asteraceae;Santolina;chamaecyparissus;Apidae;Lasioglossum ;transitorium planulum;0.07;PM
+Asteraceae;Santolina;chamaecyparissus;Apidae;Megachile;pilidens;0.01;PM
+Asteraceae;Santolina;chamaecyparissus;Mordellidae;Mordellistena;sp.;0.19;PM
+Asteraceae;Santolina;chamaecyparissus;Oedemeridae;Oedemera;flavipes;0.52;PM
+Asteraceae;Santolina;chamaecyparissus;Syrphidae;Paragus;tibialis;0.12;PM
+Asteraceae;Santolina;chamaecyparissus;Bombyliidae;Phthiria;pulicaria;0.09;PM
+Asteraceae;Santolina;chamaecyparissus;Bombyliidae;Phthiria;sp.;0.02;PM
+Asteraceae;Santolina;chamaecyparissus;Chloropidae;Polyodaspis;sulcicollis;0.08;PM
+Asteraceae;Santolina;chamaecyparissus;Calliphoridae;Stomorhina;lunata;0.09;PM
+Crassulaceae;Sedum;dasyphyllum;Apidae;Halictus;vestitus;0.01;PM
+Crassulaceae;Sedum;dasyphyllum;Apidae;Hoplitis;leucomelans;0.03;PM
+Crassulaceae;Sedum;dasyphyllum;Apidae;Lasioglossum;nitidulum hammi;0.07;PM
+Crassulaceae;Sedum;dasyphyllum;Apidae;Lasioglossum ;transitorium planulum;0.21;PM
+Crassulaceae;Sedum;dasyphyllum;Oedemeridae;Oedemera;flavipes;0.03;PM
+Crassulaceae;Sedum;dasyphyllum;Chloropidae;Oscinella;frit;0.03;PM
+Crassulaceae;Sedum;dasyphyllum;Bombyliidae;Phthiria;pulicaria;0.03;PM
+Crassulaceae;Sedum;dasyphyllum;Formicidae;Plagiolepis;pygmaea;0.13;PM
+Labiatae;Teucrium;asiaticum;Apidae;Amegilla;quadrifasciata;0.40;PM
+Labiatae;Teucrium;asiaticum;Apidae;Anthidium;cingulatum;0.01;PM
+Labiatae;Teucrium;asiaticum;Apidae;Anthidium;manicatum;0.09;PM
+Labiatae;Teucrium;asiaticum;Apidae;Apis;mellifera;0.41;PM
+Labiatae;Teucrium;asiaticum;Syrphidae;Chrysotoxum;intermedium;0.01;PM
+Labiatae;Teucrium;asiaticum;Apidae;Halictus;vestitus;0.02;PM
+Labiatae;Teucrium;asiaticum;Apidae;Lasioglossum;nitidulum hammi;0.09;PM
+Labiatae;Teucrium;asiaticum;Sphingidae;Macroglossum;stellatarum;0.39;PM
+Labiatae;Teucrium;asiaticum;Apidae;Megachile;pilidens;0.52;PM
+Labiatae;Teucrium;asiaticum;Apidae;Protosmia;minutula;0.01;PM
+Labiatae;Teucrium;asiaticum;Apidae;Rhodanthidium;septemdentatum;0.04;PM
+Labiatae;Teucrium;asiaticum;Bombyliidae;Villa;sp.;0.01;PM
+Labiatae;Teucrium;asiaticum;Apidae;Xylocopa;violacea;0.01;PM
+ ;;;;;;;

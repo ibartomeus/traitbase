@@ -1088,3 +1088,35 @@ d <- d[,c("local_id","Genus", "specie","individuals","m_IT", "n_IT","se_IT","yea
 
 #SIN LOCALIZACIÓN EXACTA. NO LAT, NO LONG. ¿CREAR COLUMNA PARA REMARCAR QUE SON CAVITY NESTING?
 head(d)
+
+
+
+
+#Read data from  Tur_2013----------
+
+
+d <- read.csv("raw_data/Tur_2013.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Tur_2013"
+d$description <-"Dataset interactions frequencies"
+d$location<- ifelse(d$Site =="SB", "Son Bosc, Mallorca","Puig Major, Mallorca")
+d$country<-"Spain"
+d$month<-ifelse(d$Site =="SB", "4-7","5-8")
+d$year<-"2009/2010"
+d$doi<-"10.1371/journal.pone.0078294"
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:3] <- c("C.","R.","A.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:3] <- c("Tur","Castro-Urgal","Travest")
+
+d$lat <- ifelse(d$Site =="SB", "39.774475","39.7998639")
+d$long<-ifelse(d$Site=="SB", "3.129261111111111", "2.7855027777777774" )
+
+head(d)
+
+#NACHO, EN ESTE CASO TENEMOS POLINIZADORES, EN GENERAL, NO SOLO ABEJAS. HE DEJADO
+#LA TABLA PRÁCTICAMENTE TAL Y COMO ESTABA, DEJANDO LAS COLUMNAS DE "FAMILY",
+#"POLLINATOR", ETC. ÉCHALE UN OJO A LOS DATOS Y ME DICES SI HACEMOS LIMPIEZA DE TABLA.
