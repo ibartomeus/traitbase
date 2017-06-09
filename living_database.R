@@ -1120,3 +1120,37 @@ head(d)
 #NACHO, EN ESTE CASO TENEMOS POLINIZADORES, EN GENERAL, NO SOLO ABEJAS. HE DEJADO
 #LA TABLA PRÁCTICAMENTE TAL Y COMO ESTABA, DEJANDO LAS COLUMNAS DE "FAMILY",
 #"POLLINATOR", ETC. ÉCHALE UN OJO A LOS DATOS Y ME DICES SI HACEMOS LIMPIEZA DE TABLA.
+
+
+
+
+#Read data from  Normandin_2016----------
+
+
+d <- read.csv("raw_data/Normandin_2016.csv", header = TRUE, sep = ";", dec= ",")
+head(d)
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Normandin_2016"
+d$description <-"Dataset about ecological and morphological traits"
+d$location<- "Montreal & Quebec"
+d$country<-"Canada"
+d$year<-"2012/2013"
+d$doi<-"10.7717/peerj.3051"
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:4] <- c("E.","N.J.","C.M.","V.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:4] <- c("Normandin","Vereecken","Buddle","Fournier")
+d$lat<- "45.5011111 & 46.8022222"
+d$long<-"-73.65611111111112 & -71.26388888888889" 
+
+colnames(d)[4]<-"m_IT"
+colnames(d)[5]<-"Sociality"
+colnames(d)[8]<-"floral_specialization"
+
+head(d)
+
+#DUDAS ACERCA DE CÓMO PONER LOCATION Y LAT/LONG EN ESTE PAPER. EN LA TABLA INTRODUCIDA NO TENEMOS NADA QUE NOS DIFERENCIA ENTRE ZONAS, YA QUE NO SE HAN
+#AÑADIDO LAS ABUNDANCIAS QUE APARECEN EN OTRAS TABLAS. HAY TABLAS TAMBIÉN DE LOS DISTINTOS SITES (MUCHOS), CADA UNO CON SU LAT/LONG, AUNQUE CREO QUE ES INFORMACIÓN
+#NO ESENCIAL. 
+
