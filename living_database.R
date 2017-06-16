@@ -1154,3 +1154,37 @@ head(d)
 #AÑADIDO LAS ABUNDANCIAS QUE APARECEN EN OTRAS TABLAS. HAY TABLAS TAMBIÉN DE LOS DISTINTOS SITES (MUCHOS), CADA UNO CON SU LAT/LONG, AUNQUE CREO QUE ES INFORMACIÓN
 #NO ESENCIAL. 
 
+
+d <- read.csv("raw_data/Macior_1974.csv", header = TRUE, sep = ",", dec= ",")
+head(d)
+
+
+d$local_id <- c(1:nrow(d))
+d$name <- "Macior_1974"
+d$credit<-"Pollination ecology of the Front Range of the Colorado Rocky Mountains, 1974. Macior, L.W. Melanderia 15 :1-59."
+d$description <-"Dataset about tongue length measures"
+d$location<-"Colorado Rocky Mountains"
+d$country<-"U.S.A."
+d$year<-"1974"
+
+
+d$Contributor_name <- rep(NA, nrow(d)) 
+d$Contributor_name[1:1] <- c("L.W.")
+d$Contributor_lastname <- rep(NA, nrow(d)) 
+d$Contributor_lastname[1:1] <- c("Macior")
+
+
+colnames(d)[1]<-"Pollinator"
+colnames(d)[2]<-"m_tongue_length"
+colnames(d)[3]<-"se_tongue_length"
+
+#split pollinator
+position <- regexpr(pattern = " ", d$Pollinator)
+d$pollinator_genus <- substr(d$Pollinator, 1, position-1)
+d$pollinator_specie <- substr(d$Pollinator, position+1, nchar(as.character(d$Pollinator)))
+
+
+head(d)
+
+#ESTOS DATOS LOS HE ENCONTRADO A TRAVÉS DE OTRO ARTÍCULO:http://datadryad.org/resource/doi:10.5061/dryad.10278. 
+#HE INTENTADO IR A LA FUENTE ORIGINAL, EL ARTÍCULO DE MACIOR, PERO NO HE ENCONTRADO PRÁCTICAMENTE NADA. 
