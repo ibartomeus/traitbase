@@ -1056,7 +1056,7 @@ d <- d[,c("local_id","Genus", "specie","m_bsize","year","name","description",
 
 head(d)
 
-#REPASAR Y ESTANDARIZAR.
+#REPASAR Y ESTANDARIZAR. REVISAR M_BSIZE.
 
 
 
@@ -1174,17 +1174,18 @@ d$Contributor_lastname <- rep(NA, nrow(d))
 d$Contributor_lastname[1:1] <- c("Macior")
 
 
-colnames(d)[1]<-"Pollinator"
+colnames(d)[1]<-"Species"
 colnames(d)[2]<-"m_tongue_length"
 colnames(d)[3]<-"se_tongue_length"
 
 #split pollinator
-position <- regexpr(pattern = " ", d$Pollinator)
-d$pollinator_genus <- substr(d$Pollinator, 1, position-1)
-d$pollinator_specie <- substr(d$Pollinator, position+1, nchar(as.character(d$Pollinator)))
+position <- regexpr(pattern = " ", d$Species)
+d$Genus <- substr(d$Species, 1, position-1)
+d$specie <- substr(d$Species, position+1, nchar(as.character(d$Species)))
 
 
 head(d)
 
 #ESTOS DATOS LOS HE ENCONTRADO A TRAVÉS DE OTRO ARTÍCULO:http://datadryad.org/resource/doi:10.5061/dryad.10278. 
 #HE INTENTADO IR A LA FUENTE ORIGINAL, EL ARTÍCULO DE MACIOR, PERO NO HE ENCONTRADO PRÁCTICAMENTE NADA. 
+#CORREGIR TABS Y ESPACIOS.
