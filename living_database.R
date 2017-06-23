@@ -193,15 +193,15 @@ parse_errors(errors)
 #clean species!
 temp <- clean_species(d$species) #SLOWWWW needs user inputs.
 temp$final_names <- as.character(d$final_names)
-temp[which(temp$species == "Andrena carbonaria"), 4] <- "Andrena pilipes" 
-temp[which(temp$species == "Andrena niveata lecana"), 4] <- "Andrena niveata" 
-temp[which(temp$species == "Dioxys tridentata"), 4] <- "Aglaoapis tridentata" 
-temp[which(temp$species == "Lasioglossum atrovirens"), 4] <- "Lasioglossum soror" 
-temp[which(temp$species == "Nomiapis bispinosa"), 4] <- "Pseudapis bispinosa" 
-temp[which(temp$species == "Nomiapis diversipes"), 4] <- "Pseudapis diversipes" 
-temp[which(temp$species == "Panurgus arctos"), 4] <- "Panurgus cephalotes" 
-temp[which(temp$species == "Rhodanthidium septendentatum"), 4] <- "Rhodanthidium septemdentatum" 
-temp[which(temp$species == "Sphecodes aff.miniatus"), 4] <- "Sphecodes miniatus" 
+# temp[which(temp$species == "Andrena carbonaria"), 4] <- "Andrena pilipes" 
+# temp[which(temp$species == "Andrena niveata lecana"), 4] <- "Andrena niveata" 
+# temp[which(temp$species == "Dioxys tridentata"), 4] <- "Aglaoapis tridentata" 
+# temp[which(temp$species == "Lasioglossum atrovirens"), 4] <- "Lasioglossum soror" 
+# temp[which(temp$species == "Nomiapis bispinosa"), 4] <- "Pseudapis bispinosa" 
+# temp[which(temp$species == "Nomiapis diversipes"), 4] <- "Pseudapis diversipes" 
+# temp[which(temp$species == "Panurgus arctos"), 4] <- "Panurgus cephalotes" 
+# temp[which(temp$species == "Rhodanthidium septendentatum"), 4] <- "Rhodanthidium septemdentatum" 
+# temp[which(temp$species == "Sphecodes aff.miniatus"), 4] <- "Sphecodes miniatus" 
 #Andrena propinqua -> Added as new species
 #Anthophora salviae -> #can be either Amegilla salviae o Anthophora crinipes. Ignore for now
 #Hoplitis cristata -> Added as new species
@@ -258,6 +258,17 @@ d <- d[,c("local_id", "species", "credit",
 head(d)
 errors <- validateDataset(cnx, d)
 temp <- parse_errors(errors)
+
+#corregir
+temp <- clean_species(d$species) 
+temp
+
+d$species <- temp$final_names
+
+errors <- validateDataset(cnx, d)
+temp <- parse_errors(errors)
+
+#errors que quedan:
 
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
