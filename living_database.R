@@ -7,8 +7,8 @@ source("R/clean_species.R")
 source("R/help_functions.R")
 library(taxize)
 library(reshape2)
-#library(devtools)
-#install_github("metadevpro/traitbaser", force = TRUE) #works with basic R...
+library(devtools)
+install_github("metadevpro/traitbaser", force = TRUE) #works with basic R...
 library(traitbaser)
 cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
@@ -23,7 +23,7 @@ cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #"doi": UNIQUE. If published doi of the dataset/paper
 
 #"local_id": Any id set in the original paper
-#"species": Genus species (needs to be a valid taxon name
+#"species": genus species (needs to be a valid taxon name
 #"collector": If known who the collector was
 #"taxonomist": If known who the taxonomist was
 #"day","month","year": In separate columns
@@ -150,7 +150,7 @@ str(d)
 
 d <- d[-1,]
 d$local_id <- c(1:nrow(d))
-d$species <- paste(d$Genus, d$Species)
+d$species <- paste(d$genus, d$Species)
 d$country <- "Spain"
 colnames(d)[8] <- "m_IT" 
 colnames(d)[9] <- "se_IT" 
@@ -185,7 +185,7 @@ d$se_IT <- ifelse(is.na(d$se_IT), 0, d$se_IT)
 #5) test and upload dataset
 str(d)
 head(d)
-#errors <- validateDataset(cnx, d) #time out
+errors <- validateDataset(cnx, d) #time out
 
 errors <- validate_sliced(cnx, d)
 parse_errors(errors)
@@ -214,8 +214,11 @@ errors
 
 importDataset(cnx, d) #fails, only adds a few rows!
 
+
+
 #Data from Stone & Willmer, 1989----
 #I have to create the Csv and pass the data manually (old paper)
+
 
 #1) Read data (in prep)
 
@@ -273,6 +276,9 @@ temp <- parse_errors(errors)
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
 importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
+
+
+
 
 #Data from Borrel, 2007  ----
 
@@ -367,7 +373,7 @@ d <- read.csv("raw_data/Bartomeus_2013.csv", header = TRUE, sep = ";", dec= ",")
 #2) Check observations colnames
 
 d$local_id <- c(1:nrow(d))
-d$species <- paste(d$Genus, d$species)
+d$species <- paste(d$genus, d$species)
 summary(d)
 colnames(d)[8] <- "m_nest_site" 
 colnames(d)[9] <- "m_sociality"
@@ -491,15 +497,15 @@ d$doi <- "10.3897/jhr.51.9353"
 d$name <- "Gonzalez_2016"
 d$description <- "Dataset with information about IT measure and the postion of the trap to capture the bee"
 #When the data was until the level of genus was eliminated
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:5] <- c("V.H.", "K.E.", "I.", "J.M.", "J.F.") 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:5] <- c("Gonzalez", "Park", "Cakmak", "Hranitz", "Barthell") 
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:5] <- c("V.H.", "K.E.", "I.", "J.M.", "J.F.") 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:5] <- c("Gonzalez", "Park", "Cakmak", "Hranitz", "Barthell") 
 
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species", "country", "location", "lat",  
-          "m_IT",  "description","doi", "name", "Contributor_name", "Contributor_lastname")]
+          "m_IT",  "description","doi", "name", "contributor_name", "contributor_lastname")]
 
 
 #5) test and upload dataset
@@ -540,15 +546,15 @@ d$location <- "Sacramento Valley, California"
 d$doi <- "10.1111/1365-2664.12433" 
 d$name <- "Forrest_2015"
 d$description <- ""
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:3] <- c("J.R.K.", "R.W.","C.") 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:3] <- c("Forrest", "Thorp", "Kremen") 
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:3] <- c("J.R.K.", "R.W.","C.") 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:3] <- c("Forrest", "Thorp", "Kremen") 
 
 #4) Remove unused columns
 
 d <- d[,c("local_id", "species", "country", "location", "m_IT", "m_sociality", "m_floral_specialization",
-         "description","doi", "name", "Contributor_name", "Contributor_lastname")]
+         "description","doi", "name", "contributor_name", "contributor_lastname")]
 
 #5) test and upload dataset
 
@@ -571,7 +577,7 @@ d <- read.csv("raw_data/Carstensen_et_al_2012.csv",
 #2) Check observations colnames
 
 d$local_id <- c(1:nrow(d))
-colnames(d)[1]<- "Site"
+colnames(d)[1]<- "site"
 colnames(d)[3] <- "plant_species"
 colnames(d)[4] <- "species"
 
@@ -607,35 +613,35 @@ d$location <- "National Park of Serra do Cipó"
 d$doi <- "10.1371/journal.pone.0117763"
 d$name <- "Carstensen_et_al_2015"
 d$description <- "Dataset about interactions"
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:4] <- c("D.W.", "M.", "K.", "L.P.C.") 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:4] <- c("Carstensen", "Sabatino", "Trøjelsgaard", "Morellato")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:4] <- c("D.W.", "M.", "K.", "L.P.C.") 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:4] <- c("Carstensen", "Sabatino", "Trøjelsgaard", "Morellato")
 
 
 #Add lat/long per site and maybe keep in location via 
-levels(d$Site)
-d$location <- paste(d$location, ":", d$Site)
-d$lat <- ifelse(d$Site =="Cedro", "-19.2320778",
-                ifelse (d$Site=="Gigante","-19.2473083",
-                        ifelse (d$Site=="Paulino","-19.2553111",
-                                ifelse (d$Site=="Tinkerbell","-19.220725",
-                                        ifelse (d$Site=="Midway", "-19.2702972",
-                                                ifelse (d$Site=="Elefante", "-19.2934528",
-                                                        ifelse (d$Site=="Soizig", "-19.2728028",NA)))))))
-d$long <- ifelse(d$Site =="Cedro","-43.576394444444446",
-                 ifelse (d$Site=="Gigante","-43.510197222222224",
-                         ifelse (d$Site=="Paulino","-43.583869444444446",
-                                 ifelse (d$Site=="Tinkerbell","-43.58296388888889",
-                                         ifelse (d$Site=="Midway", "-43.550352777777775",
-                                                 ifelse (d$Site=="Elefante", "-43.55553333333333",
-                                                         ifelse (d$Site=="Soizig", "-43.57983611111111",NA))))))) #casi lo tenias
+levels(d$site)
+d$location <- paste(d$location, ":", d$site)
+d$lat <- ifelse(d$site =="Cedro", "-19.2320778",
+                ifelse (d$site=="Gigante","-19.2473083",
+                        ifelse (d$site=="Paulino","-19.2553111",
+                                ifelse (d$site=="Tinkerbell","-19.220725",
+                                        ifelse (d$site=="Midway", "-19.2702972",
+                                                ifelse (d$site=="Elefante", "-19.2934528",
+                                                        ifelse (d$site=="Soizig", "-19.2728028",NA)))))))
+d$long <- ifelse(d$site =="Cedro","-43.576394444444446",
+                 ifelse (d$site=="Gigante","-43.510197222222224",
+                         ifelse (d$site=="Paulino","-43.583869444444446",
+                                 ifelse (d$site=="Tinkerbell","-43.58296388888889",
+                                         ifelse (d$site=="Midway", "-43.550352777777775",
+                                                 ifelse (d$site=="Elefante", "-43.55553333333333",
+                                                         ifelse (d$site=="Soizig", "-43.57983611111111",NA))))))) #casi lo tenias
 
 head(d)
 str(d)
 print(d$lat)
 print(d$long)
-print(d$Site)
+print(d$site)
 
 #4) Remove unused columns ...
 
@@ -684,10 +690,10 @@ d$location <- "Grand Lyon"
 d$doi <- "10.1371/journal.pone.0104679"
 d$name <- "Fortel_et_al_2014"
 d$description <- "Dataset about traits"
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:8] <- c("L.","M.","L.","A.L.", "M.", "H.", "O.","B.") 
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:8] <- c("Fortel", "Henry", "Guilbaud", "Guirao","Kuhlmann","Mouret","Rollin","Vaissière")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:8] <- c("L.","M.","L.","A.L.", "M.", "H.", "O.","B.") 
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:8] <- c("Fortel", "Henry", "Guilbaud", "Guirao","Kuhlmann","Mouret","Rollin","Vaissière")
 
 d$lat <-"45.7666667"
 d$long <-"4.833333333333333"
@@ -769,21 +775,21 @@ colnames(d)[10]<-"dry_mass"
 
 #3) Add known missing columns (name, description, credit, doi)
 
-d$country <- ifelse(d$Location =="Maryland", "USA",
-                    ifelse (d$Location=="Ontario","Canada", NA))
+d$country <- ifelse(d$location =="Maryland", "USA",
+                    ifelse (d$location=="Ontario","Canada", NA))
 
-d$site<- ifelse(d$Location =="Maryland", "campus of the USDA Beltsville Agricultural Research Station",
-                ifelse (d$Location=="Ontario","St. Catharines", NA))
+d$site<- ifelse(d$location =="Maryland", "campus of the USDA Beltsville Agricultural Research Station",
+                ifelse (d$location=="Ontario","St. Catharines", NA))
                     
 
 d$doi<-"http://dx.doi.org/10.2317/JKES711.05.1"
 d$name <- "Skandalis_2009"
 d$description <-"Dataset about traits"
 
-d$lat <-ifelse(d$Location =="Maryland", "39",
-               ifelse (d$Location=="Ontario","43", NA))
-d$long <-ifelse(d$Location =="Maryland", "-76",
-                 ifelse (d$Location=="Ontario","-79", NA))
+d$lat <-ifelse(d$location =="Maryland", "39",
+               ifelse (d$location=="Ontario","43", NA))
+d$long <-ifelse(d$location =="Maryland", "-76",
+                 ifelse (d$location=="Ontario","-79", NA))
 
 head(d)
 
@@ -810,14 +816,14 @@ colnames(d)[3]<-"total_lenght"
 
 d$name <- "Ascher_et_al_2016"
 d$description <-"Dataset about Megachile traits"
-d$species <- paste(d$Genus, d$Specie)
+d$species <- paste(d$genus, d$Specie)
 d$country<- "Singapore"
 d$credit<-"Ascher et al. 2016. Journal, numero: http://zoobank.org/urn:lsid:zoobank.org:pub:0F042FC4-23A3-4C6F-8CDC-DDBAA412DB1A" #credit (referemnce: url)
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:5] <- c("J.S.","S.R.","Z.W.W.","J.X.Q.","E.J.Y.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:5] <- c("Ascher", "Risch", "Soh", "Lee", "Soh")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:5] <- c("J.S.","S.R.","Z.W.W.","J.X.Q.","E.J.Y.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:5] <- c("Ascher", "Risch", "Soh", "Lee", "Soh")
 
 #CONSULTAR PAPER CON NACHO.
 
@@ -839,10 +845,10 @@ d$description <-"Dataset about Apoidea IT"
 d$species <- paste(d$genus, d$specie)
 
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:1] <- c("J.H.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:1] <- c("Cane")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:1] <- c("J.H.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:1] <- c("Cane")
 d$credit<- "Journal of the Kansas Entomological Society Vol. 60, No. 1 (Jan., 1987), pp. 145-147, http://www.jstor.org/stable/25084877"
 
 #SIN DATOS SOBRE LOCALIDAD, PAÍS, LAT Y LONG, ETC.
@@ -870,10 +876,10 @@ d$long<- "120.03333333333333"
 d$country<- "Indonesia"
 d$doi<-"10.1098/rspb.2008.0405 " 
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:4] <- c("P.","T.","J.M.","I.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:4] <- c("Hoehn", "Tscharntke", "Tylianakis", "Steffan-Dewenter")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:4] <- c("P.","T.","J.M.","I.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:4] <- c("Hoehn", "Tscharntke", "Tylianakis", "Steffan-Dewenter")
 
 head(d)
 
@@ -893,10 +899,10 @@ d$location<-" Aarhus"
 d$country<- "Denmark"
 d$doi<-"10.1007/s00040-013-0290-x" 
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:2] <- c("M.","Y.L.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:2] <- c("Hagen", "Dupont")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:2] <- c("M.","Y.L.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:2] <- c("Hagen", "Dupont")
 
 #NO LAT AND LONG DATA
 head(d)
@@ -906,7 +912,7 @@ head(d)
 #Read data from  Burkle_2013----------
 
 d <- read.csv("raw_data/Burkle_2013.csv", header = TRUE, sep = ",", dec= ",")
-
+head(d)
 
 d$local_id <- c(1:nrow(d))
 
@@ -918,33 +924,32 @@ d$country<-"USA"
 d$doi<-"10.1126/science.1232728"
 #d$year<-
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:3] <- c("L.A.","J.C.","T.M.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:3] <- c("Burkle", "Marlin","Knight")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:3] <- c("L.A.","J.C.","T.M.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:3] <- c("Burkle", "Marlin","Knight")
 
-colnames(d)[2]<-"pollinator"
 
 #split plant
 position <- regexpr(pattern = "_", d$plant)
 d$plant_genus <- substr(d$plant, 1, position-1)
 d$plant_species <- substr(d$plant, position+1, nchar(as.character(d$plant)))
-
-#split pollinator
-position <- regexpr(pattern = "_", d$pollinator)
-d$pollinator_genus <- substr(d$pollinator, 1, position-1)
-d$pollinator_specie <- substr(d$pollinator, position+1, nchar(as.character(d$pollinator)))
-
-
-
-
-d <- d[,c("local_id", "plant_genus","plant_species", "pollinator_genus", "pollinator_specie", "name","description",
-          "location","country","doi","Contributor_name","Contributor_lastname")]
-
-
-#HAY QUE CORREGIR Y REPASAR. POLLINATOR?
+d$plant_specie <- paste(d$plant_genus, d$plant_specie)
+#split bee
+position <- regexpr(pattern = "_", d$bee)
+d$genus <- substr(d$bee, 1, position-1)
+d$specie <- substr(d$bee, position+1, nchar(as.character(d$bee)))
+d$specie <- paste(d$genus, d$specie)
 
 head(d)
+
+d <- d[,c("local_id", "plant_genus","plant_species", "genus", "specie", "name","description",
+          "location","country","doi","contributor_name","contributor_lastname")]
+
+head(d)
+
+errors <- validateDataset(cnx, d)
+temp <- parse_errors(errors) #This dataset is NOT valid Column #1 'plant_genus' is not recognized and it will be ignored.Column #2 'plant_species' is not recognized and it will be ignored.Column #3 'genus' is not recognized and it will be ignored.Column #4 'specie' is not recognized and it will be ignored.
 
 
 #Read data from  Fowler_2016----------
@@ -952,6 +957,11 @@ head(d)
 d <- read.csv("raw_data/Fowler_2016.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
+colnames(d)[1]<-"genus"
+colnames(d)[2]<-"specie"
+colnames(d)[3]<-"plant_genus"
+
+d$specie <- paste(d$genus, d$specie)
 d$local_id <- c(1:nrow(d))
 d$name <- "Fowler_2016"
 d$description <-"Webpage about specialist bees and pollinator-plant interactions."
@@ -959,19 +969,21 @@ d$location<-"Mid-Atlantic and Northeastern United States"
 d$country<-"USA"
 d$credit<-"http://jarrodfowler.com/specialist_bees.html"
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:2] <- c("J.","S.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:2] <- c("Fowler", "Droege")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:2] <- c("J.","S.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:2] <- c("Fowler", "Droege")
 
 
-colnames(d)[2]<-"specie"
-colnames(d)[3]<-"plant_genus"
 
 
-d <- d[,c("local_id", "plant_genus","Genus", "specie", "name","description",
-          "location","country","credit","Contributor_name","Contributor_lastname")]
+d <- d[,c("local_id", "genus", "specie","plant_genus", "name","description",
+          "location","country","credit","contributor_name","contributor_lastname")]
 head(d)
+#HOST PLANT>>PLANT GENUS. PUEDE HABER VARIOS GÉNEROS EN LA MISMA COLUMNA.
+
+errors <- validateDataset(cnx, d)#Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors)#This dataset is NOT valid Column #1 'genus' is not recognized and it will be ignored.Column #2 'specie' is not recognized and it will be ignored.Column #3 'floral_specialization' is not recognized and it will be ignored.Column #4 'sociality' is not recognized and it will be ignored.Column #5 'nest_location' is not recognized and it will be ignored.Column #6 'plant_genus' is not recognized and it will be ignored.Column #7 'plant_specie' is not recognized and it will be ignored.
 
 
 
@@ -982,7 +994,13 @@ head(d)
 d <- read.csv("raw_data/Mafalda_2017.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
+colnames(d)[1]<-"genus"
+colnames(d)[2]<-"specie"
+colnames(d)[3]<-"floral_specialization"
+colnames(d)[5]<-"nest_location"
 
+d$specie <- paste(d$genus, d$specie)
+d$plant_specie<-paste(d$plant_genus, d$plant_specie)
 d$local_id <- c(1:nrow(d))
 d$name <- "Mafalda_2017"
 d$description <-"Dataset about ecologycal traits and some interacctions data"
@@ -990,21 +1008,20 @@ d$location<-"Tapada da Ajuda, Lisboa"
 d$country<-"Portugal"
 d$credit<-"http://hdl.handle.net/10451/27533"
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:1] <- c("M.N.C.C")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:1] <- c("Rocha")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:1] <- c("M.N.C.C")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:1] <- c("Rocha")
 
 
-colnames(d)[2]<-"specie"
-colnames(d)[3]<-"floral_specialization"
-colnames(d)[5]<-"nest_location"
-
-d <- d[,c("local_id","Genus", "specie", "floral_specialization", "sociality", "nest_location", "plant_genus","plant_specie","name","description",
-          "location","country","credit","Contributor_name","Contributor_lastname")]
+d <- d[,c("local_id","genus", "specie", "floral_specialization", "sociality", "nest_location", "plant_genus","plant_specie","name","description",
+          "location","country","credit","contributor_name","contributor_lastname")]
 head(d)
 
 #REPASAR. RELLENAR ESPACIOS EN BLANCO CON "NA"
+
+errors <- validateDataset(cnx, d)#Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors)#This dataset is NOT valid Column #1 'genus' is not recognized and it will be ignored.Column #2 'specie' is not recognized and it will be ignored.Column #3 'floral_specialization' is not recognized and it will be ignored.Column #4 'sociality' is not recognized and it will be ignored.Column #5 'nest_location' is not recognized and it will be ignored.Column #6 'plant_genus' is not recognized and it will be ignored.Column #7 'plant_specie' is not recognized and it will be ignored.
 
 
 
@@ -1015,7 +1032,13 @@ head(d)
 d <- read.csv("raw_data/Hupfenmuller_2014.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
+colnames(d)[1]<-"family"
+colnames(d)[2]<-"genus"
+colnames(d)[4]<-"N"
+colnames(d)[5]<-"interaction"
+colnames(d)[6]<-"sociality"
 
+d$specie <- paste(d$genus, d$specie)
 d$local_id <- c(1:nrow(d))
 d$name <- "Hupfenmuller_2014"
 d$description <-"Dataset about ecologycal traits and abundance"
@@ -1025,17 +1048,22 @@ d$doi<-"10.1371/journal.pone.0104439"
 d$year<-"2010"
 
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:3] <- c("S.","I.","A.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:3] <- c("Hupfenmüller","Steffan-Dewenter","Holzschuh")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:3] <- c("S.","I.","A.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:3] <- c("Hupfenmüller","Steffan-Dewenter","Holzschuh")
 
 
-colnames(d)[6]<-"sociality"
 
-d <- d[,c("local_id","Genus", "specie", "Abundance", "sociality","year","name","description",
-          "location","country","doi","Contributor_name","Contributor_lastname")]
+
+d <- d[,c("local_id","family","genus", "specie", "N","interaction","sociality","year","name","description",
+          "location","country","doi","contributor_name","contributor_lastname")]
 head(d)
+
+#ABUNDANCE>>N, FREQUENCY>>INTERACTION.NO SELECCIONAMOS COLUMNA BODY. LIMPIAR ESPACIOS
+
+errors <- validateDataset(cnx, d)#Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors)#This dataset is NOT valid Column #1 'genus' is not recognized and it will be ignored.Column #2 'specie' is not recognized and it will be ignored.Column #3 'floral_specialization' is not recognized and it will be ignored.Column #4 'sociality' is not recognized and it will be ignored.Column #5 'nest_location' is not recognized and it will be ignored.Column #6 'plant_genus' is not recognized and it will be ignored.Column #7 'plant_specie' is not recognized and it will be ignored.
 
 
 
@@ -1045,6 +1073,10 @@ head(d)
 d <- read.csv("raw_data/Barbir_2014.csv", header = TRUE, sep = ",", dec= ",")
 head(d)
 
+colnames(d)[1]<-"genus"
+colnames(d)[5]<-"m_bsize"
+
+d$specie <- paste(d$genus, d$specie)
 d$local_id <- c(1:nrow(d))
 d$name <- "Barbir_2014"
 d$description <-"Dataset about size traits"
@@ -1055,19 +1087,22 @@ d$year<-"2011/2012"
 d$lat<-"40.3166667"
 d$long<-"-3.4833333333333334"
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:4] <- c("J.","F.R.","C.","J.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:4] <- c("Barbir","Badenes-Pérez","Fernández-Quintanilla","Dorado")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:4] <- c("J.","F.R.","C.","J.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:4] <- c("Barbir","Badenes-Pérez","Fernández-Quintanilla","Dorado")
 
-colnames(d)[5]<-"m_bsize"
 
-d <- d[,c("local_id","Genus", "specie","m_bsize","year","name","description",
-          "location","country","lat","long","doi","Contributor_name","Contributor_lastname")]
+
+d <- d[,c("local_id","genus", "specie","m_bsize","year","name","description",
+          "location","country","lat","long","doi","contributor_name","contributor_lastname")]
 
 head(d)
 
-#REPASAR Y ESTANDARIZAR. REVISAR M_BSIZE.
+#REVISAR M_BSIZE (BODY SIZE).
+errors <- validateDataset(cnx, d)#Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors)#This dataset is NOT valid Column #1 'genus' is not recognized and it will be ignored.Column #2 'specie' is not recognized and it will be ignored.Column #3 'floral_specialization' is not recognized and it will be ignored.Column #4 'sociality' is not recognized and it will be ignored.Column #5 'nest_location' is not recognized and it will be ignored.Column #6 'plant_genus' is not recognized and it will be ignored.Column #7 'plant_specie' is not recognized and it will be ignored.
+
 
 
 
@@ -1078,6 +1113,9 @@ head(d)
 d <- read.csv("raw_data/Sydenham_2016.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
+colnames(d)[1]<-"genus"
+
+d$specie <- paste(d$genus, d$specie)
 d$local_id <- c(1:nrow(d))
 d$name <- "Sydenham_2016"
 d$description <-"Dataset about IT size"
@@ -1085,20 +1123,22 @@ d$country<-"Norway"
 d$doi<-"10.1002/ece3.1871"
 d$year<-"2009/2010/2013"
 
-
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:4] <- c("M.A.K.","L.D.","S.R.","K.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:4] <- c("Sydenham","Häusler","Moe","Eldegard")
-
-colnames(d)[3]<-"individuals"
-
-d <- d[,c("local_id","Genus", "specie","individuals","m_IT", "n_IT","se_IT","year","name","description",
-          "country","doi","Contributor_name","Contributor_lastname")]
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:4] <- c("M.A.K.","L.D.","S.R.","K.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:4] <- c("Sydenham","Häusler","Moe","Eldegard")
 
 
-#SIN LOCALIZACIÓN EXACTA. NO LAT, NO LONG. ¿CREAR COLUMNA PARA REMARCAR QUE SON CAVITY NESTING?
+
+d <- d[,c("local_id","genus", "specie","N","m_IT", "n_IT","se_IT","year","name","description",
+          "country","doi","contributor_name","contributor_lastname")]
+
+
+#SIN LOCALIZACIÓN EXACTA. NO LAT, NO LONG. ¿CREAR COLUMNA PARA REMARCAR QUE SON CAVITY NESTING? LIMPIAR ESPACIOS
 head(d)
+
+errors <- validateDataset(cnx, d)#Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors)#This dataset is NOT valid Column #1 'genus' is not recognized and it will be ignored.Column #2 'specie' is not recognized and it will be ignored.Column #3 'floral_specialization' is not recognized and it will be ignored.Column #4 'sociality' is not recognized and it will be ignored.Column #5 'nest_location' is not recognized and it will be ignored.Column #6 'plant_genus' is not recognized and it will be ignored.Column #7 'plant_specie' is not recognized and it will be ignored.
 
 
 
@@ -1109,30 +1149,43 @@ head(d)
 d <- read.csv("raw_data/Tur_2013.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
+
+colnames(d)[1]<-"plant_family"
+colnames(d)[2]<-"plant_genus"
+colnames(d)[3]<-"plant_specie"
+colnames(d)[4]<-"family"
+colnames(d)[5]<-"genus"
+colnames(d)[6]<-"specie"
+colnames(d)[7]<-"interaction"
+colnames(d)[8]<-"site"
+
 d$local_id <- c(1:nrow(d))
 d$name <- "Tur_2013"
 d$description <-"Dataset interactions frequencies"
-d$location<- ifelse(d$Site =="SB", "Son Bosc, Mallorca","Puig Major, Mallorca")
+d$location<- ifelse(d$site =="SB", "Son Bosc, Mallorca","Puig Major, Mallorca")
 d$country<-"Spain"
-d$month<-ifelse(d$Site =="SB", "4-7","5-8")
+d$month<-ifelse(d$site =="SB", "4-7","5-8")
 d$year<-"2009/2010"
 d$doi<-"10.1371/journal.pone.0078294"
+d$plant_specie <- paste(d$plant_genus, d$plant_specie)
+d$specie <- paste(d$genus, d$specie)
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:3] <- c("C.","R.","A.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:3] <- c("Tur","Castro-Urgal","Travest")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:3] <- c("C.","R.","A.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:3] <- c("Tur","Castro-Urgal","Travest")
 
-d$lat <- ifelse(d$Site =="SB", "39.774475","39.7998639")
-d$long<-ifelse(d$Site=="SB", "3.129261111111111", "2.7855027777777774" )
+d$lat <- ifelse(d$site =="SB", "39.774475","39.7998639")
+d$long<-ifelse(d$site=="SB", "3.129261111111111", "2.7855027777777774" )
 
 head(d)
 
 #NACHO, EN ESTE CASO TENEMOS POLINIZADORES, EN GENERAL, NO SOLO ABEJAS. HE DEJADO
 #LA TABLA PRÁCTICAMENTE TAL Y COMO ESTABA, DEJANDO LAS COLUMNAS DE "FAMILY",
-#"POLLINATOR", ETC. ÉCHALE UN OJO A LOS DATOS Y ME DICES SI HACEMOS LIMPIEZA DE TABLA.
+#ETC. ÉCHALE UN OJO A LOS DATOS Y ME DICES SI HACEMOS LIMPIEZA DE TABLA.
 
-
+errors <- validateDataset(cnx, d)#Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors)#This dataset is NOT valid Column #1 'genus' is not recognized and it will be ignored.Column #2 'specie' is not recognized and it will be ignored.Column #3 'floral_specialization' is not recognized and it will be ignored.Column #4 'sociality' is not recognized and it will be ignored.Column #5 'nest_location' is not recognized and it will be ignored.Column #6 'plant_genus' is not recognized and it will be ignored.Column #7 'plant_specie' is not recognized and it will be ignored.
 
 
 #Read data from  Normandin_2016----------
@@ -1141,6 +1194,13 @@ head(d)
 d <- read.csv("raw_data/Normandin_2016.csv", header = TRUE, sep = ";", dec= ",")
 head(d)
 
+
+colnames(d)[1]<-"genus"
+colnames(d)[4]<-"m_IT"
+colnames(d)[5]<-"sociality"
+colnames(d)[8]<-"floral_specialization"
+colnames(d)[3]<-"nesting"
+
 d$local_id <- c(1:nrow(d))
 d$name <- "Normandin_2016"
 d$description <-"Dataset about ecological and morphological traits"
@@ -1148,27 +1208,36 @@ d$location<- "Montreal & Quebec"
 d$country<-"Canada"
 d$year<-"2012/2013"
 d$doi<-"10.7717/peerj.3051"
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:4] <- c("E.","N.J.","C.M.","V.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:4] <- c("Normandin","Vereecken","Buddle","Fournier")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:4] <- c("E.","N.J.","C.M.","V.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:4] <- c("Normandin","Vereecken","Buddle","Fournier")
 d$lat<- "45.5011111 & 46.8022222"
 d$long<-"-73.65611111111112 & -71.26388888888889" 
+d$specie <- paste(d$genus, d$specie)
 
-colnames(d)[4]<-"m_IT"
-colnames(d)[5]<-"Sociality"
-colnames(d)[8]<-"floral_specialization"
 
 head(d)
-
+#LIMPIAR ESPACIOS Y COLUMNAS NO DESEADAS.
 #DUDAS ACERCA DE CÓMO PONER LOCATION Y LAT/LONG EN ESTE PAPER. EN LA TABLA INTRODUCIDA NO TENEMOS NADA QUE NOS DIFERENCIA ENTRE ZONAS, YA QUE NO SE HAN
 #AÑADIDO LAS ABUNDANCIAS QUE APARECEN EN OTRAS TABLAS. HAY TABLAS TAMBIÉN DE LOS DISTINTOS SITES (MUCHOS), CADA UNO CON SU LAT/LONG, AUNQUE CREO QUE ES INFORMACIÓN
 #NO ESENCIAL. 
+errors <- validateDataset(cnx, d) #Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors)
 
+
+
+
+
+
+#Read data from  Macior_1974----------
 
 d <- read.csv("raw_data/Macior_1974.csv", header = TRUE, sep = ",", dec= ",")
 head(d)
 
+colnames(d)[1]<-"specie"
+colnames(d)[2]<-"m_tongue_length"
+colnames(d)[3]<-"se_tongue_length"
 
 d$local_id <- c(1:nrow(d))
 d$name <- "Macior_1974"
@@ -1179,23 +1248,24 @@ d$country<-"U.S.A."
 d$year<-"1974"
 
 
-d$Contributor_name <- rep(NA, nrow(d)) 
-d$Contributor_name[1:1] <- c("L.W.")
-d$Contributor_lastname <- rep(NA, nrow(d)) 
-d$Contributor_lastname[1:1] <- c("Macior")
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:1] <- c("L.W.")
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:1] <- c("Macior")
 
-
-colnames(d)[1]<-"Species"
-colnames(d)[2]<-"m_tongue_length"
-colnames(d)[3]<-"se_tongue_length"
 
 #split pollinator
-position <- regexpr(pattern = " ", d$Species)
-d$Genus <- substr(d$Species, 1, position-1)
-d$specie <- substr(d$Species, position+1, nchar(as.character(d$Species)))
+position <- regexpr(pattern = " ", d$specie)
+d$genus <- substr(d$specie, 1, position-1)
 
+d <- d[,c("local_id","genus","specie","m_tongue_length","se_tongue_length","year","name","description","country","doi","contributor_name","contributor_lastname","credit")]
 
 head(d)
+
+errors <- validateDataset(cnx, d)# Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
+temp <- parse_errors(errors) #This dataset is NOT valid Column #1 'plant_genus' is not recognized and it will be ignored.Column #2 'plant_species' is not recognized and it will be ignored.Column #3 'genus' is not recognized and it will be ignored.Column #4 'specie' is not recognized and it will be ignored.
+
+
 
 #ESTOS DATOS LOS HE ENCONTRADO A TRAVÉS DE OTRO ARTÍCULO:http://datadryad.org/resource/doi:10.5061/dryad.10278. 
 #HE INTENTADO IR A LA FUENTE ORIGINAL, EL ARTÍCULO DE MACIOR, PERO NO HE ENCONTRADO PRÁCTICAMENTE NADA. 
