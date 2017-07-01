@@ -8,7 +8,7 @@ source("R/help_functions.R")
 library(taxize)
 library(reshape2)
 library(devtools)
-install_github("metadevpro/traitbaser", force = TRUE) #works with basic R...
+#install_github("metadevpro/traitbaser", force = TRUE) #works with basic R...
 library(traitbaser)
 cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
@@ -260,7 +260,7 @@ d <- d[,c("local_id", "species", "credit",
 #5) test and upload dataset
 head(d)
 errors <- validateDataset(cnx, d)
-temp <- parse_errors(errors)
+parse_errors(errors)
 
 #corregir
 temp <- clean_species(d$species) 
@@ -270,12 +270,12 @@ d$species <- temp$final_names
 
 errors <- validateDataset(cnx, d)
 temp <- parse_errors(errors)
+temp
 
 #errors que quedan:
-
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
-importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
+importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!?
 
 
 
