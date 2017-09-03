@@ -1,20 +1,23 @@
-#this script upload raw data located at raw_data folder and produces 
-#input for traitbase. By running this script you cna recreate the database 
-#from scratch.
+#This script upload raw data located at raw_data folder and upload it 
+#to traitbase. By running this script you can recreate the database 
+#from scratch being all decisions made completely reproducible.
 
-#source helper functions and packages
-source("R/clean_species.R")
-source("R/help_functions.R")
-library(taxize)
+#Install packages----
+library(taxize) #loaded with traitbase? Not Yet.
 library(reshape2)
 library(devtools)
-#install_github("metadevpro/traitbaser", force = TRUE) #works with basic R...
+#install_github("metadevpro/traitbaser") 
 library(traitbaser)
-cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
-#cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
+source("psw.R") #protected psw.
+#First thing you need is to stablish the connection 
+#with your user and pasword credentials. If you want writing permits,
+#email me at nacho.bartomeus@gmail.com-
+cnx <- connect(url = "http://www.traitbase.info", usr, psw)
+#cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", 
+ #              "demo", "1234") #for testing only
+
 
 #Input data needs to be in a data.frame with the following columns:
-
 #colnames:
 #"name": UNIQUE. Name of the datset (should be unique and will be lastname_year 
     #followed by a,b,c if different datasets has the same name_year combination)
@@ -23,14 +26,15 @@ cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
 #"doi": UNIQUE. If published doi of the dataset/paper
 
 #"local_id": Any id set in the original paper
-#"species": genus species (needs to be a valid taxon name
+#"species": genus species (needs to be a valid taxon name).
 #"collector": If known who the collector was
 #"taxonomist": If known who the taxonomist was
 #"day","month","year": In separate columns
 #"lat","long","location": Lat long and descriptive location if available.
 #"country": If known where was collected.
 
-#Traits: measures start by "m_"
+#Traits: measures start by "m_". Traits defined as per schema. 
+#Here examples of bee traits:
     #"m_IT" 
     #"m_sex" (male, female, queen, ...)
     #"m_plant_genus"
@@ -49,7 +53,7 @@ cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
     #"n_plant_species"
     #...
 
-#"contributor_name": Who to give credit name. Usa as many rows as contributors. Rest can be NA.
+#"contributor_name": Who to give credit name. Usa as many rows as contributors. Rest of the columns can be NA.
 #"contributor_lastname": Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
 #"contributor_country": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
 #"contributor_organization": OPTIONAL. Who to give credit last name. Usa as many rows as contributors. Rest can be NA.
@@ -96,7 +100,7 @@ d$country <- "Netherlands" #Add country based on paper description
 colnames(d)[9] <- "m_IT" #rename trait
 summary(d$m_IT) #check is numeric and range is ok
 d$n_IT <- 1 #sample size is one for all
-d$se_IT <- 0 #se is 0 for all
+d$se_IT <- 0 #se is 0 for all by definition (n = 1)
 d$m_sex <- d$sex #less elegant way to rename a column
 levels(d$m_sex) <- c("female", "male") #recode for standardizing all datsets.
 d$n_sex <- 1 #sample size is one for all
@@ -106,9 +110,9 @@ d$se_sex <- 0 #se is 0 for all
 #Add contributor information (if doi, can be ignored)
 d$doi <- "10.1371/journal.pone.0148983" #Add doi
 d$name <- "Oliveira_2016" # Add name of the dataset
-d$description <- "Dataset describing bodi sizes for 10 bee species alomg > 100 years in the Nederlands" # Add name of the dataset
+d$description <- "Dataset describing bodi sizes for 10 bee species along > 100 years in the Nederlands" # Add name of the dataset
 d$contributor_name <- rep(NA, nrow(d)) #create an empty column
-d$contributor_name[1:4] <- c("MO", "BM", "J", "D") #populate the first forut rows
+d$contributor_name[1:4] <- c("MO", "BM", "J", "D") #populate the first four rows, because it has four authors
 d$contributor_lastname <- rep(NA, nrow(d)) #create an empty column
 d$contributor_lastname[1:4] <- c("Oliveira", "Freitas", "Scheper", "Kleijn") #populate the first forut rows
 
@@ -125,7 +129,7 @@ d <- d[,c("local_id", "species",
 head(d)
 #txt <- df_to_rl(d)
 errors <- validateDataset(cnx, d)
-parse_errors(errors)
+parseErrors(errors)
 
 unique(d$month) #great catch!
 d[which(d$month > 12),"month"] <- c(7,4,5)
