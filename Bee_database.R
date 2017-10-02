@@ -7,14 +7,14 @@ library(taxize) #loaded with traitbase? Not Yet.
 library(reshape2)
 library(devtools)
 #install_github("metadevpro/traitbaser") 
+#install_github("ibartomeus/traitbaser") 
 library(traitbaser)
 source("psw.R") #protected psw.
 #First thing you need is to stablish the connection 
 #with your user and pasword credentials. If you want writing permits,
 #email me at nacho.bartomeus@gmail.com-
 cnx <- connect(url = "http://www.traitbase.info", usr, psw)
-#cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", 
- #              "demo", "1234") #for testing only
+#cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", usr, psw) #for testing only
 
 
 #Input data needs to be in a data.frame with the following columns:

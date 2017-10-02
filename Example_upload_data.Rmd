@@ -29,3 +29,5 @@ temp <- clean_species(species = d$species[1:3])
 d$test
 parse_errors(validateDataset(cnx, d[1,]))
 ```
+
+TODO: ADD A delete function
