@@ -136,7 +136,7 @@ d[which(d$month > 12),"month"] <- c(7,4,5)
 
 head(d)
 errors <- validateDataset(cnx, d)
-parse_errors(errors)
+parseErrors(errors = errors)
 
 importDataset(cnx, d) #works!
 
