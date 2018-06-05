@@ -8,11 +8,11 @@ library(reshape2)
 #library(devtools)
 #install_github("metadevpro/traitbaser")
 library(traitbaser)
-#cnx <- connect(url = "http://www.traitbase.info", "demo", "1234")
-cnx <- connect(url = "http://traitbase-qa.herokuapp.com/", "demo", "1234")
+#cnx <- connect(url = "https://traitbase.info", usr, psw)
+cnx <- connect(url = "https://traitbase-qa.herokuapp.com/", "test", "test")
 
 #test data
-d <- read.csv("processed_data/testdata.csv", header = TRUE, sep = ";")
+d <- read.csv("tests/testdata.csv", header = TRUE, sep = ";")
 head(d)
 errors <- validateDataset(cnx, d)
 errors
