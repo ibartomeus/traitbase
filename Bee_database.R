@@ -136,9 +136,11 @@ d[which(d$month > 12),"month"] <- c(7,4,5)
 
 head(d)
 errors <- validateDataset(cnx, d)
-parseErrors(errors = errors)
+parseErrors(errors)
 
 importDataset(cnx, d) #works!
+#is not inserting observations without date!?!
+#not importing contributors!
 
 #Data from Osorio-Canadas et al., 2016----
 
@@ -190,9 +192,7 @@ d$se_IT <- ifelse(is.na(d$se_IT), 0, d$se_IT)
 str(d)
 head(d)
 errors <- validateDataset(cnx, d) #time out
-
-errors <- validate_sliced(cnx, d)
-parse_errors(errors)
+parseErrors(errors)
 
 #clean species!
 temp <- clean_species(d$species) #SLOWWWW needs user inputs.
@@ -213,8 +213,8 @@ temp$final_names <- as.character(d$final_names)
 
 d$species <- temp$final_names
 
-errors <- validate_sliced(cnx, d)
-errors
+errors <- validateDataset(cnx, d) #time out
+parseErrors(errors)
 
 importDataset(cnx, d) #fails, only adds a few rows!
 
@@ -234,7 +234,7 @@ head(d)
 d$local_id <- c(1:nrow(d))
 colnames(d)[1] <- "species" 
 colnames(d)[2] <- "m_fresh_mass"  #fresh mass in the paper the unit is g, but I think it is wrong and it is mg
-d$m_fresh_mass <- d$m_fresh_mass/10 #NOt mg... crap...
+d$m_fresh_mass <- d$m_fresh_mass/10 #update to grams
 colnames(d)[3] <- "n_fresh_mass" 
 d$m_sex <- d$sex
 d$n_sex <- d$n_fresh_mass
@@ -264,24 +264,21 @@ d <- d[,c("local_id", "species", "credit",
 #5) test and upload dataset
 head(d)
 errors <- validateDataset(cnx, d)
-parse_errors(errors)
+(temp <- parseErrors(errors))
 
 #corregir
-temp <- clean_species(d$species) 
-temp
+#temp <- cleanSpecies(d$species) #cleanSpecies gives error
+#temp
 
-d$species <- temp$final_names
+#d$species <- temp$final_names
 
 errors <- validateDataset(cnx, d)
-temp <- parse_errors(errors)
-temp
+(temp <- parseErrors(errors))
 
 #errors que quedan:
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
 importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!?
-
-
 
 
 #Data from Borrel, 2007  ----
@@ -322,7 +319,7 @@ head(d)
 
 head(d)
 errors <- validateDataset(cnx, d)
-(temp <- parse_errors(errors))
+(temp <- parseErrors(errors))
 
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
@@ -363,7 +360,7 @@ d <- d[,c("local_id", "species", "country", "location", "m_tongue_length", "n_to
 
 head(d)
 errors <- validateDataset(cnx, d)
-(temp <- parse_errors(errors))
+(temp <- parseErrors(errors))
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
 importDataset(cnx, d[-which(d$species %in% to_rm),]) #only remove first instance!
@@ -516,7 +513,7 @@ d <- d[,c("local_id", "species", "country", "location", "lat",
 
 head(d)
 errors <- validateDataset(cnx, d)
-(temp <- parse_errors(errors))
+(temp <- parseErrors(errors))
 
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
@@ -564,7 +561,7 @@ d <- d[,c("local_id", "species", "country", "location", "m_IT", "m_sociality", "
 
 head(d)
 errors <- validateDataset(cnx, d)
-(temp <- parse_errors(errors))
+(temp <- parseErrors(errors))
 
 to_rm <- d$species[temp[[2]]]
 #simply ignore them.
@@ -596,7 +593,7 @@ d$se_plant_genus <- 0
 d$se_plant_species <- 0
    
 #split date 
-date <- as.POSIXlt(strptime(d$date, "%d/%m/%Y")) #convert to date class
+date <- as.POSIXlt(strptime(d$Date, "%d/%m/%Y")) #convert to date class
 d$day <- date$mday #extract the day only
 d$month <- date$mon+1 #extract the day only
 d$year <- date$year + 1900 #extract the day only
@@ -654,7 +651,7 @@ print(d$site)
 
 #5) Upload dataset 
 errors <- validateDataset(cnx, d)#Error: lexical error: invalid char in json text.<!DOCTYPE html> 	<html> 	  <hea (right here) ------^
-temp <- parse_errors(errors)
+temp <- parseErrors(errors)
 
 #I keep the template for later:
 #1) Read data (read.table, read.csv...)
