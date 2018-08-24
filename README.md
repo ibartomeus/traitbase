@@ -1,5 +1,5 @@
 # TraitBase:
-*This repo manages the dynamic individual trait database [www.traitbase.info](www.traitbase.info) via [traitbaseR](https://github.com/metadevpro/traitbaser)*  
+*This repo manages a flexible, individual-based, open and reproducible trait database: [www.traitbase.info](www.traitbase.info) via [traitbaseR](https://github.com/metadevpro/traitbaser)*  
 
 *Please fill bugs as issues: [https://github.com/ibartomeus/traitbase/issues](https://github.com/ibartomeus/traitbase/issues)
 

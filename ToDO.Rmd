@@ -46,16 +46,16 @@ Exploring (summary):
     [] Bitton to download metadata?
 About:
     [] Check spelling
-    [] remove "by making all data CC-by." to avoid ambiguities with sup mat data.
+    [X] remove "by making all data CC-by." to avoid ambiguities with sup mat data.
     [] Link to "R package"
-    [] 2017 JAJA
+    [X] remove "2017" JAJA
 Access to data:
     [] Spelling
     [] (This can be done in 3-4 tables downloaded as a ZIP file)-> First release comming soon.
     [] "The package includes a series of useful ..." Change for link to the package.
     
     [] Add a note that if you want to remove your data, just ask.
-    [] 
+ 
     
 #Media:
     [] When Beta version is ot make some noise and ask people to submit datasets.
