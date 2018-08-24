@@ -1,0 +1,64 @@
+#To Do:
+
+#Data
+[] Clean Bee_database.R code
+    [] change DOI NA[1-9] to first name - last name (or whatever we decide with Pedro).
+    [] Some datasets failing
+    [] Some datasets have species that can be cleaned, or traits (paratisim) that can be included.
+    [] Bombus appears as soil nester, which... meh... check Mafalda and Fortel datasets.
+    [] Check lon and not long for longitude! I think long is supported.
+[] Add Asensio and De Palma data. We use issues for new datasets: https://github.com/ibartomeus/traitbase/issues/7
+[] Update Example_upload_data (unify with /tests) and Example_query_data.Rmd.
+
+#Package:
+    [] load taxize with package
+    [] `parseErrors` paradoxialy gives an error when there are no errors (Nacho will fix this)
+    [] Add to `privateImport` an if statement to show a 404 error or the 505 when this occurs.
+    [] cleanSpecies gives error -> Nacho (Update from elsewhere with verbose = TRUE)
+    [] Modify ParseError to target unrecognized or ambigous species for you (Nacho)
+    [] To enter data make snipets that help splitting dates, genus, species, white space, etc...
+    [] Implement functions: credit() to give credit already formated for a bunch of id's and
+search() as a wrapper for resorce() and query().
+    [] Add code of conduct, vignettes, 
+    [] query function filtering for created at: to be able to reproduce the database at point X in time.
+    [] Create sumary functions for phenology, distribution, lecticity...
+    [] Submit to CRAN?
+Contribute:
+    [] All data uploaded to TRAITBASE is released using the license CC-by (please ensure you have the rights to do so). CHANGE
+    [] If you want to contribute the easiest way is to download the template [link]. Make template!
+    [] Pollinators = Apoidea.
+Team:
+    [] Ignaci!
+    [] Add Curro (photos), etc...
+Sponsors:
+    [] Use only logos.
+    
+
+#Web:
+index:
+    [] add Beta version? near v1.0.2
+Menu: 
+    [] Add box search
+Exploring (summary):
+    [] Remove"EXPLORING" <- Species.
+    [] Remove search box.
+    [] Sample size and St error in one line?
+    [] Bitton to download metadata?
+About:
+    [] Check spelling
+    [] remove "by making all data CC-by." to avoid ambiguities with sup mat data.
+    [] Link to "R package"
+    [] 2017 JAJA
+Access to data:
+    [] Spelling
+    [] (This can be done in 3-4 tables downloaded as a ZIP file)-> First release comming soon.
+    [] "The package includes a series of useful ..." Change for link to the package.
+    
+    [] Add a note that if you want to remove your data, just ask.
+    [] 
+    
+#Media:
+    [] When Beta version is ot make some noise and ask people to submit datasets.
+    
+#Paper:
+    [] Write paper with no rush. Objectibe preprint-PCI- and think about being inclusive with authors.
