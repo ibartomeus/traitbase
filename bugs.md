@@ -2,10 +2,10 @@
 
 # Important (in order of importance for me, more or less):
 [] make ORCID not compulsory to upload a contributor. Warn contributor not updated if some compulsory fields are missing.
-[] Metadata from advanced search not working e.g. https://traitbase.info/metadata?key=species&value=Bombus%20terrestris 
+[?] Metadata from advanced search not working e.g. https://traitbase.info/metadata?key=species&value=Bombus%20terrestris 
 from simple search it works: https://traitbase.info/metadata?speciesId=5b04145b2265c5000fab2abf
-[] long shifted to the left (e.g. Bombus terrestris) - checked against Google maps. All EU represented.
-[] Removing datasets do not remove its observations.
+[X] long shifted to the left (e.g. Bombus terrestris) - checked against Google maps. All EU represented.
+[X] Removing datasets do not remove its observations.
 [] When downloading data, locationDescription are merged and description not displayed (e.g. download data from Bombus terrestris)
 [] When data is downloaded, it lists all contributors of the table per row (i.e. per observation) (this only in simple search, and It shuold look like in advanced search) -> Not too important.
 [] Advanced search. Country and contributor Search not working properly.
