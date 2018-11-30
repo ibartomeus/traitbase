@@ -19,7 +19,8 @@
     [] To enter data make snipets that help splitting dates, genus, species, white space, etc... including list of accepted traits (e.g. retrieve metadata) and variables.
     [] Implement functions: credit() to give credit already formated for a bunch of id's and
 search() as a wrapper for resorce() and query().
-    [] Add code of conduct, vignettes, 
+    [X] Add code of conduct, 
+    [ ] vignettes, 
     [] query function filtering for created at: to be able to reproduce the database at point X in time.
     [] Create sumary functions for phenology, distribution, lecticity...
     [] Submit to CRAN?
@@ -34,6 +35,7 @@ Exploring (summary):
     [] Remove search box.
     [] Sample size and St error in one line?
     [] Button to download metadata?
+    [] make posible to call https://traitbase.info/species?q=Bombus%20terrestris, instead of e.g. https://traitbase.info/species?q=5b04145b2265c5000fab2abf. 
 About:
     [] Check spelling
     [X] remove "by making all data CC-by." to avoid ambiguities with sup mat data.
@@ -51,12 +53,13 @@ Contribute:
     [] Pollinators = Apoidea.
 Team:
     [] Ignaci!
-    [] Add Curro (photos), etc...
+    [] Add Curro, Jamie, and all the team...  (photos? remove photos?), etc...
 Sponsors:
     [] Use only logos. 
+    [] Remove teaming. Keep paypal.
     
 #Media:
     [] When Beta version is on make some noise and ask people to submit datasets.
     
 #Paper:
-    [] Write paper with no rush. Objectibe preprint-PCI- and think about being inclusive with authors.
+    [] Write paper with no rush. Objective preprint-PCI- and think about being inclusive with authors.

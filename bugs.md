@@ -40,7 +40,7 @@ from simple search it works: https://traitbase.info/metadata?speciesId=5b04145b2
 [] Would be cool to have a Delete dataset (and its observations) function (for the future)
 
 #Web
-[] Move search box to upper bar. (only if easy)
+[] Move search box to upper bar. 
 [] When Date search has day/month blank, it ignores year. Not important.
 [] Metadata can be downloaded along with data (maybe simply add a download button)
 [I] We say: "Use our API to connect directly with you preferred programming tool. See details on the API implementation here." Can we refer people to the API? which is the link? I found this: "API REST published over /api on port 5000. Swagger documentation for /api available on /api/documentation" Is this information enough?
