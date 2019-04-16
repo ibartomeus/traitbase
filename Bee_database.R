@@ -1623,7 +1623,7 @@ d$contributor_name[1:3] <- c('Michaela M.', 'Constantin M.', 'Susanne S.')
 d$contributor_lastname <- rep(NA, nrow(d)) 
 d$contributor_lastname[1:3] <- c('Hofmann', 'Zohner', 'Renner')
 d$contributor_ORCID <- rep(NA, nrow(d)) 
-d$contributor_ORCID[1:3] <- c('NA14', '0000-0002-8302-4854', '0000-0003-3704-0703')
+d$contributor_ORCID[1:3] <- c('Michaela Hofmann', '0000-0002-8302-4854', '0000-0003-3704-0703')
 
 #4) Remove unused columns
 d <- d[,c('Species', 'Pollen.specialisation', 'Nest.location','Sociality','Size.mean',
