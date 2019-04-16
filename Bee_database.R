@@ -10,7 +10,7 @@ library(devtools)
 #install_github("ibartomeus/traitbaser") 
 library(traitbaser)
 source("psw.R") #protected psw.
-#First thing you need is to stablish the connection 
+#First thing you need is to establish the connection 
 #with your user and pasword credentials. If you want writing permits,
 #email me at nacho.bartomeus@gmail.com-
 cnx <- connect(url = "https://traitbase.info", usr, psw)
@@ -1573,6 +1573,109 @@ errors <- validateDataset(cnx, d)
 to_rm <- d$species[c(temp[[2]], 776, 782, 1190, 1798, 2202)]
 #simply ignore them.
 importDataset(cnx, d[-which(d$species %in% to_rm),]) #
+
+##Data from Hofmann et al., 2019 ------
+
+#1) Read data 
+d <- read.csv("raw_data/Hofmann_etal_2019.csv", header = TRUE, sep = ",")
+str(d)
+head(d)
+
+#species has authority in the name. Find second space and remove everything after that
+position <- regexpr(pattern = " .*?( )", d$Species, perl = TRUE)
+position <- as.numeric(attr(position, 'capture.start'))
+d$Species <- substr(d$Species, 0, position-1) 
+
+#2) Check observations colnames ("local_id", "species","collector","taxonomist",
+#"day","month","year","lat","long","location","country")
+#Add lat long from google maps or paper if possible.
+#Check traits colnames(m_trait, se_trait, n_trait)
+colnames(d)
+
+#first deal with cuckoo bees
+d$parasitism <- 'no'
+d$parasitism[d$Pollen.specialisation == 'cuckoo'] <- 'yes'
+d$Sociality[d$parasitism == 'yes'] <- NA
+d$Pollen.specialisation[d$parasitism == 'yes'] <- NA
+
+#then rename nest location names
+levels(d$Nest.location)
+# above --> other
+# ground --> soil
+# ground and above --> other
+# host nest --> NA
+library(plyr)
+d$Nest.location <- revalue(d$Nest.location, c("above"="other", "ground"="soil",
+                           "ground and above"="other", "host nest"= 'other'))
+d$Nest.location[d$parasitism == 'yes'] <- NA
+
+
+#3) Add known missing columns (name, description, credit, doi)
+#Add contributor information (contributor_name, contributor_lastname, contributor_ORCID)
+#Do not look for other contributor info in detail.
+
+d$country <- 'Germany'
+d$name <- 'Hofmann et al. 2019'
+d$description <- 'Dataset of life history of Central European Bees'
+d$doi <- "10.1098/rspb.2019.0316"
+d$contributor_name <- rep(NA, nrow(d)) 
+d$contributor_name[1:3] <- c('Michaela M.', 'Constantin M.', 'Susanne S.')
+d$contributor_lastname <- rep(NA, nrow(d)) 
+d$contributor_lastname[1:3] <- c('Hofmann', 'Zohner', 'Renner')
+d$contributor_ORCID <- rep(NA, nrow(d)) 
+d$contributor_ORCID[1:3] <- c('NA14', '0000-0002-8302-4854', '0000-0003-3704-0703')
+
+#4) Remove unused columns
+d <- d[,c('Species', 'Pollen.specialisation', 'Nest.location','Sociality','Size.mean',
+     "parasitism", "country", "doi", "name", "description", "contributor_name", "contributor_lastname",
+     "contributor_ORCID")]
+names(d) <- c('species', 'm_floral_specialization', 'm_nest_site','m_sociality','m_body_size',
+              "m_parasitism", "country", "doi", "name", "description", "contributor_name", "contributor_lastname",
+              "contributor_ORCID")
+
+#5 test and upload dataset
+
+head(d)
+
+d$species <- revalue(d$species, c('Eucera dentata' = 'Tetraloniella dentata',
+                     'Andrena scotica' = 'Andrena carantonica',
+                     'Osmia lepeletieri' = 'Hoplitis lepeletieri',
+                     'Osmia adunca' = 'Hoplitis adunca',
+                     'Osmia tuberculata' = 'Hoplitis tuberculata',
+                     'Eucera macroglossa' = 'Tetralonia malvae',
+                     'Coelioxys conica' = 'Coelioxys quadridentata',
+                     'Osmia villosa' = 'Hoplitis villosa',
+                     'Osmia tridentata' = 'Hoplitis tridentata',
+                     'Osmia papaveris' = 'Hoplitis papaveris',
+                     'Osmia loti' = 'Hoplitis loti',
+                     'Osmia bicornis' = 'Osmia rufa',
+                     'Osmia anthocopoides' = 'Hoplitis anthocopoides',
+                     'Osmia acuticornis' = 'Hoplitis acuticornis',
+                     'Halictus eurygnathus' = 'Halictus compressus',
+                     'Anthidium byssinum' = 'Trachusa byssina',
+                     'Osmia ravouxi' = 'Hoplitis ravouxi',
+                     'Osmia claviventris' = 'Hoplitis claviventris',
+                     'Eucera alticincta' = 'Tetraloniella alticincta',
+                     'Rhophitoides canus' = 'Rophites canus',
+                     'Osmia spinulosa' = 'Hoplosmia spinulosa',
+                     'Anthidium nanum' = 'Pseudoanthidium scapulare',
+                     'Osmia truncorum' = 'Heriades truncorum',
+                     'Osmia crenulata' = 'Heriades crenulatus',
+                     'Hylaeus dilatatus' = 'Hylaeus annularis',
+                     'Osmia leucomelana' = 'Hoplitis leucomelana',
+                     'Osmia rapunculi' = 'Chelostoma rapunculi',
+                     'Eucera salicariae' = 'Tetraloniella salicariae',
+                     'Anthidium strigatum' = 'Anthidiellum strigatum'))
+
+errors <- validateDataset(cnx, d)
+(temp <- parseErrors(errors))
+
+
+to_rm <- d$species[temp[[2]]]
+#simply ignore them.
+importDataset(cnx, d[-which(d$species %in% to_rm),]) 
+
+
 
 #----
 #priority would Asensio localities.
