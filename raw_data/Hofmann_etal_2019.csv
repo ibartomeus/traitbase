@@ -1,0 +1,446 @@
+Species,Red.List,Abundance,Population.trend,Pollen.specialisation,Nest.location,Sociality,Mean.flight.month,Duration.of.activity,Size.mean,Altitude.mean,Forest,Raw.soil,Urban.areas,Meadows,Hedgerows,Wasteland,Habitat.breadth
+"Dufourea halictula (NYLANDER, 1852)",4,4,4,oligolectic,ground,solitary,7.5,2,4.5,400,0,1,0,0,0,1,2
+"Hylaeus clypearis (SCHENCK, 1853)",1,3,2,polylectic,above,solitary,7.5,4,4.5,800,0,0,0,0,1,1,2
+"Hylaeus pictipes NYLANDER, 1852",1,3,2,polylectic,above,solitary,7,3,4.5,800,0,1,0,0,1,1,3
+"Hylaeus styriacus FÖRSTER, 1871",1,3,2,polylectic,above,solitary,7,3,4.5,800,1,0,0,0,1,1,3
+"Lasioglossum glabriusculum (MORAWITZ, 1872)",1,3,2,polylectic,ground,social,7,7,4.5,800,0,1,0,0,0,1,2
+"Lasioglossum lucidulum (SCHENCK, 1861)",1,2,2,polylectic,ground,solitary,7,7,4.5,400,0,1,0,1,1,1,4
+"Lasioglossum minutissimum (KIRBY, 1802)",1,4,2,polylectic,ground,solitary,6.5,6,4.5,800,0,1,0,1,0,1,3
+"Lasioglossum politum (SCHENCK, 1853)",1,3,2,polylectic,ground,social,6.5,8,4.5,400,0,1,1,1,0,1,4
+"Nomada bluethgeni STÖCKHERT, 1943",6,7,6,cuckoo,host nest,cuckoo,6,5,4.5,400,0,1,0,1,0,0,2
+"Nomioides minutissimus (ROSSI, 1790)",4,6,4,polylectic,ground,solitary,7,3,4.5,400,0,1,0,0,0,0,1
+"Stelis minima SCHENCK, 1861",1,4,2,cuckoo,host nest,cuckoo,7,3,4.5,800,0,0,1,1,1,1,4
+"Hylaeus brevicornis NYLANDER, 1852",1,2,2,polylectic,above,solitary,7.5,4,5,800,0,0,1,1,1,1,4
+"Hylaeus gracilicornis (MORAWITZ, 1867)",1,4,insufficient data,polylectic,above,solitary,7,3,5,400,1,1,0,0,1,0,3
+"Hylaeus moricei (FRIESE, 1898)",3,4,3,polylectic,above,solitary,7,3,5,400,1,0,0,0,1,1,3
+"Lasioglossum aeratum (KIRBY, 1802)",3,4,3,polylectic,ground,social,6.5,6,5,1050,0,1,0,0,0,1,2
+"Lasioglossum marginellum (SCHENCK, 1853)",4,5,3,polylectic,ground,solitary,6.5,4,5,400,0,1,0,0,0,0,1
+"Sphecodes longulus VON HAGENS, 1882",1,3,2,cuckoo,host nest,cuckoo,6,7,5.25,800,1,1,1,1,1,1,6
+"Halictus smaragdulus VACHAL, 1895",3,4,3,polylectic,ground,social,6,5,5.5,800,0,1,0,0,0,1,2
+"Hylaeus gredleri FÖRSTER, 1871",1,2,2,polylectic,above,solitary,7,3,5.5,800,1,0,1,0,1,1,4
+"Hylaeus kahri FÖRSTER, 1871",1,4,insufficient data,polylectic,above,solitary,7.5,4,5.5,800,0,0,0,0,0,1,1
+"Hylaeus leptocephalus (MORAWITZ, 1870)",1,3,2,polylectic,above,solitary,7,5,5.5,800,0,0,1,0,1,1,3
+"Hylaeus lineolatus (SCHENCK, 1861)",3,4,3,polylectic,above,solitary,7.5,4,5.5,400,0,1,0,0,1,0,2
+"Hylaeus punctatus (BRULLÉ, 1832)",1,3,2,polylectic,above,solitary,6.5,4,5.5,400,0,0,1,0,1,1,3
+"Hylaeus sinuatus (SCHENCK, 1853)",1,3,2,polylectic,above,solitary,7,3,5.5,800,1,0,0,0,1,1,3
+"Lasioglossum cupromicans (PÉREZ, 1903)",3,5,insufficient data,polylectic,ground,solitary,6.5,6,5.5,1900,0,1,0,0,0,0,1
+"Lasioglossum morio (FABRICIUS, 1793)",1,1,2,polylectic,ground,social,6.5,8,5.5,1050,1,1,1,1,1,1,6
+"Lasioglossum pauxillum (SCHENCK, 1853)",1,1,2,polylectic,ground,social,6.5,8,5.5,800,1,1,1,1,1,1,6
+"Lasioglossum semilucens (ALFKEN, 1914)",1,3,2,polylectic,ground,solitary,5,6,5.5,400,0,1,0,0,1,1,3
+"Lasioglossum tarsatum (SCHENCK, 1868)",4,4,4,polylectic,ground,solitary,6,5,5.5,400,0,1,0,0,0,0,1
+"Nomada distinguenda MORAWITZ, 1874",3,4,insufficient data,cuckoo,host nest,cuckoo,7,7,5.5,800,1,1,1,1,1,1,6
+"Nomada kohli SCHMIEDEKNECHT, 1882",4,4,4,cuckoo,host nest,cuckoo,6.5,4,5.5,400,0,1,0,1,1,1,4
+"Sphecodes geoffrellus (KIRBY, 1802)",1,2,2,cuckoo,host nest,cuckoo,7,7,5.5,1500,1,1,1,1,1,1,6
+"Sphecodes hyalinatus VON HAGENS, 1882",1,1,2,cuckoo,host nest,cuckoo,7,7,5.5,1050,1,1,1,1,1,1,6
+"Sphecodes marginatus VON HAGENS, 1882",1,3,insufficient data,cuckoo,host nest,cuckoo,6.5,4,5.5,800,0,1,0,0,0,0,1
+"Sphecodes miniatus VON HAGENS, 1882",1,3,insufficient data,cuckoo,host nest,cuckoo,6.5,6,5.5,1500,1,1,1,1,1,1,6
+"Sphecodes niger VON HAGENS, 1874",1,3,2,cuckoo,host nest,cuckoo,7,7,5.5,1050,1,1,1,1,1,1,6
+"Stelis breviuscula (NYLANDER, 1848)",1,2,2,cuckoo,host nest,cuckoo,7,5,5.5,800,0,0,0,1,1,0,2
+"Stelis minuta LEPELETIER & SERVILLE, 1825",1,4,insufficient data,cuckoo,host nest,cuckoo,7.5,4,5.5,800,0,1,0,0,1,1,3
+"Andrena minutula (KIRBY, 1802)",1,1,2,polylectic,ground,solitary,5.5,6,6,1050,1,1,1,1,1,1,6
+"Dufourea alpina MORAWITZ, 1865",unknown,6,2,polylectic,ground,solitary,7,3,6,1900,0,1,0,0,0,0,1
+"Dufourea minuta LEPELETIER, 1841",3,4,3,oligolectic,ground,solitary,7.5,4,6,1450,1,0,0,0,0,0,1
+"Lasioglossum intermedium (SCHENCK, 1868)",3,4,3,polylectic,ground,solitary,6,5,6,1800,0,1,0,0,0,0,1
+"Lasioglossum lissonotum (NOSKIEWICZ, 1926)",4,5,3,polylectic,ground,social,6,5,6,800,0,1,0,0,0,1,2
+"Lasioglossum nitidiusculum (KIRBY, 1802)",2,3,3,polylectic,ground,solitary,6.5,6,6,400,0,1,0,0,1,1,3
+"Lasioglossum nitidulum (FABRICIUS, 1804)",1,2,2,polylectic,ground,social,6.5,8,6,800,0,1,1,0,0,0,2
+"Lasioglossum parvulum (SCHENCK, 1853)",2,4,3,polylectic,ground,solitary,7,7,6,800,1,1,1,1,1,1,6
+"Lasioglossum pygmaeum (SCHENCK, 1853)",3,4,insufficient data,polylectic,ground,solitary,6.5,6,6,400,0,1,0,0,0,1,2
+"Nomada atroscutellaris STRAND, 1921",2,3,3,cuckoo,host nest,cuckoo,5,3,6,800,0,1,1,1,1,1,5
+"Nomada discedens PÉREZ, 1884",5,6,insufficient data,cuckoo,host nest,cuckoo,6,1,6,400,0,1,0,0,0,0,1
+"Nomada flavoguttata (KIRBY, 1802)",1,1,2,cuckoo,host nest,cuckoo,5.5,6,6,1050,1,1,1,1,1,1,6
+"Nomada fuscicornis NYLANDER, 1848",1,3,2,cuckoo,host nest,cuckoo,7.5,4,6,800,0,1,0,0,1,1,3
+"Nomada obtusifrons NYLANDER, 1848",4,4,4,cuckoo,host nest,cuckoo,7.5,2,6,1050,1,1,0,0,1,0,3
+"Nomada sheppardana (KIRBY, 1802)",1,1,2,cuckoo,host nest,cuckoo,5.5,6,6,800,1,1,0,0,1,1,4
+"Sphecodes puncticeps THOMSON, 1870",1,3,2,cuckoo,host nest,cuckoo,6.5,6,6,800,0,1,0,0,0,1,2
+"Andrena alfkenella PERKINS, 1914",2,4,3,polylectic,ground,solitary,6.5,4,6.5,800,0,0,0,1,1,1,3
+"Andrena falsifica PERKINS, 1915",1,3,2,polylectic,ground,solitary,4,3,6.5,800,1,0,0,1,1,1,4
+"Andrena minutuloides PERKINS, 1914",1,1,2,polylectic,ground,solitary,6.5,6,6.5,800,1,1,1,1,1,1,6
+"Andrena potentillae PANZER, 1809",4,5,3,oligolectic,ground,solitary,4,3,6.5,400,0,1,0,0,0,1,2
+"Andrena semilaevis PÉREZ, 1903",3,4,3,polylectic,ground,solitary,6,3,6.5,1050,0,1,0,1,1,1,4
+"Anthidium strigatum (PANZER, 1805)",2,3,4,polylectic,above,solitary,7,3,6.5,800,0,1,1,0,1,1,4
+"Camptopoeum frontale (FABRICIUS, 1804)",4,6,3,oligolectic,ground,solitary,7.5,2,6.5,400,0,1,0,0,0,0,1
+"Ceratina cyanea (KIRBY, 1802)",1,2,2,polylectic,above,solitary,7,7,6.5,800,0,0,1,1,1,1,4
+"Epeolus alpinus FRIESE, 1893",unknown,6,2,cuckoo,host nest,cuckoo,6.5,2,6.5,1500,0,1,0,0,0,0,1
+"Hylaeus cardioscapus COCKERELL, 1924",unknown,6,insufficient data,polylectic,above,solitary,7,3,6.5,400,0,0,0,0,1,0,1
+"Hylaeus communis NYLANDER, 1852",1,1,2,polylectic,above,solitary,7.5,6,6.5,1050,0,1,1,0,1,0,3
+"Hylaeus dilatatus (KIRBY, 1802)",1,3,2,polylectic,above,solitary,7.5,4,6.5,800,0,1,0,0,1,1,3
+"Hylaeus hyalinatus SMITH, 1842",1,1,2,polylectic,above,solitary,7,5,6.5,800,0,1,1,1,1,1,5
+"Hylaeus rinki (GORSKI, 1852)",1,4,2,polylectic,above,solitary,7,3,6.5,800,1,0,0,0,1,0,2
+"Lasioglossum brevicorne (SCHENCK, 1868)",3,4,3,oligolectic,ground,social,7,7,6.5,800,0,1,0,0,1,0,2
+"Lasioglossum convexiusculum (SCHENCK, 1853)",4,5,3,polylectic,ground,solitary,6.5,4,6.5,800,0,0,0,0,0,1,1
+"Lasioglossum fulvicorne (KIRBY, 1802)",1,1,2,polylectic,ground,solitary,6.5,8,6.5,1050,1,1,1,1,1,1,6
+"Lasioglossum interruptum (PANZER, 1798)",3,3,4,polylectic,ground,social,7,7,6.5,800,0,0,0,1,0,1,2
+"Lasioglossum laticeps (SCHENCK, 1868)",1,2,2,polylectic,ground,social,6.5,8,6.5,800,0,1,0,1,1,1,4
+"Lasioglossum minutulum (SCHENCK, 1853)",3,4,3,polylectic,ground,solitary,6.5,6,6.5,800,0,0,0,1,0,1,2
+"Lasioglossum punctatissimum (SCHENCK, 1853)",1,3,2,polylectic,ground,solitary,7,7,6.5,400,0,1,0,0,1,1,3
+"Lasioglossum puncticolle (MORAWITZ, 1872)",3,4,3,polylectic,ground,social,7,7,6.5,400,0,1,0,1,1,1,4
+"Lasioglossum quadrisignatum (SCHENCK, 1853)",4,5,3,polylectic,ground,solitary,6.5,6,6.5,800,0,0,0,0,1,1,2
+"Lasioglossum rufitarse (ZETTERSTEDT, 1838)",1,3,2,polylectic,ground,solitary,7,7,6.5,1050,1,1,0,0,1,0,3
+"Lasioglossum sexstrigatum (SCHENCK, 1868)",1,3,2,polylectic,ground,solitary,7,7,6.5,400,1,1,1,0,0,1,4
+"Lasioglossum tricinctum (SCHENCK, 1874)",3,4,3,polylectic,ground,social,6.5,6,6.5,400,0,1,0,0,0,1,2
+"Lasioglossum villosulum (KIRBY, 1802)",1,2,2,polylectic,ground,solitary,6.5,8,6.5,800,1,1,1,1,1,1,6
+"Nomada errans LEPELETIER, 1841",4,5,3,cuckoo,host nest,cuckoo,7,3,6.5,400,0,1,1,1,1,1,5
+"Nomada posthuma BLÜTHGEN, 1949",unknown,5,insufficient data,cuckoo,host nest,cuckoo,6,3,6.5,400,1,0,0,0,0,0,1
+"Osmia andrenoides SPINOLA, 1808",4,4,4,oligolectic,above,solitary,6.5,4,6.5,800,0,1,0,0,0,1,2
+"Osmia crenulata (NYLANDER, 1856)",1,3,2,oligolectic,above,solitary,7.5,4,6.5,800,0,0,0,1,1,0,2
+"Osmia truncorum (LINNAEUS, 1758)",1,2,2,oligolectic,above,solitary,7.5,4,6.5,800,0,0,0,1,1,0,2
+"Osmia versicolor LATREILLE, 1811",5,6,4,polylectic,above,solitary,5.5,4,6.5,800,0,1,0,0,0,1,2
+"Osmia viridana MORAWITZ, 1874",4,6,3,polylectic,above,solitary,5.5,4,6.5,800,0,1,0,0,0,1,2
+"Panurginus herzi MORAWITZ, 1892",unknown,6,2,polylectic,ground,solitary,7,3,6.5,1450,0,0,0,1,0,0,1
+"Panurginus montanus GIRAUD, 1861",1,4,2,oligolectic,ground,solitary,7,3,6.5,1900,0,0,0,1,0,0,1
+"Sphecodes crassus THOMSON, 1870",1,1,2,cuckoo,host nest,cuckoo,7,7,6.5,1050,1,1,1,1,1,1,6
+"Sphecodes croaticus MEYER, 1922",4,4,insufficient data,cuckoo,host nest,cuckoo,7.5,6,6.5,800,0,1,0,0,0,1,2
+"Stelis odontopyga NOSKIEWICZ, 1926",3,4,3,cuckoo,host nest,cuckoo,7,3,6.5,1050,0,1,0,1,1,0,3
+"Stelis ornatula (KLUG, 1807)",1,3,2,cuckoo,host nest,cuckoo,6,5,6.5,1050,0,1,0,0,1,1,3
+"Stelis signata (LATREILLE, 1809)",3,4,3,cuckoo,host nest,cuckoo,6.5,4,6.5,800,0,1,1,0,1,1,4
+"Andrena subopaca NYLANDER, 1848",1,2,2,polylectic,ground,solitary,5.5,6,7,1050,1,1,1,1,1,1,6
+"Andrena viridescens VIERECK, 1916",2,3,3,oligolectic,ground,solitary,5,3,7,800,0,1,1,1,1,1,5
+"Anthidium nanum MOCSÁRY, 1879",3,4,3,oligolectic,above,solitary,7.5,4,7,800,0,0,0,0,1,1,2
+"Ceratina cucurbitina (ROSSI, 1792)",1,3,2,polylectic,above,solitary,7,5,7,800,0,1,1,0,1,1,4
+"Coelioxys echinata FÖRSTER, 1853",1,4,1,cuckoo,host nest,cuckoo,7.5,2,7,800,0,1,0,0,1,1,3
+"Epeolus cruciger (PANZER, 1799)",3,3,4,cuckoo,host nest,cuckoo,7.5,2,7,400,0,1,0,0,1,1,3
+"Halictus confusus SMITH, 1853",1,3,2,polylectic,ground,solitary,5.5,7,7,1050,0,1,0,0,0,1,2
+"Halictus tumulorum (LINNAEUS, 1758)",1,1,2,polylectic,ground,social,6.5,6,7,1050,1,1,1,1,1,1,6
+"Hylaeus annulatus (LINNAEUS, 1758)",unknown,6,2,polylectic,above,solitary,7.5,4,7,1050,1,0,1,1,1,1,5
+"Hylaeus confusus NYLANDER, 1852",1,2,2,polylectic,above,solitary,6.5,6,7,1050,1,1,1,0,1,0,4
+"Hylaeus cornutus CURTIS, 1831",1,3,insufficient data,polylectic,above,solitary,7,3,7,800,0,1,0,1,1,1,4
+"Hylaeus duckei (ALFKEN, 1904)",3,4,3,polylectic,above,solitary,6.5,4,7,800,0,1,0,0,0,1,2
+"Hylaeus gibbus SAUNDERS, 1850",1,2,2,polylectic,above,solitary,7,5,7,1050,0,1,0,0,1,1,3
+"Hylaeus pectoralis FÖRSTER, 1871",3,3,4,polylectic,above,solitary,7,5,7,400,1,0,0,1,1,0,2
+"Hylaeus variegatus (FABRICIUS, 1798)",2,3,3,polylectic,ground,solitary,7.5,4,7,800,0,1,0,0,0,1,2
+"Lasioglossum fratellum (PÉREZ, 1903)",1,3,2,polylectic,ground,solitary,7,7,7,1500,1,1,0,0,1,0,3
+"Lasioglossum lativentre (SCHENCK, 1853)",2,3,3,polylectic,ground,solitary,7,7,7,800,0,0,0,1,1,1,3
+"Lasioglossum lineare (SCHENCK, 1868)",3,3,4,polylectic,ground,social,6,7,7,800,0,1,0,0,0,1,2
+"Lasioglossum quadrinotatum (KIRBY, 1802)",3,4,3,polylectic,ground,solitary,7,7,7,400,0,0,0,1,0,1,2
+"Nomada facilis SCHWARZ, 1967",3,5,insufficient data,cuckoo,host nest,cuckoo,6.5,4,7,800,0,1,0,1,1,0,3
+"Nomada integra BRULLÉ, 1832",3,4,insufficient data,cuckoo,host nest,cuckoo,6,5,7,800,0,1,0,1,1,0,3
+"Ammobates punctatus (FABRICIUS, 1804)",4,5,3,cuckoo,host nest,cuckoo,7,3,7.5,800,0,1,0,0,0,0,1
+"Andrena nanaeformis NOSKIEWICZ, 1925",6,7,6,polylectic,ground,solitary,5.5,4,7.5,400,0,1,0,0,0,0,1
+"Biastes brevicornis (PANZER, 1798)",5,6,3,cuckoo,host nest,cuckoo,7,3,7.5,400,0,0,0,0,0,1,1
+"Dufourea dentiventris (NYLANDER, 1848)",3,3,4,oligolectic,ground,solitary,7.5,2,7.5,1050,0,0,0,0,1,1,2
+"Dufourea inermis (NYLANDER, 1848)",4,4,4,oligolectic,ground,solitary,7.5,2,7.5,1500,0,0,0,0,1,1,2
+"Epeolus variegatus (LINNAEUS, 1758)",2,3,3,cuckoo,host nest,cuckoo,7,3,7.5,800,0,1,0,0,0,1,2
+"Halictus leucaheneus EBMER, 1972",3,3,4,polylectic,ground,social,6.5,6,7.5,800,1,1,0,0,0,1,3
+"Halictus subauratus (ROSSI, 1792)",1,3,2,polylectic,ground,social,5.5,6,7.5,800,0,1,0,0,0,1,2
+"Hylaeus difformis (EVERSMANN, 1852)",1,4,2,polylectic,above,solitary,7,3,7.5,800,1,0,0,1,1,0,3
+"Hylaeus punctulatissimus SMITH, 1842",3,3,insufficient data,oligolectic,above,solitary,6.5,4,7.5,800,0,1,1,0,0,1,3
+"Lasioglossum quadrinotatulum (SCHENCK, 1861)",3,4,3,polylectic,ground,solitary,7,7,7.5,400,0,1,0,1,0,1,3
+"Nomada baccata SMITH, 1844",4,4,4,cuckoo,host nest,cuckoo,8,3,7.5,400,0,1,0,0,0,0,1
+"Nomada guttulata SCHENCK, 1861",1,4,2,cuckoo,host nest,cuckoo,5.5,4,7.5,800,0,0,1,1,1,1,4
+"Osmia gallarum SPINOLA, 1808",2,4,3,oligolectic,above,solitary,6,5,7.5,800,0,0,0,0,1,1,2
+"Osmia spinulosa (KIRBY, 1802)",3,3,4,oligolectic,above,solitary,7,5,7.5,1050,0,1,0,1,1,0,3
+"Osmia submicans MORAWITZ, 1870",4,5,3,polylectic,above,solitary,5.5,2,7.5,800,0,1,0,0,1,1,3
+"Rhophitoides canus (EVERSMANN, 1852)",2,4,3,oligolectic,ground,solitary,7,3,7.5,400,0,0,0,0,0,1,1
+"Sphecodes ephippius (LINNAEUS, 1767)",1,1,2,cuckoo,host nest,cuckoo,6.5,8,7.5,1050,1,1,1,1,1,1,6
+"Sphecodes ferruginatus VON HAGENS, 1882",1,3,2,cuckoo,host nest,cuckoo,7,7,7.5,1500,1,1,1,1,1,1,6
+"Sphecodes rufiventris (PANZER, 1798)",1,3,2,cuckoo,host nest,cuckoo,6.5,6,7.5,800,0,1,0,0,1,1,3
+"Andrena labiata FABRICIUS, 1781",1,2,2,polylectic,ground,solitary,5.5,4,8,1050,0,0,1,1,1,1,4
+"Andrena nitidiuscula SCHENCK, 1853",3,3,4,oligolectic,ground,solitary,7,3,8,800,0,1,1,1,1,1,5
+"Coelioxys afra LEPELETIER, 1841",3,4,3,cuckoo,host nest,cuckoo,7,3,8,800,0,1,0,0,0,1,2
+"Coelioxys brevis EVERSMANN, 1852",4,5,3,cuckoo,host nest,cuckoo,7,3,8,400,0,1,0,0,0,0,1
+"Colletes mlokossewiczi RADOSZKOWSKI, 1891",unknown,6,insufficient data,oligolectic,ground,solitary,7,3,8,400,0,1,0,0,0,1,2
+"Hylaeus nigritus (FABRICIUS, 1798)",1,1,2,oligolectic,above,solitary,7,5,8,1050,0,1,1,1,0,1,4
+"Hylaeus signatus (PANZER, 1798)",1,1,2,oligolectic,above,solitary,6.5,6,8,800,0,1,1,0,1,1,4
+"Lasioglossum albipes (FABRICIUS, 1781)",1,1,2,polylectic,ground,social,7,7,8,1500,1,0,1,0,1,1,4
+"Lasioglossum laeve (KIRBY, 1802)",5,6,4,polylectic,ground,solitary,6.5,6,8,800,0,0,0,0,1,1,2
+"Lasioglossum marginatum (BRULLÉ, 1832)",unknown,6,2,polylectic,ground,social,6.5,8,8,800,0,0,0,1,0,1,2
+"Lasioglossum prasinum (SMITH, 1848)",4,4,4,polylectic,ground,solitary,7,7,8,400,0,1,0,0,0,0,1
+"Nomada alboguttata HERRICH-SCHÄFFER, 1839",1,3,2,cuckoo,host nest,cuckoo,4.5,2,8,400,0,1,0,0,0,0,1
+"Nomada argentata HERRICH-SCHÄFFER, 1839",4,4,4,cuckoo,host nest,cuckoo,8,3,8,800,0,1,0,0,0,1,2
+"Nomada obscura ZETTERSTEDT, 1838",1,4,2,cuckoo,host nest,cuckoo,4.5,4,8,1050,1,1,0,0,1,0,3
+"Nomada opaca ALFKEN, 1913",4,5,3,cuckoo,host nest,cuckoo,5.5,2,8,400,1,0,0,0,1,0,2
+"Nomada piccioliana MAGRETTI, 1883",3,4,3,cuckoo,host nest,cuckoo,6,3,8,800,0,0,0,1,0,1,2
+"Nomada rhenana MORAWITZ, 1872",3,4,insufficient data,cuckoo,host nest,cuckoo,6,5,8,400,0,1,1,1,1,1,5
+"Nomada roberjeotiana PANZER, 1799",3,4,insufficient data,cuckoo,host nest,cuckoo,8,3,8,800,0,1,0,0,0,0,1
+"Nomada rufipes FABRICIUS, 1793",2,3,3,cuckoo,host nest,cuckoo,8,3,8,1050,0,1,0,0,1,0,2
+"Nomada zonata PANZER, 1798",2,4,2,cuckoo,host nest,cuckoo,6,5,8,400,0,1,0,0,1,1,3
+"Osmia leucomelana (KIRBY, 1802)",1,2,2,polylectic,above,solitary,7,3,8,1050,0,1,0,0,1,1,3
+"Panurgus calcaratus (SCOPOLI, 1763)",1,3,2,oligolectic,ground,solitary,7.5,4,8,1050,0,1,0,0,1,1,3
+"Panurgus dentipes LATREILLE, 1811",3,4,3,oligolectic,ground,solitary,7.5,4,8,800,0,0,0,0,0,1,1
+"Sphecodes cristatus VON HAGENS, 1882",3,4,insufficient data,cuckoo,host nest,cuckoo,6.5,2,8,800,0,1,0,0,0,1,2
+"Stelis phaeoptera (KIRBY, 1802)",3,4,3,cuckoo,host nest,cuckoo,6.5,6,8,1050,0,0,0,1,1,1,3
+"Andrena coitana (KIRBY, 1802)",3,4,3,polylectic,ground,solitary,7.5,4,8.5,1050,1,0,0,0,1,0,2
+"Andrena pallitarsis PÉREZ, 1903",5,6,4,oligolectic,ground,solitary,7.5,2,8.5,400,0,0,0,0,0,1,1
+"Andrena ventralis IMHOFF, 1832",1,3,2,oligolectic,ground,solitary,4,3,8.5,800,0,1,0,0,0,0,1
+"Anthidium punctatum LATREILLE, 1809",2,3,3,polylectic,above,solitary,7,5,8.5,1050,0,0,1,0,1,1,3
+"Anthophora bimaculata (PANZER, 1798)",3,4,3,polylectic,ground,solitary,7,5,8.5,800,0,1,0,0,0,0,1
+"Anthophora pubescens (FABRICIUS, 1781)",5,6,4,polylectic,ground,solitary,7,3,8.5,800,0,0,1,1,0,0,2
+"Eucera alticincta (LEPELETIER, 1841)",6,7,6,oligolectic,ground,solitary,8,3,8.5,400,0,1,0,0,1,0,2
+"Lasioglossum calceatum (SCOPOLI, 1763)",1,1,2,polylectic,ground,social,6.5,8,8.5,1050,1,1,1,1,1,1,6
+"Lasioglossum laevigatum (KIRBY, 1802)",3,3,4,polylectic,ground,solitary,6.5,8,8.5,1050,0,1,0,1,1,1,4
+"Lasioglossum malachurum (KIRBY, 1802)",1,2,2,polylectic,ground,social,7,7,8.5,800,1,1,1,1,1,1,6
+"Megachile apicalis SPINOLA, 1808",4,5,3,polylectic,ground and above,solitary,7,3,8.5,800,0,0,0,1,1,0,2
+"Megachile rotundata (FABRICIUS, 1787)",1,3,2,polylectic,ground and above,solitary,7.5,4,8.5,800,0,1,0,0,1,1,3
+"Nomada conjungens HERRICH-SCHÄFFER, 1839",1,3,2,cuckoo,host nest,cuckoo,5.5,4,8.5,800,0,0,1,1,1,1,4
+"Nomada similis MORAWITZ, 1872",3,4,insufficient data,cuckoo,host nest,cuckoo,7.5,4,8.5,1050,1,1,0,0,1,1,4
+"Osmia parietina CURTIS, 1828",3,4,3,polylectic,above,solitary,6,5,8.5,1050,1,0,0,0,1,0,2
+"Osmia rufohirta LATREILLE, 1811",3,3,4,polylectic,above,solitary,6,5,8.5,800,0,1,0,0,0,1,2
+"Pseudapis femoralis (PALLAS, 1773)",6,7,6,polylectic,ground,solitary,6.5,2,8.5,400,0,1,0,0,0,1,2
+"Sphecodes majalis PÉREZ, 1903",1,5,2,cuckoo,host nest,cuckoo,4.5,2,8.5,400,0,0,0,1,1,1,3
+"Sphecodes monilicornis (KIRBY, 1802)",1,1,2,cuckoo,host nest,cuckoo,6.5,8,8.5,800,1,1,1,1,1,1,6
+"Sphecodes reticulatus THOMSON, 1870",1,3,2,cuckoo,host nest,cuckoo,7,7,8.5,800,0,1,0,0,1,1,3
+"Stelis nasuta (LATREILLE, 1809)",6,7,6,cuckoo,host nest,cuckoo,6.5,4,8.5,800,0,1,0,0,0,1,2
+"Systropha curvicornis (SCOPOLI, 1770)",3,4,3,oligolectic,ground,solitary,7,3,8.5,400,0,0,0,0,0,1,1
+"Andrena argentata SMITH, 1844",3,3,4,polylectic,ground,solitary,6.5,5,9,400,0,1,0,0,0,0,1
+"Andrena paucisquama NOSKIEWICZ, 1924",5,6,insufficient data,oligolectic,ground,solitary,5.5,2,9,400,0,0,0,1,1,1,3
+"Anthidium oblongatum (ILLIGER, 1806)",2,3,3,polylectic,above,solitary,7,3,9,800,0,0,1,0,1,1,3
+"Ceratina chalybea CHEVRIER, 1872",3,4,3,polylectic,above,solitary,6.5,6,9,400,0,0,0,0,0,1,1
+"Osmia rapunculi (LEPELETIER, 1841)",1,2,2,oligolectic,above,solitary,6.5,4,9,1050,0,0,1,1,1,1,4
+"Colletes daviesanus SMITH, 1846",1,2,2,oligolectic,ground,solitary,7.5,4,9,1050,0,1,1,0,0,1,3
+"Colletes marginatus SMITH, 1846",3,4,3,polylectic,ground,solitary,8,3,9,800,0,1,0,0,0,1,2
+"Epeoloides coecutiens (FABRICIUS, 1775)",1,4,2,cuckoo,host nest,cuckoo,7.5,2,9,800,1,0,0,0,1,0,2
+"Eucera salicariae (LEPELETIER, 1841)",3,4,3,polylectic,ground,solitary,7,3,9,400,0,1,0,0,1,0,2
+"Halictus maculatus SMITH, 1848",1,2,2,polylectic,ground,social,6.5,6,9,800,0,1,0,0,1,1,3
+"Lasioglossum leucozonium (SCHRANK, 1781)",1,1,2,polylectic,ground,solitary,7,7,9,1050,1,1,1,1,1,1,6
+"Lasioglossum sexmaculatum (SCHENCK, 1853)",3,5,insufficient data,polylectic,ground,solitary,5.5,6,9,400,0,1,0,0,0,0,1
+"Nomada fabriciana (LINNAEUS, 1767)",1,1,2,cuckoo,host nest,cuckoo,5.5,6,9,1050,1,1,1,1,1,1,6
+"Nomada femoralis MORAWITZ, 1869",4,5,3,cuckoo,host nest,cuckoo,5.5,4,9,800,0,1,0,1,1,1,4
+"Nomada ferruginata (LINNAEUS, 1767)",1,3,2,cuckoo,host nest,cuckoo,4,3,9,800,0,1,0,0,1,0,2
+"Nomada fucata PANZER, 1798",1,2,2,cuckoo,host nest,cuckoo,5.5,6,9,800,1,1,1,1,1,1,6
+"Osmia caerulescens (LINNAEUS, 1758)",1,2,2,polylectic,above,solitary,6.5,8,9,800,0,1,1,0,1,1,4
+"Osmia claviventris THOMSON, 1872",1,2,2,polylectic,above,solitary,7,3,9,1050,0,1,0,0,1,1,3
+"Osmia ravouxi PÉREZ, 1902",4,4,4,polylectic,above,solitary,6,5,9,800,0,1,0,0,0,1,2
+"Sphecodes pellucidus SMITH, 1845",2,3,3,cuckoo,host nest,cuckoo,6.5,6,9,1050,0,1,0,0,1,1,3
+"Sphecodes scabricollis WESMAEL, 1835",3,4,insufficient data,cuckoo,host nest,cuckoo,7,5,9,800,1,1,1,1,1,1,6
+"Thyreus orbatus (LEPELETIER, 1841)",4,5,3,cuckoo,host nest,cuckoo,7,5,9,1050,0,1,0,1,0,0,2
+"Andrena bicolor FABRICIUS, 1775",1,1,2,polylectic,ground,solitary,5.5,6,9.5,1050,1,1,1,1,1,1,6
+"Andrena chrysopus PÉREZ, 1903",2,4,2,oligolectic,ground,solitary,5.5,2,9.5,400,0,1,0,0,0,0,1
+"Andrena chrysosceles (KIRBY, 1802)",1,2,2,polylectic,ground,solitary,5,3,9.5,400,0,0,1,1,1,1,4
+"Andrena dorsata (KIRBY, 1802)",1,2,2,polylectic,ground,solitary,6,5,9.5,800,0,1,0,0,1,1,3
+"Andrena marginata FABRICIUS, 1776",4,4,4,oligolectic,ground,solitary,8,3,9.5,800,0,1,0,0,0,1,2
+"Andrena ovatula (KIRBY, 1802)",1,2,2,polylectic,ground,solitary,5.5,6,9.5,1050,0,1,1,1,1,1,5
+"Andrena ruficrus NYLANDER, 1848",3,4,insufficient data,oligolectic,ground,solitary,4,3,9.5,1050,1,1,0,0,1,0,3
+"Andrena symphyti SCHMIEDEKNECHT, 1883",1,5,insufficient data,oligolectic,ground,solitary,5,3,9.5,400,0,1,0,0,1,0,2
+"Anthidium byssinum (PANZER, 1798)",3,3,4,oligolectic,ground,solitary,7,3,9.5,1050,0,1,0,1,1,0,3
+"Coelioxys inermis (KIRBY, 1802)",1,3,2,cuckoo,host nest,cuckoo,7.5,6,9.5,800,0,0,1,1,1,1,4
+"Colletes impunctatus NYLANDER, 1852",3,5,3,polylectic,ground,solitary,7,3,9.5,1050,0,1,0,0,0,0,1
+"Epeolus schummeli SCHILLING, 1849",5,6,3,cuckoo,host nest,cuckoo,7,3,9.5,400,0,1,0,0,0,0,1
+"Halictus eurygnathus BLÜTHGEN, 1931",1,3,2,polylectic,ground,solitary,6.5,6,9.5,800,0,1,0,0,0,1,2
+"Halictus simplex BLÜTHGEN, 1923",1,2,2,polylectic,ground,solitary,6,5,9.5,1050,0,1,0,0,0,1,2
+"Lasioglossum euboeense (STRAND, 1909)",4,5,3,polylectic,ground,social,7,7,9.5,800,0,1,0,0,0,1,2
+"Lasioglossum nigripes (LEPELETIER, 1841)",4,4,4,polylectic,ground,social,7,7,9.5,1050,1,1,1,1,1,1,6
+"Lasioglossum subfasciatum (IMHOFF, 1832)",5,5,4,polylectic,ground,solitary,6.5,8,9.5,800,0,0,0,0,0,1,1
+"Lasioglossum zonulum (SMITH, 1848)",1,2,2,polylectic,ground,solitary,7,7,9.5,800,1,1,1,1,1,1,6
+"Megachile leachella CURTIS, 1828",3,4,3,polylectic,ground and above,solitary,7,5,9.5,800,0,1,0,0,0,0,1
+"Megachile pilidens ALFKEN, 1924",3,4,4,polylectic,ground and above,solitary,7,5,9.5,800,0,1,0,0,0,1,2
+"Nomada flavopicta (KIRBY, 1802)",1,3,2,cuckoo,host nest,cuckoo,7.5,6,9.5,400,1,1,1,1,1,1,6
+"Nomada hirtipes PÉREZ, 1884",3,4,3,cuckoo,host nest,cuckoo,5,3,9.5,800,0,0,0,1,1,0,2
+"Nomada moeschleri ALFKEN, 1913",1,5,2,cuckoo,host nest,cuckoo,6,3,9.5,800,0,0,1,1,1,0,3
+"Osmia acuticornis DUFOUR & PERRIS, 1840",4,5,3,polylectic,above,solitary,7,3,9.5,800,0,1,0,0,0,1,2
+"Osmia anthocopoides SCHENCK, 1853",3,3,4,oligolectic,above,solitary,6.5,4,9.5,1050,0,1,0,0,0,0,1
+"Osmia inermis (ZETTERSTEDT, 1838)",4,5,4,polylectic,above,solitary,6.5,4,9.5,1900,0,1,0,0,0,0,1
+"Osmia leaiana (KIRBY, 1802)",3,4,3,oligolectic,above,solitary,6,5,9.5,1050,0,0,0,1,1,1,3
+"Osmia niveata (FABRICIUS, 1804)",3,3,4,oligolectic,above,solitary,5.5,4,9.5,800,0,0,1,1,1,1,4
+"Osmia uncinata GERSTÄCKER, 1869",3,4,3,polylectic,above,solitary,5.5,6,9.5,1050,1,0,0,0,1,0,2
+"Rophites algirus PÉREZ, 1895",3,4,3,oligolectic,ground,solitary,6.5,2,9.5,800,0,1,0,0,0,1,2
+"Rophites quinquespinosus SPINOLA, 1808",4,5,3,oligolectic,ground,solitary,7,3,9.5,400,0,1,0,0,1,1,3
+"Sphecodes rubicundus VON HAGENS, 1875",3,4,3,cuckoo,host nest,cuckoo,6,3,9.5,400,0,0,0,1,1,0,2
+"Sphecodes ruficrus (ERICHSON, 1835)",1,5,2,cuckoo,host nest,cuckoo,5,3,9.5,400,0,1,0,0,0,1,2
+"Stelis punctulatissima (KIRBY, 1802)",1,2,2,cuckoo,host nest,cuckoo,7,5,9.5,800,0,1,1,0,1,1,4
+"Andrena angustior (KIRBY, 1802)",1,3,2,polylectic,ground,solitary,8,3,10,400,0,1,0,1,1,0,3
+"Andrena proxima (KIRBY, 1802)",1,3,2,oligolectic,ground,solitary,5,3,10,1050,0,0,1,1,1,1,4
+"Colletes fodiens (GEOFFROY, 1785)",3,4,3,oligolectic,ground,solitary,7.5,2,10,800,0,1,0,0,0,1,2
+"Colletes similis SCHENCK, 1853",2,3,3,oligolectic,ground,solitary,7.5,4,10,800,0,1,0,1,0,1,3
+"Dufourea paradoxa (MORAWITZ, 1867)",unknown,6,2,polylectic,ground,solitary,7.5,4,10,1900,0,1,0,0,0,0,1
+"Eucera cineraria EVERSMANN, 1852",6,7,6,oligolectic,ground,solitary,6,3,10,400,0,1,0,0,0,1,2
+"Lasioglossum costulatum (KRIECHBAUMER, 1873)",3,3,4,oligolectic,ground,solitary,6.5,6,10,1050,0,1,0,1,1,1,4
+"Nomada braunsiana SCHMIEDEKNECHT, 1882",5,6,insufficient data,cuckoo,host nest,cuckoo,6.5,4,10,1050,0,0,0,1,1,1,3
+"Nomada leucophthalma (KIRBY, 1802)",1,2,2,cuckoo,host nest,cuckoo,4.5,4,10,1050,1,1,0,0,1,0,3
+"Nomada mutabilis MORAWITZ, 1870",5,6,4,cuckoo,host nest,cuckoo,6,3,10,800,0,1,0,1,0,0,2
+"Nomada pleurosticta HERRICH-SCHÄFFER, 1839",4,5,3,cuckoo,host nest,cuckoo,7,3,10,400,0,1,0,1,1,1,4
+"Nomada ruficornis (LINNAEUS, 1758)",1,2,2,cuckoo,host nest,cuckoo,4.5,4,10,800,0,0,1,1,1,0,3
+"Nomada striata FABRICIUS, 1793",1,2,2,cuckoo,host nest,cuckoo,6,5,10,1050,0,1,0,1,1,0,3
+"Nomada symphyti STÖCKHERT, 1930",3,5,3,cuckoo,host nest,cuckoo,5.5,2,10,400,1,1,0,0,1,0,3
+"Osmia bicornis (LINNAEUS, 1758)",1,1,2,polylectic,above,solitary,5,5,10,800,1,1,1,1,1,1,6
+"Osmia loti MORAWITZ, 1867",unknown,6,2,polylectic,above,solitary,7.5,4,10,1500,0,1,0,0,0,0,1
+"Osmia pilicornis SMITH, 1846",3,5,insufficient data,polylectic,above,solitary,4.5,4,10,800,1,0,0,0,1,0,2
+"Sphecodes gibbus (LINNAEUS, 1758)",1,1,2,cuckoo,host nest,cuckoo,7,7,10,1500,1,1,1,1,1,1,6
+"Sphecodes schenckii VON HAGENS, 1882",5,6,insufficient data,cuckoo,host nest,cuckoo,6.5,6,10,400,0,1,0,0,0,1,2
+"Stelis franconica BLÜTHGEN, 1930",6,7,6,cuckoo,host nest,cuckoo,6,3,10,1200,0,1,0,0,0,1,2
+"Andrena combinata (CHRIST, 1791)",3,4,3,polylectic,ground,solitary,5.5,2,10.5,800,0,0,0,1,0,1,2
+"Andrena hypopolia SCHMIEDEKNECHT, 1883",4,6,4,polylectic,ground,solitary,6.5,4,10.5,400,0,1,0,0,0,0,1
+"Andrena lagopus (LATREILLE, 1809)",1,3,2,oligolectic,ground,solitary,5,3,10.5,800,0,1,0,1,1,1,4
+"Andrena praecox (SCOPOLI, 1763)",1,3,2,oligolectic,ground,solitary,4,3,10.5,800,0,1,0,0,1,0,2
+"Andrena simillima SMITH, 1851",5,6,3,polylectic,ground,solitary,8,3,10.5,1500,0,1,0,0,0,0,1
+"Bombus pyrenaeus PÉREZ, 1879",1,4,2,polylectic,ground and above,social,7,5,10.5,2300,1,0,0,0,1,0,2
+"Coelioxys lanceolata NYLANDER, 1852",4,6,3,cuckoo,host nest,cuckoo,6.5,2,10.5,950,1,0,0,0,1,0,2
+"Coelioxys mandibularis NYLANDER, 1848",1,3,2,cuckoo,host nest,cuckoo,7,3,10.5,1050,0,1,1,1,1,1,5
+"Colletes hylaeiformis EVERSMANN, 1852",5,6,insufficient data,oligolectic,ground,solitary,8,3,10.5,400,0,1,0,0,0,1,2
+"Halictus rubicundus (CHRIST, 1791)",1,3,2,polylectic,ground,social,6.5,6,10.5,1050,1,1,1,1,1,1,6
+"Lasioglossum sexnotatum (KIRBY, 1802)",3,4,4,polylectic,ground,solitary,7,7,10.5,400,0,1,0,0,0,1,2
+"Nomada emarginata MORAWITZ, 1877",1,4,2,cuckoo,host nest,cuckoo,7,5,10.5,800,0,0,0,1,1,1,3
+"Nomada panzeri LEPELETIER, 1841",1,2,2,cuckoo,host nest,cuckoo,5.5,6,10.5,1050,1,1,1,1,1,1,6
+"Osmia aurulenta (PANZER, 1799)",1,3,2,polylectic,above,solitary,5,5,10.5,800,0,1,0,1,1,1,4
+"Osmia bicolor (SCHRANK, 1781)",1,3,2,polylectic,above,solitary,5,5,10.5,800,1,1,0,0,1,1,4
+"Osmia papaveris (LATREILLE, 1799)",5,5,4,polylectic,ground,solitary,6,3,10.5,800,0,0,0,0,1,1,2
+"Sphecodes spinulosus VON HAGENS, 1875",3,4,insufficient data,cuckoo,host nest,cuckoo,6,3,10.5,800,0,0,0,1,1,1,3
+"Systropha planidens GIRAUD, 1861",4,4,4,oligolectic,ground,solitary,7,3,10.5,400,0,0,0,0,0,1,1
+"Thyreus histrionicus (ILLIGER, 1806)",6,7,6,cuckoo,host nest,cuckoo,7.5,2,10.5,800,0,1,0,0,0,0,1
+"Andrena denticulata (KIRBY, 1802)",2,3,3,oligolectic,ground,solitary,7.5,2,11,800,1,1,0,0,1,1,4
+"Andrena haemorrhoa (FABRICIUS, 1781)",1,1,2,polylectic,ground,solitary,4.5,4,11,800,1,1,1,1,1,1,6
+"Andrena humilis IMHOFF, 1832",2,3,3,oligolectic,ground,solitary,6,3,11,1050,1,1,0,1,1,1,5
+"Andrena pandellei PÉREZ, 1895",3,3,4,oligolectic,ground,solitary,5.5,2,11,800,0,0,0,1,1,1,3
+"Andrena sericata IMHOFF, 1868",unknown,6,2,oligolectic,ground,solitary,4,3,11,800,0,0,0,0,1,0,1
+"Andrena similis SMITH, 1849",3,4,insufficient data,oligolectic,ground,solitary,5,5,11,400,0,1,0,1,1,0,3
+"Andrena synadelpha PERKINS, 1914",1,4,2,polylectic,ground,solitary,6,3,11,400,1,1,0,0,1,1,4
+"Andrena taraxaci GIRAUD, 1861",unknown,6,2,oligolectic,ground,solitary,4.5,4,11,800,0,1,0,1,1,1,4
+"Andrena varians (KIRBY, 1802)",1,3,2,polylectic,ground,solitary,4,3,11,800,1,0,1,1,1,1,5
+"Anthophora quadrimaculata (PANZER, 1798)",2,3,3,polylectic,ground,solitary,6.5,4,11,1050,0,1,1,1,0,0,3
+"Colletes floralis EVERSMANN, 1852",6,7,6,polylectic,ground,solitary,6.5,4,11,1050,0,1,0,0,0,0,1
+"Colletes halophilus VERHOEFF, 1944",unknown,6,2,oligolectic,ground,solitary,9,3,11,0,0,1,0,0,0,0,1
+"Colletes succinctus (LINNAEUS, 1758)",2,3,3,oligolectic,ground,solitary,8.5,2,11,400,0,1,0,0,1,0,2
+"Nomada armata HERRICH-SCHÄFFER, 1839",3,3,4,cuckoo,host nest,cuckoo,6.5,4,11,800,0,0,0,1,1,0,2
+"Nomada bifasciata OLIVIER, 1811",1,2,2,cuckoo,host nest,cuckoo,4.5,4,11,400,1,1,1,1,1,1,6
+"Nomada lathburiana (KIRBY, 1802)",1,2,2,cuckoo,host nest,cuckoo,5.5,6,11,1050,0,1,1,1,1,1,5
+"Nomada mutica MORAWITZ, 1872",4,5,3,cuckoo,host nest,cuckoo,5.5,4,11,800,1,1,0,0,1,1,4
+"Nomada stigma FABRICIUS, 1804",1,2,2,cuckoo,host nest,cuckoo,6,5,11,800,0,0,0,1,1,0,2
+"Nomada villosa THOMSON, 1870",3,4,insufficient data,cuckoo,host nest,cuckoo,5.5,4,11,800,0,0,1,1,1,0,3
+"Osmia brevicornis (FABRICIUS, 1798)",3,4,insufficient data,oligolectic,above,solitary,5.5,4,11,800,0,0,1,0,1,1,3
+"Osmia cerinthidis MORAWITZ, 1876",5,6,3,oligolectic,above,solitary,5.5,2,11,800,0,0,0,0,1,1,2
+"Osmia maritima FRIESE, 1885",unknown,6,2,polylectic,ground,solitary,6,3,11,0,0,1,0,0,0,0,1
+"Osmia tridentata DUFOUR & PERRIS, 1840",3,4,3,oligolectic,above,solitary,7,3,11,400,0,0,0,0,1,1,2
+"Osmia villosa (SCHENCK, 1853)",4,5,3,oligolectic,above,solitary,6,3,11,1500,0,1,0,0,0,0,1
+"Panurgus banksianus (KIRBY, 1802)",1,3,2,oligolectic,ground,solitary,7,3,11,1050,1,1,0,1,1,1,5
+"Ammobatoides abdominalis (EVERSMANN, 1852)",6,7,6,cuckoo,host nest,cuckoo,7,3,11.5,400,0,1,0,1,0,1,3
+"Andrena barbilabris (KIRBY, 1802)",2,3,3,polylectic,ground,solitary,5,5,11.5,400,0,1,0,0,1,1,3
+"Andrena florea FABRICIUS, 1793",1,3,2,oligolectic,ground,solitary,6.5,4,11.5,800,0,0,1,0,1,1,3
+"Andrena fucata SMITH, 1847",1,3,2,polylectic,ground,solitary,6,3,11.5,1050,1,0,0,0,0,0,1
+"Andrena mitis SCHMIEDEKNECHT, 1883",2,3,3,oligolectic,ground,solitary,4.5,4,11.5,400,1,1,0,1,0,0,3
+"Andrena nigriceps (KIRBY, 1802)",4,5,3,polylectic,ground,solitary,7,3,11.5,800,0,1,0,0,0,1,2
+"Andrena schencki MORAWITZ, 1866",4,6,4,polylectic,ground,solitary,6,3,11.5,400,0,0,0,1,0,1,2
+"Andrena wilkella (KIRBY, 1802)",1,3,2,oligolectic,ground,solitary,5,5,11.5,1050,0,1,0,1,1,1,4
+"Anthidium manicatum (LINNAEUS, 1758)",1,2,2,polylectic,above,solitary,7,3,11.5,800,0,1,1,0,1,0,3
+"Anthophora furcata (PANZER, 1798)",2,3,3,oligolectic,above,solitary,7,3,11.5,800,1,0,1,0,1,0,3
+"Bombus jonellus (KIRBY, 1802)",3,4,3,polylectic,ground and above,social,6,7,11.5,1050,1,1,0,0,1,1,4
+"Bombus pratorum (LINNAEUS, 1761)",1,1,2,polylectic,above,social,5,5,11.5,1500,1,0,1,1,1,1,5
+"Coelioxys aurolimbata FÖRSTER, 1853",2,3,3,cuckoo,host nest,cuckoo,7,3,11.5,400,0,1,0,1,1,1,4
+"Coelioxys conica (LINNAEUS, 1758)",2,3,3,cuckoo,host nest,cuckoo,6.5,4,11.5,1050,0,0,0,1,1,0,2
+"Coelioxys elongata LEPELETIER, 1841",1,4,insufficient data,cuckoo,host nest,cuckoo,7,5,11.5,800,0,1,0,1,1,1,4
+"Colletes hederae SCHMIDT & WESTRICH, 1993",1,3,insufficient data,oligolectic,ground,solitary,9,3,11.5,400,1,1,1,1,1,1,6
+"Eucera macroglossa ILLIGER, 1806",4,5,3,oligolectic,ground,solitary,7,3,11.5,800,0,1,0,0,0,1,2
+"Lasioglossum majus (NYLANDER, 1852)",3,4,4,polylectic,ground,solitary,6.5,6,11.5,800,1,0,0,1,1,1,4
+"Megachile analis NYLANDER, 1852",4,5,3,polylectic,ground,solitary,7,5,11.5,1500,0,1,0,0,0,0,1
+"Megachile melanopyga COSTA, 1863",5,6,4,polylectic,above,solitary,7.5,6,11.5,800,0,1,0,1,0,1,3
+"Megachile versicolor SMITH, 1844",1,2,2,polylectic,above,solitary,7,5,11.5,800,1,1,1,1,1,1,6
+"Melitta leporina (PANZER, 1799)",1,3,2,oligolectic,ground,solitary,7.5,4,11.5,400,0,0,1,1,0,1,3
+"Melitta nigricans ALFKEN, 1905",1,3,2,oligolectic,ground,solitary,7.5,2,11.5,400,0,0,0,0,1,0,1
+"Melitta tricincta KIRBY, 1802",2,3,2,oligolectic,ground,solitary,8.5,2,11.5,800,0,1,0,1,0,1,3
+"Nomada fulvicornis FABRICIUS, 1793",1,2,2,cuckoo,host nest,cuckoo,5.5,6,11.5,800,1,1,1,1,1,1,6
+"Nomada goodeniana (KIRBY, 1802)",1,1,2,cuckoo,host nest,cuckoo,5.5,3,11.5,800,1,1,1,1,1,1,6
+"Nomada marshamella (KIRBY, 1802)",1,1,2,cuckoo,host nest,cuckoo,5.5,4,11.5,800,1,1,1,1,1,1,6
+"Nomada signata JURINE, 1807",1,4,2,cuckoo,host nest,cuckoo,4.5,4,11.5,800,1,0,1,0,1,0,3
+"Nomada succincta PANZER, 1798",1,2,2,cuckoo,host nest,cuckoo,4.5,4,11.5,800,1,1,1,1,1,1,6
+"Osmia tuberculata NYLANDER, 1848",3,4,3,polylectic,above,solitary,6.5,2,11.5,1900,1,0,0,1,1,0,3
+"Andrena flavipes PANZER, 1799",1,2,2,polylectic,ground,solitary,6,7,12,800,1,1,1,1,1,1,6
+"Andrena tscheki MORAWITZ, 1872",3,4,3,oligolectic,ground,solitary,4,3,12,400,0,0,0,1,0,1,2
+"Bombus humilis ILLIGER, 1806",3,3,4,polylectic,above,social,7,7,12,1050,0,0,0,1,1,1,3
+"Bombus pascuorum (SCOPOLI, 1763)",1,1,2,polylectic,ground and above,social,7,7,12,1050,0,0,1,1,1,1,4
+"Bombus soroeensis (FABRICIUS, 1776)",2,3,3,polylectic,ground,social,6.5,6,12,1050,1,1,0,1,1,1,5
+"Coelioxys alata FÖRSTER, 1853",5,6,insufficient data,cuckoo,host nest,cuckoo,7,3,12,400,1,0,0,0,1,0,2
+"Coelioxys rufescens LEPELETIER & SERVILLE, 1825",2,4,3,cuckoo,host nest,cuckoo,7.5,4,12,1050,0,0,0,0,1,0,1
+"Lasioglossum xanthopus (KIRBY, 1802)",1,3,2,polylectic,ground,solitary,6.5,8,12,800,0,0,0,1,1,1,3
+"Megachile lapponica THOMSON, 1872",1,3,2,oligolectic,above,solitary,7,3,12,800,1,0,1,0,1,0,3
+"Megachile pyrenaea PÉREZ, 1890",3,5,3,polylectic,ground and above,solitary,8,3,12,800,0,1,0,0,0,1,2
+"Nomada flava PANZER, 1798",1,1,2,cuckoo,host nest,cuckoo,4.5,4,12,800,1,1,1,1,1,1,6
+"Nomada nobilis HERRICH-SCHÄFFER, 1839",6,7,6,cuckoo,host nest,cuckoo,5.5,2,12,800,0,0,0,0,0,1,1
+"Nomada sexfasciata PANZER, 1799",1,3,2,cuckoo,host nest,cuckoo,5,3,12,800,0,0,0,1,1,1,3
+"Osmia adunca (PANZER, 1798)",1,2,2,oligolectic,above,solitary,7.5,4,12,800,0,1,0,0,0,1,2
+"Osmia lepeletieri PÉREZ, 1879",6,7,6,oligolectic,above,solitary,7,3,12,1050,0,1,0,0,0,0,1
+"Andrena bucephala STEPHENS, 1846",3,4,3,polylectic,ground,solitary,4.5,2,12.5,800,0,0,0,1,1,0,2
+"Andrena clarkella (KIRBY, 1802)",1,3,2,oligolectic,ground,solitary,4,3,12.5,1050,1,0,0,0,1,0,2
+"Andrena ferox SMITH, 1847",4,5,3,polylectic,ground,solitary,5.5,2,12.5,800,1,0,0,0,1,0,2
+"Andrena lapponica ZETTERSTEDT, 1838",2,3,3,oligolectic,ground,solitary,5.5,4,12.5,1650,1,1,0,0,1,0,3
+"Andrena rosae PANZER, 1801",3,4,4,polylectic,ground,solitary,5.5,5,12.5,800,0,0,0,1,1,1,3
+"Bombus lucorum (LINNAEUS, 1761)",1,1,2,polylectic,ground,social,5.5,6,12.5,1050,1,1,1,1,1,1,6
+"Bombus monticola SMITH, 1849",1,4,2,polylectic,ground,social,6,7,12.5,1900,1,1,0,0,1,0,3
+"Bombus ruderarius (MÜLLER, 1776)",3,4,3,polylectic,above,social,6.5,6,12.5,1500,0,0,0,1,0,0,1
+"Bombus sylvarum (LINNAEUS, 1761)",2,3,3,polylectic,ground and above,social,7,7,12.5,1050,0,1,1,1,1,1,5
+"Colletes collaris DOURS, 1872",unknown,6,2,polylectic,ground,solitary,9,3,12.5,400,0,1,0,0,0,1,2
+"Megachile genalis MORAWITZ, 1880",4,5,3,oligolectic,above,solitary,7.5,4,12.5,800,0,1,0,0,1,1,3
+"Melitta haemorrhoidalis (FABRICIUS, 1775)",1,2,2,oligolectic,ground,solitary,7.5,4,12.5,1050,0,0,1,1,1,1,4
+"Nomada melathoracica IMHOFF, 1834",4,5,3,cuckoo,host nest,cuckoo,5.5,4,12.5,800,0,1,1,1,1,0,4
+"Nomada rostrata HERRICH-SCHÄFFER, 1839",5,6,3,cuckoo,host nest,cuckoo,5.5,2,12.5,400,0,1,0,0,0,0,1
+"Sphecodes albilabris (FABRICIUS, 1793)",1,3,2,cuckoo,host nest,cuckoo,6.5,8,12.5,800,0,1,0,0,0,1,2
+"Andrena chrysopyga SCHENCK, 1853",4,5,3,polylectic,ground,solitary,5,3,13,800,0,1,0,1,0,0,2
+"Andrena decipiens SCHENCK, 1861",4,5,4,polylectic,ground,solitary,7.5,4,13,400,0,1,0,0,0,0,1
+"Andrena fulva (MÜLLER, 1766)",1,2,2,polylectic,ground,solitary,4,3,13,800,1,0,1,0,1,0,3
+"Andrena gravida IMHOFF, 1832",1,1,2,polylectic,ground,solitary,4.5,4,13,800,1,1,1,1,1,1,6
+"Andrena nuptialis PÉREZ, 1902",5,6,3,polylectic,ground,solitary,6,4,13,900,0,0,0,0,1,1,2
+"Andrena nycthemera IMHOFF, 1868",3,4,3,oligolectic,ground,solitary,4.5,4,13,400,0,1,0,0,0,0,1
+"Andrena polita SMITH, 1847",4,4,4,oligolectic,ground,solitary,7,5,13,400,0,1,0,1,1,1,4
+"Andrena rogenhoferi MORAWITZ, 1872",unknown,6,2,polylectic,ground,solitary,6.5,4,13,1500,0,1,0,1,0,0,2
+"Andrena scotica PERKINS, 1916",1,3,2,polylectic,ground,solitary,5,3,13,800,0,1,1,1,1,0,4
+"Bombus hypnorum (LINNAEUS, 1758)",1,1,2,polylectic,above,social,5.5,6,13,1050,1,0,1,1,1,1,5
+"Bombus muscorum (LINNAEUS, 1758)",4,4,4,polylectic,above,social,7,5,13,800,0,1,0,1,1,0,3
+"Bombus pomorum (PANZER, 1805)",4,4,4,polylectic,ground,social,6,5,13,800,0,0,0,1,1,0,2
+"Bombus veteranus (FABRICIUS, 1793)",3,4,3,polylectic,above,social,6.5,6,13,800,0,0,0,1,1,0,2
+"Eucera dentata GERMAR, 1839",4,5,3,oligolectic,ground,solitary,7.5,4,13,800,0,1,0,0,0,1,2
+"Melecta albifrons (FORSTER, 1771)",1,1,2,cuckoo,host nest,cuckoo,5,5,13,1500,0,1,1,0,0,0,2
+"Melecta luctuosa (SCOPOLI, 1770)",3,4,3,cuckoo,host nest,cuckoo,5.5,4,13,800,0,1,0,0,1,0,2
+"Osmia nigriventris (ZETTERSTEDT, 1838)",5,6,4,polylectic,above,solitary,5.5,4,13,1650,1,0,0,0,1,0,2
+"Andrena apicata SMITH, 1847",3,3,insufficient data,oligolectic,ground,solitary,3.5,4,13.5,800,1,1,0,0,1,0,3
+"Andrena bimaculata (KIRBY, 1802)",2,3,3,polylectic,ground,solitary,5.5,6,13.5,400,0,1,0,0,0,0,1
+"Andrena curvungula THOMSON, 1870",3,3,4,oligolectic,ground,solitary,6,3,13.5,800,0,0,0,1,1,1,3
+"Andrena labialis (KIRBY, 1802)",2,3,3,oligolectic,ground,solitary,6,3,13.5,1050,0,0,0,1,1,0,2
+"Andrena lathyri ALFKEN, 1899",1,2,2,oligolectic,ground,solitary,5.5,4,13.5,800,0,0,1,1,1,0,3
+"Anthophora plagiata (ILLIGER, 1806)",4,6,4,polylectic,ground,solitary,5.5,4,13.5,1050,0,1,0,0,0,0,1
+"Bombus hortorum (LINNAEUS, 1761)",1,2,2,polylectic,ground and above,social,6,5,13.5,1050,0,0,1,1,1,1,4
+"Bombus semenoviellus SKORIKOV, 1910",1,5,insufficient data,polylectic,ground,social,6,7,13.5,400,1,1,0,1,0,1,4
+"Colletes cunicularius (LINNAEUS, 1761)",1,3,2,polylectic,ground,solitary,3.5,2,13.5,400,0,1,0,0,0,0,1
+"Colletes nasutus SMITH, 1853",4,5,3,oligolectic,ground,solitary,7,3,13.5,400,0,1,0,0,0,0,1
+"Halictus scabiosae (ROSSI, 1790)",1,3,2,polylectic,ground,social,6.5,6,13.5,800,0,1,0,0,1,1,3
+"Lithurgus chrysurus FONSCOLOMBE, 1834",5,6,insufficient data,oligolectic,above,solitary,7,3,13.5,400,1,1,0,0,0,0,2
+"Megachile willughbiella (KIRBY, 1802)",1,2,2,polylectic,ground and above,solitary,7,5,13.5,1050,0,0,1,1,1,0,3
+"Melitta dimidiata MORAWITZ, 1876",5,6,3,oligolectic,ground,solitary,5.5,4,13.5,800,0,0,0,1,0,1,2
+"Osmia cornuta (LATREILLE, 1805)",1,3,1,polylectic,above,solitary,4,5,13.5,800,0,1,1,0,1,0,3
+"Osmia mustelina GERSTÄCKER, 1869",4,5,3,polylectic,above,solitary,5.5,6,13.5,1050,0,1,0,0,0,1,2
+"Andrena agilissima (SCOPOLI, 1770)",3,4,3,oligolectic,ground,solitary,5.5,2,14,800,0,1,1,1,1,0,4
+"Andrena cineraria (LINNAEUS, 1758)",1,2,2,polylectic,ground,solitary,4,3,14,1050,0,1,1,1,1,1,5
+"Andrena nigroaenea (KIRBY, 1802)",1,3,2,polylectic,ground,solitary,5,5,14,1050,0,1,1,1,1,0,4
+"Andrena pilipes FABRICIUS, 1781",3,3,4,polylectic,ground,solitary,6.5,5,14,800,0,1,0,1,0,1,3
+"Andrena suerinensis FRIESE, 1884",4,5,3,oligolectic,ground,solitary,6,3,14,400,0,1,0,0,0,1,2
+"Andrena tibialis (KIRBY, 1802)",1,3,2,polylectic,ground,solitary,4.5,4,14,800,0,1,1,1,1,1,5
+"Andrena vaga PANZER, 1799",1,3,2,oligolectic,ground,solitary,4.5,4,14,800,0,1,0,0,0,0,1
+"Bombus lapidarius (LINNAEUS, 1758)",1,1,2,polylectic,above,social,6.5,8,14,1050,0,0,1,1,1,1,4
+"Bombus mesomelas GERSTÄCKER, 1869",6,7,6,polylectic,ground,social,7.5,6,14,1900,0,1,0,0,0,0,1
+"Bombus mucidus GERSTÄCKER, 1869",1,4,2,polylectic,ground,social,7.5,6,14,1900,0,0,0,0,1,0,1
+"Bombus terrestris (LINNAEUS, 1758)",1,1,2,polylectic,ground,social,5.5,8,14,800,0,0,1,1,1,1,4
+"Dasypoda hirtipes (FABRICIUS, 1793)",2,3,3,oligolectic,ground,solitary,7.5,4,14,800,0,1,0,0,1,1,3
+"Eucera longicornis (LINNAEUS, 1758)",2,3,3,oligolectic,ground,solitary,6,3,14,400,0,0,0,1,0,1,2
+"Eucera nigrescens PÉREZ, 1879",1,3,2,oligolectic,ground,solitary,5,3,14,400,0,0,0,1,1,0,2
+"Megachile ericetorum LEPELETIER, 1841",1,3,2,oligolectic,above,solitary,7,3,14,800,0,1,1,1,1,1,5
+"Megachile ligniseca (KIRBY, 1802)",4,5,3,polylectic,above,solitary,7.5,4,14,1050,1,0,0,0,1,0,2
+"Melitturga clavicornis (LATREILLE, 1806)",6,7,6,oligolectic,ground,solitary,7,3,14,800,0,1,0,1,1,1,4
+"Anthophora aestivalis (PANZER, 1801)",3,4,3,polylectic,ground,solitary,5.5,4,14.5,1050,0,1,0,0,1,1,3
+"Anthophora plumipes (PALLAS, 1772)",1,1,2,polylectic,ground,solitary,4.5,4,14.5,800,1,1,1,1,1,1,6
+"Anthophora retusa (LINNAEUS, 1758)",2,3,4,polylectic,ground,solitary,5.5,4,14.5,800,0,1,0,1,1,0,3
+"Bombus sichelii RADOSZKOWSKI, 1859",3,5,3,polylectic,ground,social,6.5,6,14.5,2300,1,0,0,0,1,0,2
+"Bombus wurflenii RADOSZKOWSKI, 1859",2,3,3,polylectic,ground,social,7,7,14.5,1500,1,1,0,1,1,0,4
+"Coelioxys conoidea (ILLIGER, 1806)",3,4,3,cuckoo,host nest,cuckoo,7,3,14.5,800,0,1,0,0,0,1,2
+"Halictus sexcinctus (FABRICIUS, 1775)",3,3,4,polylectic,ground,solitary,7,6,14.5,800,0,1,0,0,0,1,2
+"Megachile maritima (KIRBY, 1802)",3,3,4,polylectic,ground,solitary,7,3,14.5,800,0,1,0,0,0,1,2
+"Andrena hattorfiana (FABRICIUS, 1775)",3,3,4,oligolectic,ground,solitary,6.5,4,15,800,0,0,1,1,1,0,3
+"Andrena nitida (MÜLLER, 1776)",1,1,2,polylectic,ground,solitary,4.5,4,15,800,0,0,0,0,0,0,6
+"Andrena thoracica (FABRICIUS, 1775)",4,5,3,polylectic,ground,solitary,6.5,6,15,800,0,1,0,0,0,1,2
+"Bombus alpinus (LINNAEUS, 1758)",6,7,6,polylectic,ground,social,6.5,6,15,1900,0,0,0,0,0,1,1
+"Bombus sylvestris (LEPELETIER, 1832)",1,2,2,cuckoo,host nest,cuckoo,6,5,15,1050,1,0,1,1,1,1,5
+"Dasypoda argentata (PANZER, 1809)",5,6,4,oligolectic,ground,solitary,7.5,4,15,800,0,1,0,0,0,0,1
+"Megachile nigriventris SCHENCK, 1868",1,3,1,oligolectic,above,solitary,6.5,4,15,1050,1,0,0,0,1,0,2
+"Andrena aberrans EVERSMANN, 1852",5,6,3,oligolectic,ground,solitary,5,3,15.5,400,0,1,0,0,0,1,2
+"Bombus mendax GERSTÄCKER, 1869",1,4,2,polylectic,ground,social,7,7,15.5,2300,0,1,0,0,0,0,1
+"Halictus quadricinctus (FABRICIUS, 1776)",3,4,3,polylectic,ground,solitary,6.5,6,15.5,1050,0,1,0,0,0,1,2
+"Bombus gerstaeckeri MORAWITZ, 1882",unknown,6,2,oligolectic,ground,social,8,5,16,1900,0,0,0,0,1,1,2
+"Megachile lagopoda (LINNAEUS, 1761)",4,5,3,polylectic,ground and above,solitary,7,3,16,800,0,1,0,0,0,1,2
+"Bombus campestris (PANZER, 1801)",1,2,2,cuckoo,host nest,cuckoo,6.5,4,16.5,1050,0,0,1,1,1,1,4
+"Xylocopa iris (CHRIST, 1791)",6,7,6,polylectic,above,solitary,7,7,16.5,400,0,0,0,0,1,0,1
+"Andrena nasuta GIRAUD, 1863",4,4,4,oligolectic,ground,solitary,5.5,2,17,400,0,1,0,0,0,0,1
+"Bombus flavidus EVERSMANN, 1852",3,4,insufficient data,cuckoo,host nest,cuckoo,7.5,4,17,1900,1,0,0,0,1,0,2
+"Megachile parietina (GEOFFROY, 1785)",5,6,5,polylectic,above,solitary,5.5,6,17,800,0,1,0,0,0,1,2
+"Bombus barbutellus (KIRBY, 1802)",1,2,2,cuckoo,host nest,cuckoo,5.5,4,18,1050,0,0,1,1,1,1,4
+"Bombus norvegicus (SPARRE-SCHNEIDER, 1918)",1,3,2,cuckoo,host nest,cuckoo,6,5,20,1050,1,0,0,1,1,1,4
+"Bombus rupestris (FABRICIUS, 1793)",1,2,2,cuckoo,host nest,cuckoo,6,5,20,1050,0,0,1,1,1,1,4
+"Bombus vestalis (GEOFFROY, 1785)",1,3,2,cuckoo,host nest,cuckoo,6,5,21,800,0,0,1,1,1,1,4
+"Xylocopa violacea (LINNAEUS, 1758)",1,3,1,polylectic,above,solitary,6.5,8,22.5,800,0,0,1,1,0,0,2
+"Bombus bohemicus SEIDL, 1838",1,2,2,cuckoo,host nest,cuckoo,6,5,24,1050,0,0,1,1,1,1,4
+"Bombus quadricolor (LEPELETIER, 1832)",4,5,3,cuckoo,host nest,cuckoo,6.5,6,24,1050,1,1,0,1,1,1,5
