@@ -5,8 +5,8 @@
 [] When downloading data, locationDescription are merged and description not displayed (e.g. download data from Bombus terrestris)  
 [] When data is downloaded from simple search, it lists all contributors of the table per row (i.e. per observation). Each observation should have only it's contributors, as it happens in advanced search.
 [] Advanced search. Country and contributor Search not working properly.  
-[] Something goes wrong with calculating means: https://traitbase.info/species?q=5b0414a32265c5000fab55cb Hofmann dataset has the only measurement of m_body_size (6 mm length), so SE cannot be calculated, and the mean should not be NA?
-[] Map as displayed in simple exploration: NZ is not shown
+[] Something goes wrong with calculating means: https://traitbase.info/species?q=5b0414a32265c5000fab55cb Hofmann dataset has the only measurement of m_body_size (6 mm length), so SE cannot be calculated, and the mean should not be NA?  
+[] Map as displayed in simple exploration: NZ is not shown  
 [?] Metadata from advanced search not working as expected e.g. https://traitbase.info/metadata?key=species&value=Bombus%20terrestris 
 from simple search it works: https://traitbase.info/metadata?speciesId=5b04145b2265c5000fab2abf  
 
