@@ -3,7 +3,7 @@
 # Important (in order of importance for me, more or less):
 [] make ORCID not compulsory when uploading a contributor. Warn contributor not updated if some compulsory fields are missing.  
 [] When downloading data, locationDescription are merged and description not displayed (e.g. download data from Bombus terrestris)  
-[] When data is downloaded from simple search, it lists all contributors of the table per row (i.e. per observation). Each observation should have only it's contributors, as it happens in advanced search.
+[] When data is downloaded from simple search, it lists all contributors of the table per row (i.e. per observation). Each observation should have only it's contributors, as it happens in advanced search.  
 [] Advanced search. Country and contributor Search not working properly.  
 [] Something goes wrong with calculating means: https://traitbase.info/species?q=5b0414a32265c5000fab55cb Hofmann dataset has the only measurement of m_body_size (6 mm length), so SE cannot be calculated, and the mean should not be NA?  
 [] Map as displayed in simple exploration: NZ is not shown  
@@ -11,9 +11,9 @@
 from simple search it works: https://traitbase.info/metadata?speciesId=5b04145b2265c5000fab2abf  
 
 # Enhancements  
-[] Users to be able to modify their own pws (maybe via github connection)
-[] Add a measurement source field for Observation (2 factors: literature, own_measurement). So each variable will have m_, n_, se_ and scr_ (source)
-[] Add photo field to the traits table accepting an URL. This is in case you want to add a photo on how to measure the trait.
+[] Users to be able to modify their own pws (maybe via github connection)  
+[] Add a measurement source field for Observation (2 factors: literature, own_measurement). So each variable will have m_, n_, se_ and scr_ (source)  
+[] Add photo field to the traits table accepting an URL. This is in case you want to add a photo on how to measure the trait.  
 
 # less important  
 [] Import csv (web) only works for ~2000 lines. e.g. table species.  
